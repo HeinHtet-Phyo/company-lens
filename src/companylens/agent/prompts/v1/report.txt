@@ -1,0 +1,56 @@
+Generate a due-diligence report as valid JSON. Output ONLY the JSON object — no markdown, no prose, no code fences.
+
+The JSON must match the following structure exactly:
+
+{
+  "company": {
+    "name": "<string>",
+    "number": "<string>",
+    "status": "<string>",
+    "company_type": "<string>",
+    "incorporated": "<YYYY-MM-DD or null>",
+    "sic_codes": ["<string>", ...],
+    "sic_descriptions": ["<string>", ...],
+    "registered_office_locality": "<string or null>"
+  },
+  "facts": [
+    {
+      "field": "<string>",
+      "value": "<string>",
+      "evidence_ids": ["e1", ...]
+    }
+  ],
+  "red_flags": [
+    {
+      "rule_id": "<R1..R9>",
+      "severity": "<info|warning|high>",
+      "explanation": "<string>",
+      "evidence_ids": ["e1", ...]
+    }
+  ],
+  "risk_level": "<Low|Medium|High>",
+  "risk_reasons": ["<string>", ...],
+  "summary": "<string>",
+  "evidence": [
+    {
+      "id": "e1",
+      "tool": "<tool_name>",
+      "source_url": "<url>",
+      "retrieved_at": "<ISO 8601 datetime>",
+      "excerpt": "<string>"
+    }
+  ],
+  "limitations": ["<string>", ...]
+}
+
+## Rules
+
+1. Every field in the schema is required. Use empty arrays [] where there are no items.
+2. Every fact must include at least one evidence_id.
+3. Every red_flag must include at least one evidence_id.
+4. The summary must be 3 to 5 sentences in plain English. Every sentence must end with a citation in square brackets, e.g. [e1]. Do not omit citations.
+5. risk_level must be one of: "Low", "Medium", "High".
+6. severity must be one of: "info", "warning", "high".
+7. Do not include personal data: no names of individuals, no dates of birth, no home addresses, no nationality.
+8. evidence IDs must be sequential strings starting at "e1".
+9. Output ONLY the JSON. Any text outside the JSON object will cause a parse error.
