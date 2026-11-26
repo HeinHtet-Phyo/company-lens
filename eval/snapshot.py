@@ -117,6 +117,19 @@ async def record() -> None:
 
     await asyncio.gather(*(one(i) for i in items))
     store.save()
+    for it in items:  # GDELT allows ~1 request / 5 s: fetch news sequentially, retry failures
+        if it["category"] not in ("unique_name", "number"):
+            continue
+        prof = await store.call("get_company_profile", company_number=it["expected_number"])
+        name = (prof.data or {}).get("company_name", it["query"])
+        k = key("search_news", {"company_name": name})
+        for _ in range(3):
+            if k in store.data and store.data[k]["ok"]:
+                break
+            store.data.pop(k, None)
+            await store.call("search_news", company_name=name)
+            await asyncio.sleep(7)
+    store.save()
     print("recorded", len(store.data), "entries")
 
 

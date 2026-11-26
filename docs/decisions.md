@@ -21,7 +21,8 @@ CompanyLens is a portfolio project for a junior AI Engineer role. It must demons
 | Tool server | MCP (official mcp Python SDK, FastMCP) | Demonstrates MCP literacy; lets any MCP client (Claude Desktop etc.) use the tools |
 | Agent | LangGraph StateGraph | Shows LangGraph knowledge; supports checkpoints and human-in-the-loop interrupts |
 | LLM SDK | openai Python SDK pointed at Nebius/Mistral | Avoids LiteLLM which caused OOM in Citewise (used ~240 MiB on the 512 MB free tier) |
-| Main LLM | Qwen3-235B-A22B on Nebius | Strong tool-calling; cheap enough for $15 budget |
+| Main LLM | Qwen3.8-27B on Nebius (summaries/judge-in-loop: Qwen3-30B-A3B-Instruct-2507) | Tool-calling that works on the models Nebius actually served at build time; cheap enough for the $15 budget. The originally planned 235B model was not in the Nebius model list |
+| Eval judge | google/gemma-3-27b-it on Nebius | Different model family from the agent, non-reasoning (a DeepSeek reasoning model timed out as a judge) |
 | Comparison LLM | Mistral on mistral.ai free tier | Demonstrates multi-provider evaluation |
 | API | FastAPI + SSE | Fast, async, streams agent steps live |
 | UI | Static HTML/CSS/JS served by FastAPI | No React build step; works in any browser; easy to maintain |
@@ -39,12 +40,19 @@ CompanyLens is a portfolio project for a junior AI Engineer role. It must demons
 
 ---
 
-## ADR-002 — LangGraph vs hand-written state machine (placeholder)
+## ADR-002 — LangGraph vs hand-written state machine
 
-**Date:** TBD  
-**Status:** Pending — measure memory in Phase 2
+**Date:** 2026-11-26
+**Status:** Accepted — keep LangGraph
 
-If LangGraph + all dependencies push the Docker image peak above 400 MiB under `--memory=512m`, replace the agent loop with a hand-written async state machine that implements the same nodes (resolve → plan → act → decide → report) without the LangGraph dependency. The interface (state dict, node functions, guards) stays identical so tests are unaffected.
+### Decision
+
+Keep LangGraph. The threshold was "replace it if peak memory exceeds 400 MiB under `--memory=512m`". Measured peak with three live reports was 92.2 MiB (84.1 MiB idle), no OOM kill (`eval/results/memory.json`). There is no memory case for a rewrite.
+
+### Consequences
+
+- The image is 433 MB on disk; that is a disk figure, not a memory figure.
+- The graph stays small (resolve → plan → act → decide → report) and guards live outside it in `guards.py`, so the node logic would be portable if this ever changes.
 
 ---
 

@@ -895,15 +895,17 @@
 "search_news|{\"company_name\": \"nmc health plc\"}": {
 "tool": "search_news",
 "args": {
-"company_name": "NMC HEALTH PLC",
+"company_name": "nmc health plc",
 "days": 180,
 "limit": 5
 },
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NMC+HEALTH+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:14:56.393490Z",
-"error": "HTTP 429"
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22nmc+health+plc%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:19:56.207170Z",
+"error": null
 },
 "search_companies|{\"query\": \"aviva plc\"}": {
 "tool": "search_companies",
@@ -2621,15 +2623,17 @@
 "search_news|{\"company_name\": \"starling bank limited\"}": {
 "tool": "search_news",
 "args": {
-"company_name": "STARLING BANK LIMITED",
+"company_name": "starling bank limited",
 "days": 180,
 "limit": 5
 },
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22STARLING+BANK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:20.879970Z",
-"error": "ConnectTimeout: "
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22starling+bank+limited%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:21:34.744208Z",
+"error": null
 },
 "search_companies|{\"query\": \"rolls-royce holdings plc\"}": {
 "tool": "search_companies",
@@ -16902,5 +16906,2640 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/company/12092407",
 "retrieved_at": "2026-11-26T14:18:08.720950Z",
 "error": null
+},
+"search_companies|{\"query\": \"carillion plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "CARILLION PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "CARILLION PLC",
+"number": "03782379",
+"status": "liquidation",
+"date_of_creation": "1999-05-28",
+"address_locality": "Leeds"
+},
+{
+"name": "CARILLION ADVICE SERVICES LIMITED",
+"number": "10556292",
+"status": "liquidation",
+"date_of_creation": "2017-01-10",
+"address_locality": "Leeds"
+},
+{
+"name": "CARILLION (AM) LIMITED",
+"number": "01367044",
+"status": "liquidation",
+"date_of_creation": "1978-05-08",
+"address_locality": "Leeds"
+},
+{
+"name": "CARILLION (AMBS) LIMITED",
+"number": "SC020258",
+"status": "liquidation",
+"date_of_creation": "1938-03-15",
+"address_locality": "Edinburgh"
+},
+{
+"name": "CARILLION AM DEVELOPMENTS LIMITED",
+"number": "01685693",
+"status": "liquidation",
+"date_of_creation": "1982-12-09",
+"address_locality": "Leeds"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=CARILLION PLC",
+"retrieved_at": "2026-11-26T14:33:26.910311Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"carillion plc\", \"company_number\": \"03782379\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "CARILLION PLC",
+"company_number": "03782379"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:26.910436Z",
+"error": "FCA credentials not configured"
+},
+"search_companies|{\"query\": \"future plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "FUTURE PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "FUTURE PLC",
+"number": "03757874",
+"status": "active",
+"date_of_creation": "1999-04-22",
+"address_locality": "Bath"
+},
+{
+"name": "FUTURE NETWORK LIMITED",
+"number": "03592138",
+"status": "dissolved",
+"date_of_creation": "1998-06-29",
+"address_locality": "Bath"
+},
+{
+"name": "FUTURE TELECOM SOLUTIONS LIMITED",
+"number": "04291194",
+"status": "dissolved",
+"date_of_creation": "2001-09-20",
+"address_locality": "London"
+},
+{
+"name": "ANGOLA CONSTRUCTION LTD",
+"number": "14291710",
+"status": "active",
+"date_of_creation": "2022-08-12",
+"address_locality": "Worthing"
+},
+{
+"name": "APEX FUTURE TRAVEL EXPERIENCE LIMITED",
+"number": "12363316",
+"status": "active",
+"date_of_creation": "2019-12-13",
+"address_locality": "Heathfield"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=FUTURE PLC",
+"retrieved_at": "2026-11-26T14:33:26.925525Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"future plc\", \"company_number\": \"03757874\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "FUTURE PLC",
+"company_number": "03757874"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:26.925596Z",
+"error": "FCA credentials not configured"
+},
+"search_companies|{\"query\": \"patisserie holdings plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "PATISSERIE HOLDINGS PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "PATISSERIE HOLDINGS PLC",
+"number": "08963601",
+"status": "liquidation",
+"date_of_creation": "2014-03-27",
+"address_locality": "London"
+},
+{
+"name": "PV ACQUISITION REALISATIONS LIMITED",
+"number": "06070007",
+"status": "liquidation",
+"date_of_creation": "2007-01-26",
+"address_locality": "London"
+},
+{
+"name": "EATON'S PATISSERIE HOLDINGS LTD",
+"number": "09660067",
+"status": "active",
+"date_of_creation": "2015-06-26",
+"address_locality": "Slough"
+},
+{
+"name": "LE PAPILLON PATISSERIE UK (HOLDINGS) LIMITED",
+"number": "05938618",
+"status": "active",
+"date_of_creation": "2006-09-18",
+"address_locality": "St. Albans"
+},
+{
+"name": "PATISSERIE VALERY HOLDINGS LTD",
+"number": "15151514",
+"status": "active",
+"date_of_creation": "2023-09-20",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=PATISSERIE HOLDINGS PLC",
+"retrieved_at": "2026-11-26T14:33:26.949355Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"08963601\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "08963601"
+},
+"ok": true,
+"data": {
+"status": "liquidation",
+"type": "plc",
+"date_of_creation": "2014-03-27",
+"sic_codes": [
+"70100"
+],
+"accounts": {
+"next_due": "2019-03-31",
+"overdue": true
+},
+"confirmation_statement": {
+"overdue": true
+},
+"has_insolvency_history": true,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/08963601",
+"retrieved_at": "2026-11-26T14:33:26.964890Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"08963601\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "08963601"
+},
+"ok": true,
+"data": {
+"active_directors": 2,
+"active_secretaries": 1,
+"resignations_last_12m": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/08963601/officers",
+"retrieved_at": "2026-11-26T14:33:26.994211Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"08963601\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "08963601",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-10-23",
+"type": "WU07",
+"description": "liquidation-compulsory-winding-up-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2025-09-24",
+"type": "WU07",
+"description": "liquidation-compulsory-winding-up-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2024-10-21",
+"type": "WU07",
+"description": "liquidation-compulsory-winding-up-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2023-09-28",
+"type": "WU07",
+"description": "liquidation-compulsory-winding-up-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2022-09-27",
+"type": "WU07",
+"description": "liquidation-compulsory-winding-up-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2021-09-24",
+"type": "WU07",
+"description": "liquidation-compulsory-winding-up-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2020-09-07",
+"type": "WU04",
+"description": "liquidation-compulsory-appointment-liquidator",
+"category": "insolvency"
+},
+{
+"date": "2020-09-07",
+"type": "COCOMP",
+"description": "liquidation-compulsory-winding-up-order",
+"category": "insolvency"
+},
+{
+"date": "2019-11-01",
+"type": "600",
+"description": "liquidation-voluntary-appointment-of-liquidator",
+"category": "insolvency"
+},
+{
+"date": "2019-10-30",
+"type": "AD01",
+"description": "change-registered-office-address-company-with-date-old-address-new-address",
+"category": "address"
+},
+{
+"date": "2019-10-17",
+"type": "AM10",
+"description": "liquidation-in-administration-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2019-10-17",
+"type": "AM22",
+"description": "liquidation-in-administration-move-to-creditors-voluntary-liquidation",
+"category": "insolvency"
+},
+{
+"date": "2019-09-02",
+"type": "AM10",
+"description": "liquidation-in-administration-progress-report",
+"category": "insolvency"
+},
+{
+"date": "2019-08-08",
+"type": "AM07",
+"description": "liquidation-in-administration-result-creditors-meeting",
+"category": "insolvency"
+},
+{
+"date": "2019-05-02",
+"type": "COM1",
+"description": "liquidation-establishment-of-creditors-or-liquidation-committee",
+"category": "insolvency"
+},
+{
+"date": "2019-04-29",
+"type": "AM07",
+"description": "liquidation-in-administration-result-creditors-meeting",
+"category": "insolvency"
+},
+{
+"date": "2019-03-29",
+"type": "AM03",
+"description": "liquidation-in-administration-proposals",
+"category": "insolvency"
+},
+{
+"date": "2019-03-26",
+"type": "AM02",
+"description": "liquidation-in-administration-statement-of-affairs-with-form-attached",
+"category": "insolvency"
+},
+{
+"date": "2019-03-05",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2019-02-11",
+"type": "AD01",
+"description": "change-registered-office-address-company-with-date-old-address-new-address",
+"category": "address"
+}
+],
+"total_count": 81
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/08963601/filing-history",
+"retrieved_at": "2026-11-26T14:33:27.030201Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"08963601\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "08963601"
+},
+"ok": true,
+"data": {
+"total_count": 1,
+"kinds": {
+"individual-person-with-significant-control": 1
+},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/08963601/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:33:27.065018Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"08963601\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "08963601"
+},
+"ok": true,
+"data": {
+"total": 0,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": null
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/08963601/charges",
+"retrieved_at": "2026-11-26T14:33:27.098184Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"08963601\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "08963601"
+},
+"ok": true,
+"data": {
+"cases": [
+{
+"type": "in-administration",
+"dates": [
+{
+"date": "2019-01-22",
+"type": "administration-started-on"
+},
+{
+"date": "2019-10-17",
+"type": "administration-ended-on"
+}
+],
+"practitioners": 2
+},
+{
+"type": "creditors-voluntary-liquidation",
+"dates": [
+{
+"date": "2019-10-17",
+"type": "wound-up-on"
+}
+],
+"practitioners": 2
+},
+{
+"type": "compulsory-liquidation",
+"dates": [
+{
+"date": "2020-06-20",
+"type": "petitioned-on"
+},
+{
+"date": "2020-07-29",
+"type": "wound-up-on"
+}
+],
+"practitioners": 3
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/08963601/insolvency",
+"retrieved_at": "2026-11-26T14:33:27.175313Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"patisserie holdings plc\", \"company_number\": \"08963601\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "PATISSERIE HOLDINGS PLC",
+"company_number": "08963601"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:27.175536Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"future plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "FUTURE PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22FUTURE+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:33:39.033284Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"cambridge analytica limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "CAMBRIDGE ANALYTICA LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "CAMBRIDGE ANALYTICA LIMITED",
+"number": "16735751",
+"status": "active",
+"date_of_creation": "2025-09-23",
+"address_locality": "London"
+},
+{
+"name": "CAMBRIDGE ANALYTICA LTD",
+"number": "09154503",
+"status": "dissolved",
+"date_of_creation": "2014-07-30",
+"address_locality": "Ipswich"
+},
+{
+"name": "CAMBRIDGE ANALYTICAL (CONSULTING) LTD.",
+"number": "08797529",
+"status": "active",
+"date_of_creation": "2013-12-02",
+"address_locality": "Bishop's Stortford"
+},
+{
+"name": "CAMBRIDGE ANALYTICAL GROUP LIMITED",
+"number": "01908036",
+"status": "active",
+"date_of_creation": "1985-04-24",
+"address_locality": "Crawley"
+},
+{
+"name": "CAMBRIDGE ANALYTICA(UK) LIMITED",
+"number": "09375920",
+"status": "dissolved",
+"date_of_creation": "2015-01-06",
+"address_locality": "Tunbridge Wells"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=CAMBRIDGE ANALYTICA LIMITED",
+"retrieved_at": "2026-11-26T14:33:39.092208Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"16735751\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "16735751"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2025-09-23",
+"sic_codes": [
+"96090"
+],
+"accounts": {
+"next_due": "2027-06-23",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16735751",
+"retrieved_at": "2026-11-26T14:33:39.107240Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"16735751\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "16735751"
+},
+"ok": true,
+"data": {
+"active_directors": 1,
+"active_secretaries": 1,
+"resignations_last_12m": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16735751/officers",
+"retrieved_at": "2026-11-26T14:33:39.138977Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"16735751\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "16735751",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-10-05",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2025-09-23",
+"type": "NEWINC",
+"description": "incorporation-company",
+"category": "incorporation"
+}
+],
+"total_count": 2
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16735751/filing-history",
+"retrieved_at": "2026-11-26T14:33:39.162270Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"16735751\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "16735751"
+},
+"ok": true,
+"data": {
+"total_count": 1,
+"kinds": {
+"individual-person-with-significant-control": 1
+},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16735751/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:33:39.194332Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"16735751\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "16735751"
+},
+"ok": true,
+"data": {
+"total": 0,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": null
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16735751/charges",
+"retrieved_at": "2026-11-26T14:33:39.219311Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"16735751\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "16735751"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16735751/insolvency",
+"retrieved_at": "2026-11-26T14:33:39.235813Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"cambridge analytica limited\", \"company_number\": \"16735751\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "CAMBRIDGE ANALYTICA LIMITED",
+"company_number": "16735751"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:39.236056Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"carillion plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "CARILLION PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22CARILLION+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:33:41.023435Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"national grid plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "NATIONAL GRID PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "NATIONAL GRID PLC",
+"number": "04031152",
+"status": "active",
+"date_of_creation": "2000-07-11",
+"address_locality": "London"
+},
+{
+"name": "GRAIN LNG LIMITED",
+"number": "04463679",
+"status": "active",
+"date_of_creation": "2002-06-18",
+"address_locality": "Rochester"
+},
+{
+"name": "NATIONAL GRID BRAZIL B.V.",
+"number": "BR011142",
+"status": "closed",
+"date_of_creation": "2009-10-01",
+"address_locality": "London"
+},
+{
+"name": "NATIONAL GRID CARBON LIMITED",
+"number": "03932833",
+"status": "active",
+"date_of_creation": "2000-02-24",
+"address_locality": "- 3 Strand"
+},
+{
+"name": "NATIONAL GRID COMMERCIAL HOLDINGS LIMITED",
+"number": "04042700",
+"status": "active",
+"date_of_creation": "2000-07-28",
+"address_locality": "Strand"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=NATIONAL GRID PLC",
+"retrieved_at": "2026-11-26T14:33:41.057670Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"national grid plc\", \"company_number\": \"04031152\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "NATIONAL GRID PLC",
+"company_number": "04031152"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:41.058007Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"patisserie holdings plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "PATISSERIE HOLDINGS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22PATISSERIE+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:33:41.289380Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"british steel limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "BRITISH STEEL LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "BRITISH STEEL LIMITED",
+"number": "17312541",
+"status": "active",
+"date_of_creation": "2026-07-01",
+"address_locality": "Scunthorpe"
+},
+{
+"name": "2026 TRANSFEROR COMPANY LIMITED",
+"number": "12303256",
+"status": "active",
+"date_of_creation": "2019-11-07",
+"address_locality": "Scunthorpe"
+},
+{
+"name": "SLB 2020 LIMITED",
+"number": "09438207",
+"status": "liquidation",
+"date_of_creation": "2015-02-13",
+"address_locality": "Manchester"
+},
+{
+"name": "TATA STEEL UK LIMITED",
+"number": "02280000",
+"status": "active",
+"date_of_creation": "1988-07-26",
+"address_locality": "London"
+},
+{
+"name": "BRITISH STEEL FRAME COMPANY LIMITED(THE)",
+"number": "00297386",
+"status": "active",
+"date_of_creation": "1935-02-20",
+"address_locality": "Uckfield"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=BRITISH STEEL LIMITED",
+"retrieved_at": "2026-11-26T14:33:41.327536Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"british steel limited\", \"company_number\": \"17312541\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "BRITISH STEEL LIMITED",
+"company_number": "17312541"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:41.327934Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"cambridge analytica limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "CAMBRIDGE ANALYTICA LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22CAMBRIDGE+ANALYTICA+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:33:50.345669Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"blue prism group limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "BLUE PRISM GROUP LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "BLUE PRISM GROUP LIMITED",
+"number": "09759493",
+"status": "active",
+"date_of_creation": "2015-09-02",
+"address_locality": "Warrington"
+},
+{
+"name": "PIC PROPERTY LTD",
+"number": "12310943",
+"status": "active",
+"date_of_creation": "2019-11-12",
+"address_locality": "Liverpool"
+},
+{
+"name": "BLUE PRISM LIMITED",
+"number": "04260035",
+"status": "active",
+"date_of_creation": "2001-07-26",
+"address_locality": "Warrington"
+},
+{
+"name": "BLUE PRISM CLOUD LIMITED",
+"number": "08534024",
+"status": "dissolved",
+"date_of_creation": "2013-05-17",
+"address_locality": "1 Oxford Street"
+},
+{
+"name": "BLUE SHIPPING CONSULTANTS LLP",
+"number": "OC371143",
+"status": "dissolved",
+"date_of_creation": "2012-01-03",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=BLUE PRISM GROUP LIMITED",
+"retrieved_at": "2026-11-26T14:33:50.447090Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"09759493\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "09759493"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2015-09-02",
+"sic_codes": [
+"62012"
+],
+"accounts": {
+"next_due": "2027-09-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Warrington"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/09759493",
+"retrieved_at": "2026-11-26T14:33:50.469252Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"09759493\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "09759493"
+},
+"ok": true,
+"data": {
+"active_directors": 3,
+"active_secretaries": 1,
+"resignations_last_12m": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/09759493/officers",
+"retrieved_at": "2026-11-26T14:33:50.506065Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"09759493\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "09759493",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-10-23",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-08-26",
+"type": "PSC05",
+"description": "change-to-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2026-08-26",
+"type": "PSC05",
+"description": "change-to-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2026-04-25",
+"type": "AA",
+"description": "accounts-with-accounts-type-full",
+"category": "accounts"
+},
+{
+"date": "2025-11-05",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2025-09-29",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-05-08",
+"type": "AA",
+"description": "accounts-with-accounts-type-full",
+"category": "accounts"
+},
+{
+"date": "2025-01-27",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2025-01-27",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2024-10-18",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2024-10-18",
+"type": "AD04",
+"description": "move-registers-to-registered-office-company-with-new-address",
+"category": "address"
+},
+{
+"date": "2024-09-03",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2024-07-18",
+"type": "AA",
+"description": "accounts-with-accounts-type-full",
+"category": "accounts"
+},
+{
+"date": "2023-12-04",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2023-12-04",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2023-10-09",
+"type": "AA",
+"description": "accounts-with-accounts-type-full",
+"category": "accounts"
+},
+{
+"date": "2023-09-18",
+"type": "PSC02",
+"description": "notification-of-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2023-09-15",
+"type": "PSC05",
+"description": "change-to-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2023-09-15",
+"type": "PSC07",
+"description": "cessation-of-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2023-08-30",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+}
+],
+"total_count": 194
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/09759493/filing-history",
+"retrieved_at": "2026-11-26T14:33:50.550451Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"09759493\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "09759493"
+},
+"ok": true,
+"data": {
+"total_count": 2,
+"kinds": {
+"corporate-entity-person-with-significant-control": 2
+},
+"corporate_pscs": [
+"Financial Models Corporation Limited",
+"Financial Models Corporation Limited"
+],
+"ceased_count": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/09759493/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:33:50.582954Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"09759493\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "09759493"
+},
+"ok": true,
+"data": {
+"total": 1,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": "2016-03-11"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/09759493/charges",
+"retrieved_at": "2026-11-26T14:33:50.612320Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"09759493\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "09759493"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/09759493/insolvency",
+"retrieved_at": "2026-11-26T14:33:50.628486Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"blue prism group limited\", \"company_number\": \"09759493\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "BLUE PRISM GROUP LIMITED",
+"company_number": "09759493"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:50.628637Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"british steel limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BRITISH STEEL LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BRITISH+STEEL+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:33:53.043921Z",
+"error": "HTTP 429"
+},
+"search_companies|{\"query\": \"debenhams plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "DEBENHAMS PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "DEBENHAMS PLC",
+"number": "05448421",
+"status": "dissolved",
+"date_of_creation": "2005-05-10",
+"address_locality": "Manchester"
+},
+{
+"name": "CELINE GROUP HOLDINGS LIMITED",
+"number": "03430071",
+"status": "liquidation",
+"date_of_creation": "1997-09-01",
+"address_locality": "London"
+},
+{
+"name": "DEBENHAMS RETAIL PLC",
+"number": "NF003048",
+"status": "closed-on",
+"date_of_creation": "1992-04-15",
+"address_locality": "Belfast"
+},
+{
+"name": "DEPARTMENT STORES REALISATIONS LIMITED",
+"number": "00083395",
+"status": "dissolved",
+"date_of_creation": "1905-01-28",
+"address_locality": "London"
+},
+{
+"name": "DEBENHAMS BRANDS ONLINE LIMITED",
+"number": "14840908",
+"status": "active",
+"date_of_creation": "2023-05-02",
+"address_locality": "Manchester"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=DEBENHAMS PLC",
+"retrieved_at": "2026-11-26T14:33:53.074936Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"debenhams plc\", \"company_number\": \"05448421\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "DEBENHAMS PLC",
+"company_number": "05448421"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:53.075284Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"national grid plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "NATIONAL GRID PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NATIONAL+GRID+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:33:54.221607Z",
+"error": "HTTP 429"
+},
+"search_companies|{\"query\": \"deliveroo limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "DELIVEROO LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "DELIVEROO LIMITED",
+"number": "13227665",
+"status": "active",
+"date_of_creation": "2021-02-25",
+"address_locality": "London"
+},
+{
+"name": "IGRAINE GROUP HOLDINGS LIMITED",
+"number": "12513066",
+"status": "dissolved",
+"date_of_creation": "2020-03-12",
+"address_locality": "Cardiff"
+},
+{
+"name": "LAMIHAI LIMITED",
+"number": "12953764",
+"status": "dissolved",
+"date_of_creation": "2020-10-15",
+"address_locality": "Coventry"
+},
+{
+"name": "DMSPECTRA LTD",
+"number": "11385509",
+"status": "dissolved",
+"date_of_creation": "2018-05-26",
+"address_locality": "Slough"
+},
+{
+"name": "DELIVERIX LTD",
+"number": "10295930",
+"status": "liquidation",
+"date_of_creation": "2016-07-26",
+"address_locality": "Borehamwood"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=DELIVEROO LIMITED",
+"retrieved_at": "2026-11-26T14:33:54.250684Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"13227665\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "13227665"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2021-02-25",
+"sic_codes": [
+"64209"
+],
+"accounts": {
+"next_due": "2027-09-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13227665",
+"retrieved_at": "2026-11-26T14:33:54.266943Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"13227665\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "13227665"
+},
+"ok": true,
+"data": {
+"active_directors": 2,
+"active_secretaries": 0,
+"resignations_last_12m": 2
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13227665/officers",
+"retrieved_at": "2026-11-26T14:33:54.296626Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"13227665\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "13227665",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-10-06",
+"type": "AA",
+"description": "accounts-with-accounts-type-full",
+"category": "accounts"
+},
+{
+"date": "2026-02-09",
+"type": "PSC02",
+"description": "notification-of-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2026-02-05",
+"type": "PSC09",
+"description": "withdrawal-of-a-person-with-significant-control-statement",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2026-02-02",
+"type": "RP01CS01",
+"description": "replacement-filing-of-confirmation-statement-with-made-up-date",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-01-22",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2025-12-19",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-12-19",
+"type": "TM02",
+"description": "termination-secretary-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-10-09",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2025-10-09",
+"type": "RR02",
+"description": "reregistration-public-to-private-company",
+"category": "change-of-name"
+},
+{
+"date": "2025-10-09",
+"type": "CERT10",
+"description": "certificate-re-registration-public-limited-company-to-private",
+"category": "change-of-name"
+},
+{
+"date": "2025-10-09",
+"type": "MAR",
+"description": "re-registration-memorandum-articles",
+"category": "incorporation"
+},
+{
+"date": "2025-10-09",
+"type": "OC",
+"description": "court-order",
+"category": "miscellaneous"
+},
+{
+"date": "2025-10-07",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2025-10-07",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2025-10-02",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-10-02",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-10-02",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-10-02",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-10-02",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2025-10-02",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+}
+],
+"total_count": 189
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13227665/filing-history",
+"retrieved_at": "2026-11-26T14:33:54.324837Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"13227665\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "13227665"
+},
+"ok": true,
+"data": {
+"total_count": 2,
+"kinds": {
+"corporate-entity-person-with-significant-control": 1,
+"individual-person-with-significant-control": 1
+},
+"corporate_pscs": [
+"Doordash, Inc."
+],
+"ceased_count": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13227665/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:33:54.360486Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"13227665\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "13227665"
+},
+"ok": true,
+"data": {
+"total": 0,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": null
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13227665/charges",
+"retrieved_at": "2026-11-26T14:33:54.384500Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"13227665\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "13227665"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13227665/insolvency",
+"retrieved_at": "2026-11-26T14:33:54.402088Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"deliveroo limited\", \"company_number\": \"13227665\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "DELIVEROO LIMITED",
+"company_number": "13227665"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:33:54.402230Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"blue prism group limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BLUE PRISM GROUP LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BLUE+PRISM+GROUP+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:00.736457Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"farfetch uk limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "FARFETCH UK LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "FARFETCH UK LIMITED",
+"number": "06400760",
+"status": "active",
+"date_of_creation": "2007-10-16",
+"address_locality": "London"
+},
+{
+"name": "FARFETCH UK FINCO LIMITED",
+"number": "12129585",
+"status": "active",
+"date_of_creation": "2019-07-30",
+"address_locality": "London"
+},
+{
+"name": "FARFETCH CAPITAL LIMITED",
+"number": "09390480",
+"status": "active",
+"date_of_creation": "2015-01-15",
+"address_locality": "London"
+},
+{
+"name": "FARFETCH CHINA LTD",
+"number": "12995573",
+"status": "active",
+"date_of_creation": "2020-11-04",
+"address_locality": "London"
+},
+{
+"name": "FARFETCH CHINA HOLDINGS LTD",
+"number": "12995553",
+"status": "active",
+"date_of_creation": "2020-11-04",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=FARFETCH UK LIMITED",
+"retrieved_at": "2026-11-26T14:34:00.839971Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"farfetch uk limited\", \"company_number\": \"06400760\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "FARFETCH UK LIMITED",
+"company_number": "06400760"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:00.840341Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"debenhams plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "DEBENHAMS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DEBENHAMS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:03.187815Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"wonga.com limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "WONGA.COM LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "WONGA.COM LIMITED",
+"number": "06376492",
+"status": "dissolved",
+"date_of_creation": "2007-09-20",
+"address_locality": "London"
+},
+{
+"name": "WDFC UK LIMITED",
+"number": "06374235",
+"status": "dissolved",
+"date_of_creation": "2007-09-18",
+"address_locality": "Manchester"
+},
+{
+"name": "WONGA COMPETITIONS LTD",
+"number": "16027759",
+"status": "dissolved",
+"date_of_creation": "2024-10-18",
+"address_locality": "Tuxford"
+},
+{
+"name": "WONGA COMPETITIONS LIMITED",
+"number": "13814346",
+"status": "dissolved",
+"date_of_creation": "2021-12-22",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=WONGA.COM LIMITED",
+"retrieved_at": "2026-11-26T14:34:03.216368Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"wonga.com limited\", \"company_number\": \"06376492\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "WONGA.COM LIMITED",
+"company_number": "06376492"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:03.216646Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"deliveroo limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "DELIVEROO LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DELIVEROO+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:04.511177Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"arcadia group ltd\"}": {
+"tool": "search_companies",
+"args": {
+"query": "ARCADIA GROUP LTD",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "ARCADIA GROUP LTD",
+"number": "16600131",
+"status": "active",
+"date_of_creation": "2025-07-22",
+"address_locality": "London"
+},
+{
+"name": "ADICUS EDUCATION CIC",
+"number": "16326575",
+"status": "dissolved",
+"date_of_creation": "2025-03-19",
+"address_locality": "Liverpool"
+},
+{
+"name": "ARCADIA GROUP LIMITED",
+"number": "13799837",
+"status": "dissolved",
+"date_of_creation": "2021-12-14",
+"address_locality": "Cardiff"
+},
+{
+"name": "AGL REALISATIONS LIMITED",
+"number": "00237511",
+"status": "liquidation",
+"date_of_creation": "1929-02-27",
+"address_locality": "Birmingham"
+},
+{
+"name": "DOROTHY PERKINS RETAIL LIMITED",
+"number": "01716523",
+"status": "dissolved",
+"date_of_creation": "1983-04-20",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=ARCADIA GROUP LTD",
+"retrieved_at": "2026-11-26T14:34:04.581604Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"16600131\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "16600131"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2025-07-22",
+"sic_codes": [
+"68209"
+],
+"accounts": {
+"next_due": "2027-04-22",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16600131",
+"retrieved_at": "2026-11-26T14:34:04.597924Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"16600131\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "16600131"
+},
+"ok": true,
+"data": {
+"active_directors": 1,
+"active_secretaries": 0,
+"resignations_last_12m": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16600131/officers",
+"retrieved_at": "2026-11-26T14:34:04.628237Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"16600131\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "16600131",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-07-22",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-02-19",
+"type": "MR01",
+"description": "mortgage-create-with-deed-with-charge-number-charge-creation-date",
+"category": "mortgage"
+},
+{
+"date": "2025-07-22",
+"type": "NEWINC",
+"description": "incorporation-company",
+"category": "incorporation"
+}
+],
+"total_count": 3
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16600131/filing-history",
+"retrieved_at": "2026-11-26T14:34:04.649509Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"16600131\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "16600131"
+},
+"ok": true,
+"data": {
+"total_count": 1,
+"kinds": {
+"individual-person-with-significant-control": 1
+},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16600131/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:34:04.682190Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"16600131\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "16600131"
+},
+"ok": true,
+"data": {
+"total": 1,
+"outstanding": 1,
+"satisfied": 0,
+"latest_created_on": "2026-02-17"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16600131/charges",
+"retrieved_at": "2026-11-26T14:34:04.710850Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"16600131\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "16600131"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16600131/insolvency",
+"retrieved_at": "2026-11-26T14:34:04.725972Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"arcadia group ltd\", \"company_number\": \"16600131\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "ARCADIA GROUP LTD",
+"company_number": "16600131"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:04.726102Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"farfetch uk limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "FARFETCH UK LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22FARFETCH+UK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:10.949089Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"wise payments limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "WISE PAYMENTS LIMITED",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "WISE PAYMENTS LIMITED",
+"number": "07209813",
+"status": "active",
+"date_of_creation": "2010-03-31",
+"address_locality": "London"
+},
+{
+"name": "PARROT 2 LTD",
+"number": "13211683",
+"status": "dissolved",
+"date_of_creation": "2021-02-18",
+"address_locality": "London"
+},
+{
+"name": "THE WISE GUYS COACHING LTD",
+"number": "15790489",
+"status": "dissolved",
+"date_of_creation": "2024-06-20",
+"address_locality": "London"
+},
+{
+"name": "WISE PAYMENT SOLUTIONS LIMITED",
+"number": "10058050",
+"status": "dissolved",
+"date_of_creation": "2016-03-11",
+"address_locality": "London"
+},
+{
+"name": "A&CO PAYMENTS LTD",
+"number": "17282361",
+"status": "active",
+"date_of_creation": "2026-06-18",
+"address_locality": "Bury St. Edmunds"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=WISE PAYMENTS LIMITED",
+"retrieved_at": "2026-11-26T14:34:11.011539Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"wise payments limited\", \"company_number\": \"07209813\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "WISE PAYMENTS LIMITED",
+"company_number": "07209813"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:11.011902Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"wonga.com limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "WONGA.COM LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WONGA.COM+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:13.324546Z",
+"error": "ConnectTimeout: "
+},
+"search_companies|{\"query\": \"asos plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "ASOS PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "ASOS PLC",
+"number": "04006623",
+"status": "active",
+"date_of_creation": "2000-06-02",
+"address_locality": "London"
+},
+{
+"name": "ASOS AUTO PARTS LTD",
+"number": "14168180",
+"status": "active",
+"date_of_creation": "2022-06-13",
+"address_locality": "Birmingham"
+},
+{
+"name": "ASOS.COM LIMITED",
+"number": "03584121",
+"status": "active",
+"date_of_creation": "1998-06-19",
+"address_locality": "London"
+},
+{
+"name": "ASOS CONSULTING LIMITED",
+"number": "07105976",
+"status": "liquidation",
+"date_of_creation": "2009-12-16",
+"address_locality": "19-25 Manchester Road"
+},
+{
+"name": "ASOS FOOD LTD",
+"number": "16213682",
+"status": "active",
+"date_of_creation": "2025-01-28",
+"address_locality": "Ilford"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=ASOS PLC",
+"retrieved_at": "2026-11-26T14:34:13.355971Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"asos plc\", \"company_number\": \"04006623\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "ASOS PLC",
+"company_number": "04006623"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:13.356319Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"arcadia group ltd\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ARCADIA GROUP LTD",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ARCADIA+GROUP+LTD%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:14.833304Z",
+"error": "ConnectTimeout: "
+},
+"check_fca_register|{\"company_name\": \"nf001705\", \"company_number\": \"nf001705\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "NF001705",
+"company_number": "NF001705"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:14.834208Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"wise payments limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "WISE PAYMENTS LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WISE+PAYMENTS+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:21.117378Z",
+"error": "ConnectTimeout: "
+},
+"check_fca_register|{\"company_name\": \"sc095000\", \"company_number\": \"sc095000\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "SC095000",
+"company_number": "SC095000"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:21.117805Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"asos plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ASOS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ASOS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:23.465958Z",
+"error": "ConnectTimeout: "
+},
+"get_company_profile|{\"company_number\": \"16351760\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "16351760"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2025-03-29",
+"sic_codes": [
+"99999"
+],
+"accounts": {
+"next_due": "2026-12-29",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16351760",
+"retrieved_at": "2026-11-26T14:34:23.514209Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"16351760\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "16351760"
+},
+"ok": true,
+"data": {
+"active_directors": 1,
+"active_secretaries": 0,
+"resignations_last_12m": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16351760/officers",
+"retrieved_at": "2026-11-26T14:34:23.542519Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"16351760\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "16351760",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-05-26",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-05-26",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2026-05-26",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2026-05-26",
+"type": "PSC01",
+"description": "notification-of-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2026-05-26",
+"type": "PSC07",
+"description": "cessation-of-a-person-with-significant-control",
+"category": "persons-with-significant-control"
+},
+{
+"date": "2025-07-20",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2025-03-29",
+"type": "NEWINC",
+"description": "incorporation-company",
+"category": "incorporation"
+}
+],
+"total_count": 7
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16351760/filing-history",
+"retrieved_at": "2026-11-26T14:34:23.566781Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"16351760\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "16351760"
+},
+"ok": true,
+"data": {
+"total_count": 2,
+"kinds": {
+"individual-person-with-significant-control": 2
+},
+"corporate_pscs": [],
+"ceased_count": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16351760/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:34:23.608546Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"16351760\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "16351760"
+},
+"ok": true,
+"data": {
+"total": 0,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": null
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16351760/charges",
+"retrieved_at": "2026-11-26T14:34:23.629417Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"16351760\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "16351760"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16351760/insolvency",
+"retrieved_at": "2026-11-26T14:34:23.644408Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"16351760\", \"company_number\": \"16351760\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "16351760",
+"company_number": "16351760"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:23.644573Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"nf001705\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "NF001705",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NF001705%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:24.941952Z",
+"error": "ConnectTimeout: "
+},
+"check_fca_register|{\"company_name\": \"02366661\", \"company_number\": \"02366661\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "02366661",
+"company_number": "02366661"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:24.942512Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"sc095000\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "SC095000",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22SC095000%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:31.225677Z",
+"error": "ConnectTimeout: "
+},
+"check_fca_register|{\"company_name\": \"02468686\", \"company_number\": \"02468686\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "02468686",
+"company_number": "02468686"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:31.226452Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"02366661\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "02366661",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202366661%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:35.049382Z",
+"error": "ConnectTimeout: "
+},
+"check_fca_register|{\"company_name\": \"08140312\", \"company_number\": \"08140312\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "08140312",
+"company_number": "08140312"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:35.049876Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"16351760\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "16351760",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2216351760%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:36.249632Z",
+"error": "HTTP 429"
+},
+"check_fca_register|{\"company_name\": \"03849958\", \"company_number\": \"03849958\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "03849958",
+"company_number": "03849958"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:36.250116Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"03849958\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "03849958",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2203849958%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:36.362449Z",
+"error": "RemoteProtocolError: Server disconnected without sending a response."
+},
+"check_fca_register|{\"company_name\": \"00998314\", \"company_number\": \"00998314\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "00998314",
+"company_number": "00998314"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:36.363027Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"02468686\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "02468686",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202468686%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:41.333575Z",
+"error": "ConnectTimeout: "
+},
+"get_company_profile|{\"company_number\": \"07063562\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "07063562"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2009-11-02",
+"sic_codes": [
+"46420",
+"47710",
+"47721",
+"47910"
+],
+"accounts": {
+"next_due": "2027-01-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Cheltenham"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07063562",
+"retrieved_at": "2026-11-26T14:34:41.374785Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"07063562\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "07063562"
+},
+"ok": true,
+"data": {
+"active_directors": 2,
+"active_secretaries": 1,
+"resignations_last_12m": 2
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07063562/officers",
+"retrieved_at": "2026-11-26T14:34:41.457103Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"07063562\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "07063562",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-11-20",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2026-11-12",
+"type": "MR01",
+"description": "mortgage-create-with-deed-with-charge-number-charge-creation-date",
+"category": "mortgage"
+},
+{
+"date": "2026-11-10",
+"type": "MR01",
+"description": "mortgage-create-with-deed-with-charge-number-charge-creation-date",
+"category": "mortgage"
+},
+{
+"date": "2026-11-06",
+"type": "MR01",
+"description": "mortgage-create-with-deed-with-charge-number-charge-creation-date",
+"category": "mortgage"
+},
+{
+"date": "2026-10-16",
+"type": "MR04",
+"description": "mortgage-satisfy-charge-full",
+"category": "mortgage"
+},
+{
+"date": "2026-08-06",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2026-07-20",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-02-18",
+"type": "CH01",
+"description": "change-person-director-company-with-change-date",
+"category": "officers"
+},
+{
+"date": "2025-11-11",
+"type": "SH10",
+"description": "capital-variation-of-rights-attached-to-shares",
+"category": "capital"
+},
+{
+"date": "2025-11-11",
+"type": "SH08",
+"description": "capital-name-of-class-of-shares",
+"category": "capital"
+},
+{
+"date": "2025-11-11",
+"type": "SH02",
+"description": "capital-alter-shares-subdivision",
+"category": "capital"
+},
+{
+"date": "2025-10-29",
+"type": "AA",
+"description": "accounts-with-accounts-type-group",
+"category": "accounts"
+},
+{
+"date": "2025-10-07",
+"type": "MA",
+"description": "memorandum-articles",
+"category": "incorporation"
+},
+{
+"date": "2025-10-07",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2025-10-06",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2025-08-11",
+"type": "MAR",
+"description": "re-registration-memorandum-articles",
+"category": "incorporation"
+},
+{
+"date": "2025-08-11",
+"type": "RR02",
+"description": "reregistration-public-to-private-company",
+"category": "change-of-name"
+},
+{
+"date": "2025-08-11",
+"type": "CERT10",
+"description": "certificate-re-registration-public-limited-company-to-private",
+"category": "change-of-name"
+},
+{
+"date": "2025-08-11",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2025-07-15",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+}
+],
+"total_count": 433
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07063562/filing-history",
+"retrieved_at": "2026-11-26T14:34:41.527454Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"07063562\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "07063562"
+},
+"ok": true,
+"data": {
+"total_count": 1,
+"kinds": {
+"individual-person-with-significant-control": 1
+},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07063562/persons-with-significant-control",
+"retrieved_at": "2026-11-26T14:34:41.561016Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"07063562\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "07063562"
+},
+"ok": true,
+"data": {
+"total": 19,
+"outstanding": 14,
+"satisfied": 0,
+"latest_created_on": "2026-11-05"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07063562/charges",
+"retrieved_at": "2026-11-26T14:34:41.593816Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"07063562\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "07063562"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07063562/insolvency",
+"retrieved_at": "2026-11-26T14:34:41.607495Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"07063562\", \"company_number\": \"07063562\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "07063562",
+"company_number": "07063562"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:41.607631Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"08140312\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "08140312",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2208140312%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:45.164744Z",
+"error": "ConnectTimeout: "
+},
+"check_fca_register|{\"company_name\": \"09092149\", \"company_number\": \"09092149\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "09092149",
+"company_number": "09092149"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-26T14:34:45.165195Z",
+"error": "FCA credentials not configured"
+},
+"search_news|{\"company_name\": \"00998314\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "00998314",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2200998314%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:46.470931Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"07063562\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "07063562",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2207063562%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:51.718017Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"09092149\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "09092149",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2209092149%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:34:56.989560Z",
+"error": "HTTP 429"
 }
 }

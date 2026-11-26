@@ -11,7 +11,7 @@ from typing import Any
 from companylens.config import AgentConfig, get_settings
 from companylens.llm import LLMClient
 
-JUDGE_MODEL = "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+JUDGE_MODEL = "google/gemma-3-27b-it"
 CACHE = Path(__file__).parent / "results" / "judge_cache.json"
 _PROMPT = (
     "You are a strict fact-checker. Given EVIDENCE excerpts and numbered SENTENCES from a report, "

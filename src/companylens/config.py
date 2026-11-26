@@ -103,6 +103,15 @@ AGENT_CONFIGS: dict[str, AgentConfig] = {
         judge_model="Qwen/Qwen3-30B-A3B-Instruct-2507",
         use_claim_check=False,
     ),
+    "agent_qwen_tight": AgentConfig(
+        name="agent_qwen_tight",
+        llm_provider="nebius",
+        model="Qwen/Qwen3.8-27B",
+        summary_model="Qwen/Qwen3-30B-A3B-Instruct-2507",
+        judge_model="Qwen/Qwen3-30B-A3B-Instruct-2507",
+        max_tool_calls=3,
+        max_llm_rounds=4,
+    ),
 }
 
 DEFAULT_CONFIG = "agent_qwen"
