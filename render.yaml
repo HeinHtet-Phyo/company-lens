@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: companylens
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: COMPANIES_HOUSE_API_KEY
+        sync: false
+      - key: FCA_API_EMAIL
+        sync: false
+      - key: FCA_API_KEY
+        sync: false
+      - key: NEBIUS_API_KEY
+        sync: false
+      - key: MISTRAL_API_KEY
+        sync: false
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false
+      - key: LANGFUSE_SECRET_KEY
+        sync: false
+      - key: LANGFUSE_HOST
+        value: https://cloud.langfuse.com
+      - key: DAILY_BUDGET_GBP
+        value: "0.50"
+      - key: OMP_NUM_THREADS
+        value: "1"
