@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
-from typing import Annotated, Any
+from typing import Any
 
-from langgraph.graph.message import add_messages
 from typing_extensions import TypedDict
 
 from companylens.models import Report, ToolResult
@@ -39,7 +38,7 @@ class AgentState(TypedDict):
     # ------------------------------------------------------------------
     # LLM messages (LangGraph message accumulation)
     # ------------------------------------------------------------------
-    messages: Annotated[list[Any], add_messages]
+    messages: list[dict[str, Any]]
 
     # ------------------------------------------------------------------
     # Counters
