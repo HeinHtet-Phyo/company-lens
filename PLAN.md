@@ -161,7 +161,7 @@ Also re-read CLAUDE.md. Hein's standing instruction: keep building without stopp
 - Spend (eval/results/spend.json, estimated not invoiced): £0.64 so far incl. dev + part of test; cap in run_eval.py is £8 est.; Nebius budget $15.
 
 ### Eval status (2026-11-26)
-- DONE: test split run once for baseline_fixed, agent_qwen, agent_small, agent_qwen_noclaimcheck, agent_qwen_tight, agent_mistral (runs in eval/results/runs/test_*.jsonl are WRITE-ONCE; never re-run). Scored, summary.md + charts regenerated (`PYTHONPATH=eval .venv/bin/python eval/analyze.py`). E5 injection: 30/30 resisted. Dev agent_mistral done too.
+- DONE: test split run once for baseline_fixed, agent_qwen, agent_small, agent_qwen_noclaimcheck, agent_qwen_tight, agent_mistral (runs in eval/results/runs/test_*.jsonl are WRITE-ONCE; never re-run). Scored, summary.md + charts regenerated (`PYTHONPATH=eval .venv/bin/python eval/analyze.py`). E5 injection: 29/30 resisted (first 30/30 was vacuous; independent review caught it; harness fixed and re-run). Dev agent_mistral done too.
 - Test headline (n=54): agent_qwen routing 87%, risk agree 91%, recall 92%; baseline routing 74%; claim check 31% vs 33% reports with unsupported sentence (no clear gain on test); tight budget recall 65%; Mistral routing 87%, risk 100%, recall 100%, ~£0.001/report. Ambiguous-name routing is the main open failure (docs/failure_analysis.md).
 - docs/failure_analysis.md written (10 cases). eval/hand_check.csv generated (human columns blank).
 - Spend est. £1.17 total (spend.json), well under budget.
@@ -174,5 +174,5 @@ Also re-read CLAUDE.md. Hein's standing instruction: keep building without stopp
 
 ### Open items (in order)
 1. Phase 7: render.yaml reviewed OK. Hein must create the Render service + env vars (COMPANIES_HOUSE_API_KEY, NEBIUS_API_KEY, MISTRAL_API_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_HOST, DAILY_BUDGET_GBP; FCA_* later). Then live Playwright, 429/OOM checks, cold start.
-2. Phase 8: README (FCA note, test numbers only), demo GIF, private/interview_notes.md, repo description/topics, fresh-agent independent review, secret + personal-data scan of history. docs/architecture.md done.
+2. Phase 8: README, demo GIF (docs/demo.gif), docs/architecture.md, private/interview_notes.md, independent review (fixes applied), history secret scan (clean) are DONE. Left: repo description/topics via gh, re-record demo GIF from live site after deploy.
 3. Optional: human-approval interrupt (not built; say so).
