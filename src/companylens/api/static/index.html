@@ -1,1 +1,134 @@
-<!doctype html><title>CompanyLens</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CompanyLens — first-pass UK company check</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#16202a; --mute:#5c6975; --line:#e2e6ea; --accent:#1f5fbf;
+          --low:#1b7f4b; --med:#b86e00; --high:#b3261e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+  main { max-width:900px; margin:0 auto; padding:24px 16px 80px; }
+  h1 { font-size:26px; margin:0 0 4px; } .sub { color:var(--mute); margin:0 0 20px; }
+  form { display:flex; gap:8px; } input[type=text] { flex:1; padding:12px; font-size:16px; border:1px solid var(--line); border-radius:8px; min-width:0; }
+  button { padding:10px 16px; font-size:15px; border:0; border-radius:8px; background:var(--accent); color:#fff; cursor:pointer; }
+  button:disabled { opacity:.5; cursor:default; }
+  .chips { margin:10px 0 20px; display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { background:#eaf0fa; color:var(--accent); padding:4px 10px; font-size:13px; border-radius:99px; cursor:pointer; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin:14px 0; }
+  .card h2 { font-size:16px; margin:0 0 10px; }
+  #timeline div { font-size:13px; color:var(--mute); padding:2px 0; font-family:ui-monospace,Menlo,monospace; word-break:break-word; }
+  #timeline .ok::before { content:"✓ "; color:var(--low);} #timeline .bad::before { content:"✗ "; color:var(--high);}
+  #timeline .run::before { content:"… ";}
+  .badge { display:inline-block; padding:4px 12px; border-radius:99px; color:#fff; font-weight:600; }
+  .Low{background:var(--low)} .Medium{background:var(--med)} .High{background:var(--high)}
+  .head { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap; }
+  table { width:100%; border-collapse:collapse; } td { padding:5px 6px; border-top:1px solid var(--line); vertical-align:top; word-break:break-word; }
+  td:first-child { color:var(--mute); width:38%; }
+  .flag { border-left:4px solid var(--med); padding:4px 10px; margin:8px 0; background:#fafafa; }
+  .flag.high { border-color:var(--high);} .flag.info { border-color:#8a99a8; }
+  sup a { color:var(--accent); text-decoration:none; font-size:11px; }
+  details { margin:6px 0; } summary { cursor:pointer; word-break:break-word; }
+  .ex { font-size:13px; color:var(--mute); white-space:pre-wrap; word-break:break-word; }
+  .stats { color:var(--mute); font-size:13px; }
+  .err { background:#fdecea; border-color:#f3b6b0; color:#7a1812; }
+  .opts button { display:block; width:100%; text-align:left; margin:6px 0; background:#fff; color:var(--ink); border:1px solid var(--line); }
+  footer { margin-top:32px; font-size:12px; color:var(--mute); }
+  @media (max-width:520px){ td:first-child{width:45%} h1{font-size:22px} }
+</style>
+</head>
+<body>
+<main>
+  <h1>CompanyLens</h1>
+  <p class="sub">First-pass due-diligence check on a UK company, from live Companies House, FCA Register and news data.</p>
+  <form id="f"><input id="q" type="text" maxlength="120" placeholder="Company name or number, e.g. Monzo Bank" autocomplete="off" required>
+    <button id="go">Check</button></form>
+  <div class="chips" id="chips"></div>
+  <div id="timeline-card" class="card" hidden><h2>Agent activity</h2><div id="timeline"></div></div>
+  <div id="out"></div>
+  <footer>CompanyLens is a screening aid, not advice. It uses public registry data that may be incomplete or out of date,
+    and its risk level comes from fixed rules, not a prediction. It covers UK companies only and does not look up private individuals.</footer>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const EXAMPLES = ["Monzo Bank", "Revolut Ltd", "Wise Payments", "Greggs plc", "Carillion plc", "BrewDog", "00445790"];
+$("chips").innerHTML = EXAMPLES.map(e => `<span class="chip" role="button" tabindex="0">${esc(e)}</span>`).join("");
+$("chips").addEventListener("click", e => { if (e.target.classList.contains("chip")) { $("q").value = e.target.textContent; run(); } });
+$("f").addEventListener("submit", e => { e.preventDefault(); run(); });
+
+const HTTP_MSG = {429: "Too many requests. Wait a minute and try again.", 503: "The daily budget is used up. Try again tomorrow.",
+                  502: "A data source failed. Try again shortly.", 504: "The request timed out. Try again."};
+function cite(text, evidence) {
+  const ids = new Set(evidence.map(e => e.id));
+  return esc(text).replace(/\[(e\d+)\]/g, (m, id) => ids.has(id) ? `<sup><a href="#ev-${id}">[${id.slice(1)}]</a></sup>` : "");
+}
+function showError(msg) { $("out").innerHTML = `<div class="card err">${esc(msg)}</div>`; }
+function line(text, cls) { const d = document.createElement("div"); d.className = cls || ""; d.textContent = text; $("timeline").appendChild(d); return d; }
+
+let running = false;
+async function run() {
+  const q = $("q").value.trim(); if (!q || running) return;
+  running = true; $("go").disabled = true; $("out").innerHTML = ""; $("timeline").innerHTML = ""; $("timeline-card").hidden = false;
+  const pending = {};
+  const handle = (ev, d) => {
+    if (ev === "resolve") line(`Resolved: ${d.company_name} (${d.company_number})`, "ok");
+    else if (ev === "plan") line("Plan: " + String(d.text).slice(0, 200), "ok");
+    else if (ev === "tool_call") pending[d.name] = line(`${d.name}(${Object.values(d.args).join(", ")})`, "run");
+    else if (ev === "tool_result") { const el = pending[d.name]; if (el) { el.className = d.ok ? "ok" : "bad"; el.textContent += " — " + d.summary; } }
+    else if (ev === "decision") line(d.action === "stop" ? "Decision: stop" + (d.reason ? " (" + d.reason + ")" : "") : "Decision: gather more", "ok");
+    else if (ev === "report") render(d);
+    else if (ev === "error") showError(`Something went wrong (${d.exception}): ${d.message}`);
+  };
+  try {
+    const r = await fetch("/report/stream?q=" + encodeURIComponent(q));
+    if (!r.ok || !(r.headers.get("content-type") || "").includes("text/event-stream")) {
+      const j = await r.json().catch(() => ({}));
+      if (j.type === "refused") render(j); else showError(j.message || HTTP_MSG[r.status] || `Request failed (${r.status}).`);
+    } else {
+      const reader = r.body.getReader(), dec = new TextDecoder(); let buf = "";
+      for (;;) {
+        const { value, done } = await reader.read(); if (done) break;
+        buf += dec.decode(value, { stream: true }).replace(/\r\n/g, "\n");
+        let i;
+        while ((i = buf.indexOf("\n\n")) >= 0) {
+          const block = buf.slice(0, i); buf = buf.slice(i + 2);
+          let ev = "message", data = "";
+          for (const l of block.split("\n")) { if (l.startsWith("event:")) ev = l.slice(6).trim(); else if (l.startsWith("data:")) data += l.slice(5).trim(); }
+          if (data) handle(ev, JSON.parse(data));
+        }
+      }
+    }
+  } catch (e) { showError("Connection lost. Please try again."); }
+  running = false; $("go").disabled = false;
+}
+
+function render(r) {
+  if (r.type === "refused" || r.type === "not_found" || r.type === "error")
+    return $("out").innerHTML = `<div class="card ${r.type === "error" ? "err" : ""}">${esc(r.message)}</div>`;
+  if (r.type === "clarification") {
+    $("out").innerHTML = `<div class="card opts"><h2>Which company did you mean?</h2>` + r.clarification_options.map(o =>
+      `<button data-n="${esc(o.company_number)}">${esc(o.company_name)} — ${esc(o.company_number)} · ${esc(o.status)}${o.incorporated ? " · inc. " + esc(o.incorporated) : ""}${o.address_locality ? " · " + esc(o.address_locality) : ""}</button>`).join("") + `</div>`;
+    $("out").querySelectorAll("button").forEach(b => b.onclick = () => { $("q").value = b.dataset.n; run(); });
+    return;
+  }
+  const p = r.report, c = p.company, s = p.stats;
+  const flags = p.red_flags.map(f => `<div class="flag ${esc(f.severity)}"><b>${esc(f.rule_id)}</b> · ${esc(f.severity)} — ${cite(f.explanation, p.evidence)} ${f.evidence_ids.map(i => `<sup><a href="#ev-${esc(i)}">[${esc(i.slice(1))}]</a></sup>`).join("")}</div>`).join("") || "<p>No red flags triggered.</p>";
+  const facts = p.facts.map(f => `<tr><td>${esc(f.field)}</td><td>${esc(f.value)} ${f.evidence_ids.map(i => `<sup><a href="#ev-${esc(i)}">[${esc(i.slice(1))}]</a></sup>`).join("")}</td></tr>`).join("");
+  const ev = p.evidence.map(e => `<details id="ev-${esc(e.id)}"><summary>[${esc(e.id.slice(1))}] ${esc(e.tool)} — <a href="${esc(e.source_url)}" target="_blank" rel="noopener noreferrer">source</a> · ${esc(e.retrieved_at)}</summary><div class="ex">${esc(e.excerpt)}</div></details>`).join("");
+  $("out").innerHTML = `
+    <div class="card"><div class="head"><div><h2 style="font-size:20px">${esc(c.name)}</h2>
+      <div class="stats">${esc(c.number)} · ${esc(c.company_type)} · ${esc(c.status)}${c.incorporated ? " · inc. " + esc(c.incorporated) : ""}</div></div>
+      <div><span class="badge ${esc(p.risk_level)}">${esc(p.risk_level)} risk</span></div></div>
+      <p>${p.risk_reasons.map(esc).join("<br>")}</p></div>
+    <div class="card"><h2>Summary</h2><p>${cite(p.summary, p.evidence)}</p></div>
+    <div class="card"><h2>Red flags</h2>${flags}</div>
+    <div class="card"><h2>Facts</h2><table>${facts}</table></div>
+    ${p.limitations.length ? `<div class="card"><h2>Limitations</h2><ul>${p.limitations.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>` : ""}
+    <div class="card"><h2>Evidence</h2>${ev}</div>
+    <div class="stats">${s.tool_calls} tool calls · ${s.llm_rounds} LLM rounds · ${s.input_tokens + s.output_tokens} tokens · ~£${s.cost_gbp.toFixed(4)} · ${(s.latency_ms / 1000).toFixed(1)}s · ${esc(s.model)} · ${esc(s.stop_reason)}</div>`;
+}
+</script>
+</body>
+</html>
