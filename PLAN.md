@@ -1,7 +1,7 @@
 # CompanyLens — Build Plan
 
 **Last updated:** 2026-11-26  
-**Spend so far:** ~£0.64 est. (see eval/results/spend.json)  
+**Spend so far:** ~£1.17 est. (see eval/results/spend.json)  
 **Branch:** main
 
 ---
@@ -160,9 +160,12 @@ Also re-read CLAUDE.md. Hein's standing instruction: keep building without stopp
 - Dev split (n=26, eval/results/metrics_dev_*.json): agent_qwen routing 100%, risk agreement 100%, flag recall 93%, ~£0.008/report, 16 s; baseline_fixed routing 77% (naive resolver fails ambiguous/nonexistent), recall 100%, ~£0.0003/report, 7 s. agent_small cheaper (£0.001) but recall 82%. Claim check cut reports-with-unsupported-sentence 35% → 24% (wide CIs). Do not quote these in README until test numbers exist; README uses TEST numbers.
 - Spend (eval/results/spend.json, estimated not invoiced): £0.64 so far incl. dev + part of test; cap in run_eval.py is £8 est.; Nebius budget $15.
 
-### Background job (started before this update)
-`run_eval.py --split test --configs baseline_fixed,agent_qwen,agent_small,agent_qwen_noclaimcheck,agent_qwen_tight` then `score.py --split test ...` then `run_e5.py`. Check: `ls eval/results/runs/` (test_*.jsonl appear per config; baseline_fixed and agent_qwen were done), `pgrep -fl run_eval`, then `ls eval/results/metrics_test_*.json eval/results/e5.json`. Test files are WRITE-ONCE: never delete/re-run test_*.jsonl; if the job died, run only the missing configs. If score.py did not run: `PYTHONPATH=eval .venv/bin/python eval/score.py --split test --configs ...` (re-scoring is allowed; judge results cached in eval/results/judge_cache.json). Then `PYTHONPATH=eval .venv/bin/python eval/analyze.py` for summary.md + charts.
-Note: the running job loaded code from before the FCA-limitation-wording change (wording only).
+### Eval status (2026-11-26)
+- DONE: test split run once for baseline_fixed, agent_qwen, agent_small, agent_qwen_noclaimcheck, agent_qwen_tight, agent_mistral (runs in eval/results/runs/test_*.jsonl are WRITE-ONCE; never re-run). Scored, summary.md + charts regenerated (`PYTHONPATH=eval .venv/bin/python eval/analyze.py`). E5 injection: 30/30 resisted. Dev agent_mistral done too.
+- Test headline (n=54): agent_qwen routing 87%, risk agree 91%, recall 92%; baseline routing 74%; claim check 31% vs 33% reports with unsupported sentence (no clear gain on test); tight budget recall 65%; Mistral routing 87%, risk 100%, recall 100%, ~£0.001/report. Ambiguous-name routing is the main open failure (docs/failure_analysis.md).
+- docs/failure_analysis.md written (10 cases). eval/hand_check.csv generated (human columns blank).
+- Spend est. £1.17 total (spend.json), well under budget.
+- Flaky test fixed (tests/conftest.py blanks creds, stubs Tracer._flush): 154 passed, 1 skipped.
 
 ### Credentials (Hein added; values never printed)
 - Langfuse: OTLP export works (v3 ingestion was removed 2026-11-16 → HTTP 410; tracer rewritten); verified by `scripts/verify_langfuse.py` (trace read back, 4 observations).
@@ -170,11 +173,6 @@ Note: the running job loaded code from before the FCA-limitation-wording change 
 - FCA: portal down, no key. Decision (Hein): keep "credentials not configured", shown in report limitations (done) and README (TODO); FCA excluded from eval metrics (documented in docs/eval_method.md); re-run later with `python eval/refresh_fca.py`. FCA `/Firm/Search` endpoint unverified.
 
 ### Open items (in order)
-1. Finish/verify test run, score, analyze (charts → eval/results/charts), E5 results.
-2. agent_mistral dev run (low concurrency) + test run once if it works; add to EXPERIMENTS in analyze.py as E-Mistral.
-3. docs/failure_analysis.md (≥8 real cases from runs; include number-check false positives, Cambridge Analytica shell-company name collision, naive baseline resolution, round-limit stops).
-4. eval/hand_check.csv via `eval/make_hand_check.py` (human columns left blank; judge-vs-human agreement therefore unmeasured — say so).
-5. Fix flaky test_clients error; confirm `make test` green; ruff/mypy clean.
-6. Phase 7: render.yaml review; tell Hein exact env var names for Render (COMPANIES_HOUSE_API_KEY, NEBIUS_API_KEY, MISTRAL_API_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_HOST, DAILY_BUDGET_GBP; FCA_* later); Hein creates the service (blocker per CLAUDE.md #5); then live Playwright, 429/OOM checks, cold start.
-7. Phase 8: README (FCA note, honest numbers from eval/results only), demo GIF, docs/architecture.md (safety.md, data_and_privacy.md, eval_method.md already written), private/interview_notes.md, repo description/topics, fresh-agent independent review, secret + personal-data scan of history.
-8. Optional: human-approval interrupt.
+1. Phase 7: render.yaml reviewed OK. Hein must create the Render service + env vars (COMPANIES_HOUSE_API_KEY, NEBIUS_API_KEY, MISTRAL_API_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_HOST, DAILY_BUDGET_GBP; FCA_* later). Then live Playwright, 429/OOM checks, cold start.
+2. Phase 8: README (FCA note, test numbers only), demo GIF, private/interview_notes.md, repo description/topics, fresh-agent independent review, secret + personal-data scan of history. docs/architecture.md done.
+3. Optional: human-approval interrupt (not built; say so).

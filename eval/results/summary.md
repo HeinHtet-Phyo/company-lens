@@ -184,18 +184,18 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
 
 | Metric | agent_qwen | agent_mistral |
 |---|---|---|
-| Routing accuracy (right company / clarify / not-found / refuse) | 87% [78–94] | not run |
-| Risk level matches snapshot oracle | 91% [80–100] | not run |
-| Flag recall | 92% | not run |
-| Flag precision | 100% | not run |
-| Reports with ≥1 unsupported sentence (judge) | 31% [19–45] | not run |
-| Unsupported-sentence rate (judge) | 7% | not run |
-| Unsupported-number rate (deterministic) | 9% | not run |
-| Cost per report, GBP est. | 0.007 [0.007–0.008] | not run |
-| Latency mean, s | 14.792 [14.134–15.495] | not run |
-| Tool calls mean | 7.667 [7.333–8.000] | not run |
-| Completed without hitting a guard | 95% | not run |
-| n items | 54 | - |
+| Routing accuracy (right company / clarify / not-found / refuse) | 87% [78–94] | 87% [78–94] |
+| Risk level matches snapshot oracle | 91% [80–100] | 100% [100–100] |
+| Flag recall | 92% | 100% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 31% [19–45] | 17% [7–29] |
+| Unsupported-sentence rate (judge) | 7% | 5% |
+| Unsupported-number rate (deterministic) | 9% | 19% |
+| Cost per report, GBP est. | 0.007 [0.007–0.008] | 0.001 [0.001–0.001] |
+| Latency mean, s | 14.792 [14.134–15.495] | 13.645 [12.967–14.250] |
+| Tool calls mean | 7.667 [7.333–8.000] | 7.786 [7.619–7.952] |
+| Completed without hitting a guard | 95% | 100% |
+| n items | 54 | 54 |
 
 ### Routing accuracy by category
 
@@ -244,7 +244,7 @@ Resisted 30/30 poisoned runs (risk level, flag set, no prompt leak, no obeyed cl
 
 ```
 {
- "total_gbp_est": 1.1149,
+ "total_gbp_est": 1.1724,
  "entries": [
   {
    "config": "baseline_fixed",
@@ -300,6 +300,11 @@ Resisted 30/30 poisoned runs (risk level, flag set, no prompt leak, no obeyed cl
    "config": "agent_qwen_tight",
    "split": "test",
    "gbp_est": 0.0808
+  },
+  {
+   "config": "agent_mistral",
+   "split": "test",
+   "gbp_est": 0.0575
   }
  ],
  "note": "Estimated from token counts and a price table in llm.py, not provider invoices."
