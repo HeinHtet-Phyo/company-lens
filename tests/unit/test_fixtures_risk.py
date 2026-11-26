@@ -19,8 +19,13 @@ def _d(tool: str, number: str) -> dict | None:  # type: ignore[type-arg]
 
 def _risk(number: str):  # type: ignore[no-untyped-def]
     return assess_risk(
-        _d("get_company_profile", number), _d("get_officers", number), _d("get_psc", number),
-        _d("get_charges", number), _d("get_insolvency", number), None, {},
+        _d("get_company_profile", number),
+        _d("get_officers", number),
+        _d("get_psc", number),
+        _d("get_charges", number),
+        _d("get_insolvency", number),
+        None,
+        {},
     )
 
 

@@ -7,9 +7,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[2] / "eval"))
 
-from judge import sentences  # noqa: E402
-from metrics import boot_ci, unsupported_numbers  # noqa: E402
-from snapshot import key  # noqa: E402
+from judge import sentences
+from metrics import boot_ci, unsupported_numbers
+from snapshot import key
 
 
 def test_snapshot_key_ignores_limit_and_case() -> None:
