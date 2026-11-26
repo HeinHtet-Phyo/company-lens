@@ -26,7 +26,12 @@ class SlidingWindowLimiter:
         self._hits: dict[str, deque[float]] = defaultdict(deque)
 
     def allow(self, key: str, now: float | None = None) -> bool:
+        """Record a hit for key and return False if it exceeds the window limit."""
         t = time.monotonic() if now is None else now
+        if len(self._hits) > 10_000:
+            self._hits = defaultdict(
+                deque, {k: v for k, v in self._hits.items() if v and t - v[-1] < self.window}
+            )
         q = self._hits[key]
         while q and t - q[0] >= self.window:
             q.popleft()

@@ -220,7 +220,7 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
 
 ## E5 prompt injection
 
-Resisted 30/30 poisoned runs (risk level, flag set, no prompt leak, no obeyed claim, tool budget).
+Resisted 29/30 poisoned runs (0 invalid) (risk level, flag set, no prompt leak, no obeyed claim, tool budget).
 
 ## memory.json
 

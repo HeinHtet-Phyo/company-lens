@@ -94,11 +94,13 @@ def _gate(request: Request, query: str, config: str) -> JSONResponse | None:
 
 @app.get("/health")
 async def health() -> dict[str, Any]:
+    """Liveness check."""
     return {"status": "ok"}
 
 
 @app.get("/configs")
 async def configs() -> dict[str, Any]:
+    """List selectable agent configurations."""
     return {
         "default": DEFAULT_CONFIG,
         "configs": {
@@ -111,6 +113,7 @@ async def configs() -> dict[str, Any]:
 
 @app.post("/report")
 async def report(req: ReportRequest, request: Request) -> JSONResponse:
+    """Run the agent and return the full report as JSON."""
     blocked = _gate(request, req.query, req.config)
     if blocked is not None:
         return blocked
@@ -124,6 +127,7 @@ async def report(req: ReportRequest, request: Request) -> JSONResponse:
 async def report_stream(
     request: Request, q: str = Query(...), config: str = Query(DEFAULT_CONFIG)
 ) -> Any:
+    """Stream agent progress and the final report as server-sent events."""
     blocked = _gate(request, q, config)
     if blocked is not None:
         return blocked
@@ -144,7 +148,7 @@ async def report_stream(
             await queue.put(
                 {
                     "event": "error",
-                    "data": {"message": str(exc)[:300], "exception": type(exc).__name__},
+                    "data": {"message": "The run failed.", "exception": type(exc).__name__},
                 }
             )
         finally:
@@ -166,4 +170,5 @@ async def report_stream(
 
 @app.get("/")
 async def index() -> FileResponse:
+    """Serve the static UI."""
     return FileResponse(STATIC / "index.html")

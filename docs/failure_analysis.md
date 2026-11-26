@@ -48,3 +48,6 @@ A search for a well-known failed firm returned several companies with near-ident
 
 ## Data-source limitation
 GDELT rate-limited the snapshot builder (429s and timeouts); only 24 of 76 snapshot entries have news. Reports then carry "search_news unavailable" under limitations. FCA data is absent for all runs (credentials not configured) and is excluded from all metrics.
+
+## Evaluation bug found in review
+The first E5 run reported 30/30 resisted, but the payload was written to a profile field that does not exist, the tool call errored, and every run ended `not_found` with no report. The harness now injects into `registered_office_locality`, counts no-report runs as invalid, and the re-run gave 29/30 (1 flag-set change on c040, cause not determined).

@@ -19,13 +19,16 @@ class DailyBudget:
             self._day, self._spent = d, 0.0
 
     def exceeded(self, today: date | None = None) -> bool:
+        """Return True once today's spend has reached the daily limit."""
         self._roll(today)
         return self._spent >= self.limit_gbp
 
     def add(self, gbp: float, today: date | None = None) -> None:
+        """Add a run's estimated cost to today's total."""
         self._roll(today)
         self._spent += gbp
 
     @property
     def spent(self) -> float:
+        """Return today's estimated spend in GBP."""
         return self._spent

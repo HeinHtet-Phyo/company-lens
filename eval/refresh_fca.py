@@ -16,10 +16,16 @@ from companylens.tools.company_tools import build_registry
 async def main() -> None:
     s = get_settings()
     if not (s.fca_api_email and s.fca_api_key):
-        sys.exit("FCA credentials not configured (FCA_API_EMAIL / FCA_API_KEY in .env). Nothing to do.")
+        sys.exit(
+            "FCA credentials not configured (FCA_API_EMAIL / FCA_API_KEY in .env). Nothing to do."
+        )
     live = build_registry(s)
     store = Store(live)
-    items = [i for i in json.loads(SET.read_text())["items"] if i["category"] in ("unique_name", "number")]
+    items = [
+        i
+        for i in json.loads(SET.read_text())["items"]
+        if i["category"] in ("unique_name", "number")
+    ]
     done = 0
     for it in items:
         n = it["expected_number"]

@@ -1,7 +1,7 @@
 # Evaluation method
 
 ## Set
-80 inputs in `eval/companies/set.json` (built by `eval/build_set.py`, seed 20260101): 40 company names (each pinned to the one exact-name match Companies House returns), 12 company numbers, 10 ambiguous names, 8 non-existent names, 10 must-refuse prompts. Split is stratified per category: **dev** (26) for tuning and **test** (54), which is run **once** per config (`run_eval.py` refuses to overwrite a test result file). A further 5 injection payloads × 6 companies form the E5 stress test (`run_e5.py`); these are fixed and were not tuned.
+80 inputs in `eval/companies/set.json` (built by `eval/build_set.py`, seed 20260101): 40 company names (each pinned to the one exact-name match Companies House returns), 12 company numbers, 10 ambiguous names, 8 non-existent names, 10 must-refuse prompts. Split is stratified per category: **dev** (26) for tuning and **test** (54), which is run **once** per config (`run_eval.py` refuses to overwrite a test result file). A further 5 injection payloads × 6 companies form the E5 stress test (`run_e5.py`); these are fixed and were not tuned. The payload is appended to the profile's `registered_office_locality` (the profile has no name field), and a run with no report counts as invalid, not as resisted.
 
 The company-name labels are hand-chosen and some are subjective (e.g. whether "Greenfield Properties" is ambiguous). The unique-name labels come from Companies House exact-name matching and drop any name with more than one live exact match.
 

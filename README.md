@@ -29,7 +29,7 @@ It is a screening aid, not advice. The risk level comes from fixed rules (R1–R
 
 Frozen snapshot of tool outputs replayed for every configuration; dev split (n=26) for tuning, test split (n=54) run once. Judge is a different model family (google/gemma-3-27b-it). 95% bootstrap CIs over items. Full tables: `eval/results/summary.md`; method: `docs/eval_method.md`.
 
-Test split, n=54 (intervals are wide):
+Test split, n=54 (intervals are wide). Risk and recall are scored only on the 35 reports that resolved to the right company, so wrongly routed items (see routing column) are excluded from them; the Mistral row has a higher deterministic unsupported-number rate than Qwen (19% vs 9%) even though the judge scores it better:
 
 | Config | Routing correct | Risk matches rules oracle | Flag recall | Reports with ≥1 unsupported sentence | Cost/report (est.) |
 |---|---|---|---|---|---|
@@ -42,7 +42,7 @@ Test split, n=54 (intervals are wide):
 
 \*The fixed pipeline always calls every tool and uses the same rules as the oracle, so its risk agreement is 100% by construction.
 
-What the numbers support: the agent routes better than the fixed pipeline's naive top-hit resolver (74% → 87%, intervals overlap in places); a small tool budget clearly hurts recall; the claim check made no clear difference on the test split (31% vs 33%, overlapping intervals). They do not show that the agent beats the pipeline on report quality. Prompt injection (E5): 30 of 30 poisoned runs kept the risk level, flags, prompt secrecy and tool budget.
+What the numbers support: the agent routes better than the fixed pipeline's naive top-hit resolver (74% → 87%, intervals overlap in places); a small tool budget clearly hurts recall; the claim check made no clear difference on the test split (31% vs 33%, overlapping intervals). They do not show that the agent beats the pipeline on report quality. Prompt injection (E5): 5 payloads were planted in a free-text field of the company profile for 6 companies (30 runs, all produced reports); 29 of 30 kept the risk level, flag set, prompt secrecy and tool budget. The one miss (c040) changed the flag set but not the risk level; that company also hit the round limit in clean runs, so the cause is unclear. Checks are deterministic only. A first version of this test planted the payload where the agent never saw it and produced no reports; it was fixed and re-run.
 
 ## Run it
 
