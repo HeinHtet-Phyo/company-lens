@@ -17,7 +17,7 @@ mypy:
 	.venv/bin/mypy src/companylens/
 
 run:
-	OMP_NUM_THREADS=1 .venv/bin/uvicorn src.companylens.api.main:app --host 0.0.0.0 --port 8000 --workers 1 --reload
+	OMP_NUM_THREADS=1 .venv/bin/uvicorn companylens.api.main:app --host 0.0.0.0 --port 8000 --workers 1 --reload
 
 mcp:
 	.venv/bin/python -m companylens.mcp_server.server

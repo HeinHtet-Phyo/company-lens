@@ -6,6 +6,7 @@ import asyncio
 import json
 import re
 import time
+from collections.abc import Awaitable, Callable
 from datetime import UTC, datetime
 from typing import Any, Literal
 
@@ -64,6 +65,12 @@ def _norm_name(name: str) -> str:
     return " ".join(words)
 
 
+def _short(res: ToolResult) -> str:
+    data = res.data or {}
+    keys = [k for k in data if not isinstance(data[k], (list, dict))][:4]
+    return ", ".join(f"{k}={data[k]}" for k in keys) or "ok"
+
+
 def _wrap(result: ToolResult) -> str:
     """Wrap tool output as delimited data so the model treats it as untrusted."""
     body = json.dumps({"ok": result.ok, "data": result.data, "error": result.error}, default=str)
@@ -79,7 +86,9 @@ class CompanyAgent:
         llm: LLMClient,
         config: AgentConfig,
         tracer: Tracer,
+        on_event: Callable[[dict[str, Any]], Awaitable[None]] | None = None,
     ) -> None:
+        self.on_event = on_event
         self.registry = registry
         self.llm = llm
         self.config = config
@@ -151,6 +160,23 @@ class CompanyAgent:
             type="not_found", message=out.get("error_message") or "No such company."
         )
 
+    async def _emit(self, event: str, **data: Any) -> None:
+        if self.on_event is not None:
+            await self.on_event({"event": event, "data": data})
+
+    async def _tool(self, name: str, **args: Any) -> ToolResult:
+        """Call a tool and stream tool_call / tool_result events."""
+        await self._emit("tool_call", name=name, args=args)
+        res = await self._call(name, **args)
+        await self._emit(
+            "tool_result",
+            name=name,
+            ok=res.ok,
+            summary=(res.error or "ok") if not res.ok else _short(res),
+            source_url=res.source_url,
+        )
+        return res
+
     async def _call(self, name: str, **args: Any) -> ToolResult:
         try:
             return await self.registry.get(name).fn(**args)
@@ -168,7 +194,7 @@ class CompanyAgent:
         q = state["query"]
         if _NUMBER_RE.match(q):
             number = q.upper()
-            res = await self._call("get_company_profile", company_number=number)
+            res = await self._tool("get_company_profile", company_number=number)
             if not res.ok or not res.data:
                 return {"error_message": f"No company found with number {number}."}
             return {
@@ -178,7 +204,7 @@ class CompanyAgent:
                 "tool_call_history": [("get_company_profile", {"company_number": number})],
                 "tool_calls_count": 1,
             }
-        res = await self._call("search_companies", query=q, limit=5)
+        res = await self._tool("search_companies", query=q, limit=5)
         cands = (res.data or {}).get("candidates") or []
         base: dict[str, Any] = {
             "tool_results": [res],
@@ -249,6 +275,10 @@ class CompanyAgent:
             model=self.config.summary_model,
         )
         plan = msg.content or ""
+        await self._emit(
+            "resolve", company_number=state["company_number"], company_name=state["company_name"]
+        )
+        await self._emit("plan", text=plan)
         return {
             "investigation_plan": plan,
             "messages": [
@@ -315,7 +345,7 @@ class CompanyAgent:
             else:
                 pending.append((tc.id, name, args))
                 history.append((name, args))
-        results = await asyncio.gather(*(self._call(n, **a) for _, n, a in pending))
+        results = await asyncio.gather(*(self._tool(n, **a) for _, n, a in pending))
         for (call_id, _, _), res in zip(pending, results, strict=True):
             replies.append(self._tool_msg(call_id, _wrap(res)))
         upd.update(
@@ -337,7 +367,9 @@ class CompanyAgent:
             state["tool_calls_count"], state["llm_rounds"], state["start_time"], state["cost_gbp"]
         )
         if not state["should_stop"] and not guard.allowed:
+            await self._emit("decision", action="stop", reason=guard.stop_reason)
             return {"should_stop": True, "stop_reason": guard.stop_reason or "limit"}
+        await self._emit("decision", action="stop" if state["should_stop"] else "continue")
         return {}
 
     def _after_decide(self, state: AgentState) -> Literal["act", "report"]:
