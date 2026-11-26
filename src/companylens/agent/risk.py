@@ -276,9 +276,10 @@ def assess_risk(
 
     if fca_data:
         fca_status: str = str(fca_data.get("status") or "").lower()
-        fca_confident: bool = bool(fca_data.get("high_confidence", True))
+        fca_confident: bool = fca_data.get("match_confidence") == "high"
+        fca_not_found: bool = fca_data.get("found") is False
 
-        if "no longer authorised" in fca_status:
+        if "no longer authorised" in fca_status and fca_confident:
             flags.append(
                 RedFlag(
                     rule_id=R8,
@@ -290,7 +291,7 @@ def assess_risk(
                     evidence_ids=_ev(R8, evidence_map),
                 )
             )
-        elif fca_data.get("not_found") and fca_confident and is_financial_services_sic(sic_codes):
+        elif fca_not_found and is_financial_services_sic(sic_codes):
             flags.append(
                 RedFlag(
                     rule_id=R8,
@@ -302,19 +303,6 @@ def assess_risk(
                     evidence_ids=_ev(R8, evidence_map),
                 )
             )
-    elif is_financial_services_sic(sic_codes):
-        # fca_data is None — not retrieved; treat as not found with high confidence
-        flags.append(
-            RedFlag(
-                rule_id=R8,
-                severity=RedFlagSeverity.WARNING,
-                explanation=(
-                    "Company has a financial-services SIC code but FCA data was not retrieved. "
-                    "FCA authorisation status is unknown."
-                ),
-                evidence_ids=_ev(R8, evidence_map),
-            )
-        )
 
     # ------------------------------------------------------------------
     # R9 - Corporate PSC registered overseas

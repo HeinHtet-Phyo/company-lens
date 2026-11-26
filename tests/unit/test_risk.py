@@ -172,14 +172,16 @@ class TestR7DirectorResignations:
 
 class TestR8FCA:
     def test_no_longer_authorised_high(self):
-        result = _assess(fca_data={"status": "No longer authorised", "high_confidence": True})
+        result = _assess(
+            fca_data={"found": True, "status": "No longer authorised", "match_confidence": "high"}
+        )
         flag = next(f for f in result.red_flags if f.rule_id == "R8")
         assert flag.severity == RedFlagSeverity.HIGH
 
     def test_regulated_sic_not_found_warning(self):
         result = _assess(
             profile_data=_profile(sic_codes=["6419"]),
-            fca_data={"not_found": True, "high_confidence": True},
+            fca_data={"found": False, "match_confidence": "none"},
         )
         flag = next(f for f in result.red_flags if f.rule_id == "R8")
         assert flag.severity == RedFlagSeverity.WARNING
@@ -187,7 +189,7 @@ class TestR8FCA:
     def test_non_financial_sic_no_fca_no_flag(self):
         result = _assess(
             profile_data=_profile(sic_codes=["47110"]),
-            fca_data={"not_found": True, "high_confidence": True},
+            fca_data={"found": False, "match_confidence": "none"},
         )
         assert all(f.rule_id != "R8" for f in result.red_flags)
 
@@ -250,3 +252,15 @@ class TestRiskLevelThresholds:
             profile_data=_profile(**{"accounts.overdue": True}, has_insolvency_history=True)
         )
         assert result.risk_level == RiskLevel.HIGH
+
+
+class TestR8EdgeCases:
+    def test_fca_not_retrieved_does_not_flag(self):
+        result = _assess(profile_data=_profile(sic_codes=["6419"]), fca_data=None)
+        assert "R8" not in {f.rule_id for f in result.red_flags}
+
+    def test_low_confidence_no_longer_authorised_does_not_flag(self):
+        result = _assess(
+            fca_data={"found": True, "status": "No longer authorised", "match_confidence": "medium"}
+        )
+        assert "R8" not in {f.rule_id for f in result.red_flags}

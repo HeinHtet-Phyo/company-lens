@@ -55,6 +55,8 @@ class FCAClient:
 
     def __init__(self) -> None:
         settings = get_settings()
+        self._email = settings.fca_api_email
+        self._key = settings.fca_api_key
         self._client = httpx.AsyncClient(
             base_url=_FCA_BASE,
             headers={
@@ -85,6 +87,16 @@ class FCAClient:
             "company_number": company_number,
         }
 
+        if not (self._email and self._key):
+            return ToolResult(
+                tool="check_fca_register",
+                args=args,
+                ok=False,
+                source_url=source_url,
+                retrieved_at=_now(),
+                error="FCA credentials not configured",
+            )
+
         try:
             resp = await _fca_request(
                 self._client, "GET", "/Firm/Search", params={"q": company_name}
@@ -96,7 +108,7 @@ class FCAClient:
                 ok=False,
                 source_url=source_url,
                 retrieved_at=_now(),
-                error=str(exc),
+                error=f"{type(exc).__name__}: {exc}",
             )
 
         if resp.status_code != 200:

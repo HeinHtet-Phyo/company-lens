@@ -141,7 +141,7 @@ async def test_followup_run_flags_and_risk() -> None:
 
 async def test_ambiguous_name_returns_clarification() -> None:
     llm = FakeLLM([], verdict={"choice": None, "ambiguous": True, "reason": "two close"})
-    resp = await _agent(llm, _registry([])).run("Acme")
+    resp = await _agent(llm, _registry([])).run("Acme Trading")
     assert resp.type == "clarification"
     assert len(resp.clarification_options or []) == 2
 
@@ -211,3 +211,18 @@ async def test_number_query_skips_search(q: str) -> None:
     llm = FakeLLM([_msg("plan"), _msg("done"), _msg("S [e1].")])
     await _agent(llm, _registry(calls)).run(q)
     assert "search_companies" not in calls
+
+
+async def test_prefix_ambiguity_skips_llm() -> None:
+    llm = FakeLLM([])  # any LLM call would pop from an empty script and fail
+    resp = await _agent(llm, _registry([])).run("Acm")
+    assert resp.type == "clarification"
+    assert llm.seen == []
+
+
+async def test_unique_active_exact_match_is_picked_without_llm() -> None:
+    calls: list[str] = []
+    llm = FakeLLM([_msg("plan"), _msg("done"), _msg("S [e1].")])
+    resp = await _agent(llm, _registry(calls)).run("Acme")
+    assert resp.type == "report" and resp.report is not None
+    assert resp.report.company.number == "01234567"

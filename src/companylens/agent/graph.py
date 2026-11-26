@@ -54,6 +54,16 @@ _RULE_TOOL = {
 }
 
 
+_SUFFIXES = {"ltd", "limited", "plc", "llp", "uk"}
+
+
+def _norm_name(name: str) -> str:
+    words = re.sub(r"[^a-z0-9 ]", " ", name.lower()).split()
+    while words and words[-1] in _SUFFIXES:
+        words.pop()
+    return " ".join(words)
+
+
 def _wrap(result: ToolResult) -> str:
     """Wrap tool output as delimited data so the model treats it as untrusted."""
     body = json.dumps({"ok": result.ok, "data": result.data, "error": result.error}, default=str)
@@ -177,6 +187,13 @@ class CompanyAgent:
         }
         if not res.ok or not cands:
             return {**base, "error_message": f"No company found matching '{q}'."}
+        nq = _norm_name(q)
+        exact = [x for x in cands if _norm_name(x["name"] or "") == nq]
+        prefix = [x for x in cands if _norm_name(x["name"] or "").startswith(nq)]
+        if len(exact) == 1 and exact[0].get("status") == "active":
+            return {**base, "company_number": exact[0]["number"], "company_name": exact[0]["name"]}
+        if len(prefix) >= 2:
+            return {**base, **self._clarify(cands)}
         msg, i, o, c = await self.llm.chat(
             messages=[
                 {"role": "system", "content": _RESOLVE_PROMPT},
@@ -193,23 +210,26 @@ class CompanyAgent:
             verdict = {"ambiguous": len(cands) > 1, "choice": None}
         picked = next((x for x in cands if x["number"] == verdict.get("choice")), None)
         if verdict.get("ambiguous"):
-            return {
-                **base,
-                "needs_clarification": True,
-                "clarification_options": [
-                    {
-                        "company_number": x["number"],
-                        "company_name": x["name"],
-                        "status": x.get("status") or "unknown",
-                        "incorporated": x.get("date_of_creation"),
-                        "address_locality": x.get("address_locality"),
-                    }
-                    for x in cands
-                ],
-            }
+            return {**base, **self._clarify(cands)}
         if picked is None:
             return {**base, "error_message": f"No company found matching '{q}'."}
         return {**base, "company_number": picked["number"], "company_name": picked["name"]}
+
+    @staticmethod
+    def _clarify(cands: list[dict[str, Any]]) -> dict[str, Any]:
+        return {
+            "needs_clarification": True,
+            "clarification_options": [
+                {
+                    "company_number": x["number"],
+                    "company_name": x["name"],
+                    "status": x.get("status") or "unknown",
+                    "incorporated": x.get("date_of_creation"),
+                    "address_locality": x.get("address_locality"),
+                }
+                for x in cands
+            ],
+        }
 
     def _after_resolve(self, state: AgentState) -> Literal["plan", "end"]:
         return "plan" if state.get("company_number") else "end"

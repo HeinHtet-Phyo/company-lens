@@ -138,3 +138,31 @@ class TestCheckFactsAgainstEvidence:
 
         assert passed is False
         assert "status" in failed
+
+
+class _J:
+    def __init__(self, content: str) -> None:
+        self.content = content
+
+    async def chat(self, **kw):  # type: ignore[no-untyped-def]
+        return _J(self.content), 1, 1, 0.0
+
+
+async def _verdicts(content: str, summary: str):  # type: ignore[no-untyped-def]
+    from companylens.agent.claim_check import check_summary_against_evidence
+
+    return await check_summary_against_evidence(summary, [], _J(content), "m")
+
+
+async def test_judge_results_wrapper_parsed() -> None:
+    content = (
+        '{"results": [{"sentence": "A is true.", "verdict": "supported"},'
+        ' {"sentence": "B is made up.", "verdict": "unsupported"}]}'
+    )
+    ok, bad = await _verdicts(content, "A is true. B is made up.")
+    assert ok == ["A is true."] and bad == ["B is made up."]
+
+
+async def test_judge_single_object_parsed() -> None:
+    ok, bad = await _verdicts('{"sentence": "A is true.", "verdict": "supported"}', "A is true.")
+    assert ok == ["A is true."] and bad == []

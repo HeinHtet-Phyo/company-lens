@@ -54,9 +54,9 @@ def _tool_excerpt(tool_result: ToolResult) -> str:
     if not tool_result.ok or tool_result.data is None:
         return tool_result.error or "No data returned."
     data = tool_result.data
-    # Return a compact JSON snippet (truncated to ~200 chars)
+    # Return a compact JSON snippet (truncated to ~900 chars)
     snippet = json.dumps(data, default=str)
-    return snippet[:200] + ("..." if len(snippet) > 200 else "")
+    return snippet[:900] + ("..." if len(snippet) > 900 else "")
 
 
 def _build_evidence(results: list[tuple[str, ToolResult]]) -> list[Evidence]:

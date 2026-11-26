@@ -49,7 +49,7 @@ class NewsClient:
         params = {
             "mode": "artlist",
             "format": "json",
-            "q": f'"{company_name}"',
+            "query": f'"{company_name}"',
             "maxrecords": str(limit),
             "timespan": f"{days}d",
             "sort": "datedesc",
@@ -71,7 +71,7 @@ class NewsClient:
                 ok=False,
                 source_url=source_url,
                 retrieved_at=_now(),
-                error=str(exc),
+                error=f"{type(exc).__name__}: {exc}",
             )
 
         if resp.status_code != 200:

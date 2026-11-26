@@ -94,12 +94,16 @@ def check_facts_against_evidence(
 
 _SENTENCE_CHECK_SYSTEM = (
     "You are a fact-checking assistant. "
-    "You will be given a summary sentence and evidence excerpts. "
-    "Determine whether the sentence is supported by the evidence. "
-    "Respond with a JSON array. Each element has: "
-    '{"sentence": "<sentence>", "verdict": "supported"|"unsupported"|"not_a_claim"}. '
+    "You will be given summary sentences and evidence excerpts. "
+    "For EVERY sentence, determine whether it is supported by the evidence. "
+    'Respond with one JSON object: {"results": [{"sentence": "<exact sentence>", '
+    '"verdict": "supported"|"unsupported"|"not_a_claim"}, ...]} with one entry per sentence. '
     "Only mark as 'not_a_claim' if the sentence is a boilerplate disclaimer or contains no factual claim."
 )
+
+
+def _norm(text: str) -> str:
+    return " ".join(text.lstrip("- ").split())
 
 
 def _split_sentences(text: str) -> list[str]:
@@ -112,7 +116,7 @@ def _split_sentences(text: str) -> list[str]:
 async def check_summary_against_evidence(
     summary: str,
     evidence: list[Evidence],
-    llm_client: Any,  # openai.AsyncOpenAI compatible client
+    llm_client: Any,  # companylens.llm.LLMClient
     model: str,
 ) -> tuple[list[str], list[str]]:
     """Split summary into sentences.
@@ -137,21 +141,23 @@ async def check_summary_against_evidence(
         "Return a JSON array with one object per sentence."
     )
 
-    response = await llm_client.chat.completions.create(
-        model=model,
+    message, *_ = await llm_client.chat(
         messages=[
             {"role": "system", "content": _SENTENCE_CHECK_SYSTEM},
             {"role": "user", "content": user_content},
         ],
         response_format={"type": "json_object"},
         temperature=0,
+        model=model,
     )
 
-    raw_content = response.choices[0].message.content or "{}"
+    raw_content = message.content or "{}"
     try:
         parsed = json.loads(raw_content)
         # The model may wrap the array in a key
-        if isinstance(parsed, dict):
+        if isinstance(parsed, dict) and "verdict" in parsed:
+            parsed = [parsed]
+        elif isinstance(parsed, dict):
             # Try common wrapper keys
             for key in ("results", "sentences", "items", "verdicts"):
                 if key in parsed and isinstance(parsed[key], list):
@@ -174,12 +180,12 @@ async def check_summary_against_evidence(
     verdict_map: dict[str, str] = {}
     for item in parsed:
         if isinstance(item, dict):
-            sent = str(item.get("sentence", ""))
+            sent = _norm(str(item.get("sentence", "")))
             verdict = str(item.get("verdict", "unsupported")).lower()
             verdict_map[sent] = verdict
 
     for sentence in sentences:
-        verdict = verdict_map.get(sentence, "unsupported")
+        verdict = verdict_map.get(_norm(sentence), "unsupported")
         if verdict in ("supported", "not_a_claim"):
             supported.append(sentence)
         else:
@@ -234,15 +240,15 @@ async def run_claim_check(
             f"Unsupported sentences to remove or soften:\n"
             + "\n".join(f"- {s}" for s in unsupported_sents)
         )
-        repair_response = await llm_client.chat.completions.create(
-            model=model,
+        repair_message, *_ = await llm_client.chat(
             messages=[
                 {"role": "system", "content": _REPAIR_SYSTEM},
                 {"role": "user", "content": repair_prompt},
             ],
             temperature=0,
+            model=model,
         )
-        repaired_summary: str = (repair_response.choices[0].message.content or "").strip()
+        repaired_summary: str = (repair_message.content or "").strip()
 
         # Step 4 - check the repaired summary
         _, still_unsupported = await check_summary_against_evidence(
@@ -254,7 +260,11 @@ async def run_claim_check(
             path_taken = "dropped"
             all_sents = _split_sentences(repaired_summary)
             kept = [s for s in all_sents if s not in still_unsupported]
-            final_summary = " ".join(kept) if kept else repaired_summary
+            final_summary = (
+                " ".join(kept)
+                if kept
+                else "No claim in the generated summary could be verified against the evidence."
+            )
             limitations_added = [
                 f"The following claims could not be verified and were removed: {s}"
                 for s in still_unsupported
