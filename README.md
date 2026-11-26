@@ -4,7 +4,7 @@ An AI agent for first-pass due diligence on UK companies. Give it a company name
 
 It is a screening aid, not advice. The risk level comes from fixed rules (R1–R9), not from the model.
 
-<!-- demo GIF: docs/demo.gif (added after the live deploy) -->
+![Demo](docs/demo.gif)
 
 ## What it does
 
