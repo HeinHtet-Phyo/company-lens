@@ -17,6 +17,7 @@ EXPERIMENTS = {
     "E2 model size (27B vs 30B-A3B)": ["agent_qwen", "agent_small"],
     "E3 claim check on/off": ["agent_qwen", "agent_qwen_noclaimcheck"],
     "E4 tight tool/round budget": ["agent_qwen", "agent_qwen_tight"],
+    "E-Mistral different provider": ["agent_qwen", "agent_mistral"],
 }
 
 

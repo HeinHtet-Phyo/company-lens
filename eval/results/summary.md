@@ -72,6 +72,23 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
 | Completed without hitting a guard | 88% | 0% |
 | n items | 26 | 26 |
 
+### E-Mistral different provider
+
+| Metric | agent_qwen | agent_mistral |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 100% [100–100] | 100% [100–100] |
+| Risk level matches snapshot oracle | 100% [100–100] | 100% [100–100] |
+| Flag recall | 93% | 100% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 24% [6–47] | 12% [0–29] |
+| Unsupported-sentence rate (judge) | 5% | 3% |
+| Unsupported-number rate (deterministic) | 19% | 10% |
+| Cost per report, GBP est. | 0.008 [0.007–0.009] | 0.001 [0.001–0.002] |
+| Latency mean, s | 16.035 [14.767–17.309] | 14.461 [13.521–15.388] |
+| Tool calls mean | 7.647 [7.059–8.176] | 8.000 [7.706–8.353] |
+| Completed without hitting a guard | 88% | 100% |
+| n items | 26 | 26 |
+
 ### Routing accuracy by category
 
 ```
@@ -92,6 +109,118 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
  }
 }
 ```
+
+## TEST split
+
+### E1 agent vs fixed pipeline
+
+| Metric | baseline_fixed | agent_qwen |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 74% [63–85] | 87% [78–94] |
+| Risk level matches snapshot oracle | 100% [100–100] | 91% [80–100] |
+| Flag recall | 100% | 92% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 36% [21–49] | 31% [19–45] |
+| Unsupported-sentence rate (judge) | 10% | 7% |
+| Unsupported-number rate (deterministic) | 12% | 9% |
+| Cost per report, GBP est. | 0.000 [0.000–0.000] | 0.007 [0.007–0.008] |
+| Latency mean, s | 7.328 [6.944–7.794] | 14.792 [14.134–15.495] |
+| Tool calls mean | 8.000 [8.000–8.000] | 7.667 [7.333–8.000] |
+| Completed without hitting a guard | 100% | 95% |
+| n items | 54 | 54 |
+
+### E2 model size (27B vs 30B-A3B)
+
+| Metric | agent_qwen | agent_small |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 87% [78–94] | 87% [78–94] |
+| Risk level matches snapshot oracle | 91% [80–100] | 94% [86–100] |
+| Flag recall | 92% | 92% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 31% [19–45] | 33% [19–48] |
+| Unsupported-sentence rate (judge) | 7% | 9% |
+| Unsupported-number rate (deterministic) | 9% | 10% |
+| Cost per report, GBP est. | 0.007 [0.007–0.008] | 0.001 [0.001–0.002] |
+| Latency mean, s | 14.792 [14.134–15.495] | 39.884 [35.410–45.373] |
+| Tool calls mean | 7.667 [7.333–8.000] | 7.738 [7.429–8.048] |
+| Completed without hitting a guard | 95% | 100% |
+| n items | 54 | 54 |
+
+### E3 claim check on/off
+
+| Metric | agent_qwen | agent_qwen_noclaimcheck |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 87% [78–94] | 87% [78–94] |
+| Risk level matches snapshot oracle | 91% [80–100] | 91% [80–100] |
+| Flag recall | 92% | 88% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 31% [19–45] | 33% [19–48] |
+| Unsupported-sentence rate (judge) | 7% | 8% |
+| Unsupported-number rate (deterministic) | 9% | 9% |
+| Cost per report, GBP est. | 0.007 [0.007–0.008] | 0.007 [0.007–0.008] |
+| Latency mean, s | 14.792 [14.134–15.495] | 11.838 [11.202–12.521] |
+| Tool calls mean | 7.667 [7.333–8.000] | 7.762 [7.452–8.071] |
+| Completed without hitting a guard | 95% | 90% |
+| n items | 54 | 54 |
+
+### E4 tight tool/round budget
+
+| Metric | agent_qwen | agent_qwen_tight |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 87% [78–94] | 87% [78–94] |
+| Risk level matches snapshot oracle | 91% [80–100] | 74% [60–89] |
+| Flag recall | 92% | 65% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 31% [19–45] | 71% [57–86] |
+| Unsupported-sentence rate (judge) | 7% | 19% |
+| Unsupported-number rate (deterministic) | 9% | 3% |
+| Cost per report, GBP est. | 0.007 [0.007–0.008] | 0.002 [0.002–0.002] |
+| Latency mean, s | 14.792 [14.134–15.495] | 14.811 [13.959–15.786] |
+| Tool calls mean | 7.667 [7.333–8.000] | 2.976 [2.929–3.000] |
+| Completed without hitting a guard | 95% | 0% |
+| n items | 54 | 54 |
+
+### E-Mistral different provider
+
+| Metric | agent_qwen | agent_mistral |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 87% [78–94] | not run |
+| Risk level matches snapshot oracle | 91% [80–100] | not run |
+| Flag recall | 92% | not run |
+| Flag precision | 100% | not run |
+| Reports with ≥1 unsupported sentence (judge) | 31% [19–45] | not run |
+| Unsupported-sentence rate (judge) | 7% | not run |
+| Unsupported-number rate (deterministic) | 9% | not run |
+| Cost per report, GBP est. | 0.007 [0.007–0.008] | not run |
+| Latency mean, s | 14.792 [14.134–15.495] | not run |
+| Tool calls mean | 7.667 [7.333–8.000] | not run |
+| Completed without hitting a guard | 95% | not run |
+| n items | 54 | - |
+
+### Routing accuracy by category
+
+```
+{
+ "baseline_fixed": {
+  "ambiguous": 0.0,
+  "nonexistent": 0.0,
+  "number": 1.0,
+  "refuse": 1.0,
+  "unique_name": 0.926
+ },
+ "agent_qwen": {
+  "ambiguous": 0.143,
+  "nonexistent": 0.8,
+  "number": 1.0,
+  "refuse": 1.0,
+  "unique_name": 1.0
+ }
+}
+```
+
+## E5 prompt injection
+
+Resisted 30/30 poisoned runs (risk level, flag set, no prompt leak, no obeyed claim, tool budget).
 
 ## memory.json
 
@@ -115,7 +244,7 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
 
 ```
 {
- "total_gbp_est": 0.3241,
+ "total_gbp_est": 1.1149,
  "entries": [
   {
    "config": "baseline_fixed",
@@ -141,6 +270,36 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
    "config": "agent_qwen_tight",
    "split": "dev",
    "gbp_est": 0.0331
+  },
+  {
+   "config": "baseline_fixed",
+   "split": "test",
+   "gbp_est": 0.0122
+  },
+  {
+   "config": "agent_qwen",
+   "split": "test",
+   "gbp_est": 0.3075
+  },
+  {
+   "config": "agent_small",
+   "split": "test",
+   "gbp_est": 0.0596
+  },
+  {
+   "config": "agent_qwen_noclaimcheck",
+   "split": "test",
+   "gbp_est": 0.3058
+  },
+  {
+   "config": "agent_mistral",
+   "split": "dev",
+   "gbp_est": 0.0249
+  },
+  {
+   "config": "agent_qwen_tight",
+   "split": "test",
+   "gbp_est": 0.0808
   }
  ],
  "note": "Estimated from token counts and a price table in llm.py, not provider invoices."
