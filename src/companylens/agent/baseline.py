@@ -8,6 +8,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from companylens.agent.claim_check import CountingLLM as _CountingLLM
+from companylens.agent.claim_check import run_claim_check
 from companylens.agent.risk import assess_risk
 from companylens.config import AgentConfig
 from companylens.llm import LLMClient
@@ -369,38 +371,7 @@ async def run_baseline(
 
     summary_text = summary_message.content or "Summary unavailable."
 
-    # ------------------------------------------------------------------
-    # Claim-check (optional LLM verification round)
-    # ------------------------------------------------------------------
     llm_rounds = 1
-    if config.use_claim_check:
-        claim_messages: list[dict[str, Any]] = [
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": (
-                    f"Review the following summary for factual accuracy against the evidence.\n\n"
-                    f"Summary:\n{summary_text}\n\n"
-                    f"Evidence:\n{evidence_context}\n\n"
-                    "If any claim is not supported by the evidence, respond with a corrected summary. "
-                    "Otherwise respond with the original summary unchanged. "
-                    "Output only the summary text — no commentary."
-                ),
-            },
-        ]
-        claim_span_id = tracer.add_span(trace_id, "llm:claim_check", {"model": config.judge_model})
-        claim_message, in_tok2, out_tok2, cost2 = await llm_client.chat(
-            messages=claim_messages,
-            temperature=0.0,
-            model=config.judge_model,
-        )
-        total_input_tokens += in_tok2
-        total_output_tokens += out_tok2
-        total_cost_gbp += cost2
-        llm_rounds += 1
-        tracer.end_span(trace_id, claim_span_id, {"output_tokens": out_tok2})
-        if claim_message.content:
-            summary_text = claim_message.content
 
     # ------------------------------------------------------------------
     # Assemble report
@@ -434,6 +405,19 @@ async def run_baseline(
         ],
         generated_at=datetime.now(tz=UTC),
     )
+
+    if config.use_claim_check:
+        counter = _CountingLLM(llm_client)
+        report, cc = await run_claim_check(report, counter, config.judge_model)
+        st = report.stats
+        st.input_tokens += counter.input_tokens
+        st.output_tokens += counter.output_tokens
+        st.cost_gbp += counter.cost
+        st.llm_rounds += counter.calls
+        st.latency_ms = int((time.time() - start_ms) * 1000)
+        st.claim_check_path = cc.path_taken
+        st.claim_check_failed_sentences = len(cc.failed_sentences)
+        total_cost_gbp = st.cost_gbp
 
     tracer.end_trace(trace_id, {"risk_level": str(report.risk_level), "cost_gbp": total_cost_gbp})
     return report

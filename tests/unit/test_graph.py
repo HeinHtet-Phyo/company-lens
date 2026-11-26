@@ -226,3 +226,10 @@ async def test_unique_active_exact_match_is_picked_without_llm() -> None:
     resp = await _agent(llm, _registry(calls)).run("Acme")
     assert resp.type == "report" and resp.report is not None
     assert resp.report.company.number == "01234567"
+
+
+async def test_junk_query_is_not_found_without_llm() -> None:
+    llm = FakeLLM([])
+    resp = await _agent(llm, _registry([])).run("Qqqq Nnnn Wwww Limited")
+    assert resp.type == "not_found"
+    assert llm.seen == []

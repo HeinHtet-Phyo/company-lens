@@ -19,6 +19,7 @@ from companylens.agent.baseline import (
     _extract_data,
     _load_prompt,
 )
+from companylens.agent.claim_check import CountingLLM as _CountingLLM
 from companylens.agent.claim_check import run_claim_check
 from companylens.agent.guards import AgentGuards, GuardConfig
 from companylens.agent.risk import assess_risk
@@ -63,6 +64,12 @@ def _norm_name(name: str) -> str:
     while words and words[-1] in _SUFFIXES:
         words.pop()
     return " ".join(words)
+
+
+def _overlap(query: str, name: str) -> float:
+    """Share of the query's words that appear in the candidate name."""
+    qw, nw = set(query.split()), set(name.split())
+    return len(qw & nw) / len(qw) if qw else 0.0
 
 
 def _short(res: ToolResult) -> str:
@@ -216,10 +223,14 @@ class CompanyAgent:
         nq = _norm_name(q)
         exact = [x for x in cands if _norm_name(x["name"] or "") == nq]
         prefix = [x for x in cands if _norm_name(x["name"] or "").startswith(nq)]
-        if len(exact) == 1 and exact[0].get("status") == "active":
-            return {**base, "company_number": exact[0]["number"], "company_name": exact[0]["name"]}
+        live_exact = [x for x in exact if x.get("status") != "dissolved"]
+        pool = live_exact if live_exact else exact
+        if len(pool) == 1:
+            return {**base, "company_number": pool[0]["number"], "company_name": pool[0]["name"]}
         if len(prefix) >= 2:
             return {**base, **self._clarify(cands)}
+        if not any(_overlap(nq, _norm_name(x["name"] or "")) >= 0.5 for x in cands):
+            return {**base, "error_message": f"No company found matching '{q}'."}
         msg, i, o, c = await self.llm.chat(
             messages=[
                 {"role": "system", "content": _RESOLVE_PROMPT},
@@ -235,6 +246,8 @@ class CompanyAgent:
         except json.JSONDecodeError:
             verdict = {"ambiguous": len(cands) > 1, "choice": None}
         picked = next((x for x in cands if x["number"] == verdict.get("choice")), None)
+        if picked is not None and _overlap(nq, _norm_name(picked["name"] or "")) < 0.5:
+            picked = None
         if verdict.get("ambiguous"):
             return {**base, **self._clarify(cands)}
         if picked is None:
@@ -444,5 +457,14 @@ class CompanyAgent:
             generated_at=datetime.now(UTC),
         )
         if self.config.use_claim_check:
-            report, _ = await run_claim_check(report, self.llm, self.config.judge_model)
+            counter = _CountingLLM(self.llm)
+            report, cc = await run_claim_check(report, counter, self.config.judge_model)
+            st = report.stats
+            st.input_tokens += counter.input_tokens
+            st.output_tokens += counter.output_tokens
+            st.cost_gbp += counter.cost
+            st.llm_rounds += counter.calls
+            st.latency_ms = int((time.monotonic() - state["start_time"]) * 1000)
+            st.claim_check_path = cc.path_taken
+            st.claim_check_failed_sentences = len(cc.failed_sentences)
         return {"report": report}

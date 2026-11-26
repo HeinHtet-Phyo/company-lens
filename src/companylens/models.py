@@ -86,6 +86,8 @@ class RunStats(BaseModel):
     model: str
     config_name: str
     stop_reason: str  # "complete" | "step_limit" | "time_limit" | "cost_limit" | "loop_detected"
+    claim_check_path: str | None = None  # "passed" | "repaired" | "dropped"; None = not run
+    claim_check_failed_sentences: int = 0
 
 
 class Report(BaseModel):

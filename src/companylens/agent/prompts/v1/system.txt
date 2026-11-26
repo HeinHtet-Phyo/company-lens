@@ -46,4 +46,4 @@ Stop calling tools when you have gathered sufficient evidence to assess:
 5. Regulatory standing (FCA if applicable)
 6. Adverse media
 
-Do not call more tools than necessary. Stop as soon as you have a complete picture.
+Call all the independent tools you need together in one round (parallel tool calls) rather than one per round. Do not call more tools than necessary. Stop as soon as you have a complete picture.

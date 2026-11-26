@@ -30,7 +30,7 @@ class Settings(BaseSettings):
 
     # Agent guards (defaults; overridden per config)
     max_tool_calls: int = Field(default=12)
-    max_llm_rounds: int = Field(default=6)
+    max_llm_rounds: int = Field(default=8)
     max_wall_seconds: int = Field(default=60)
     max_cost_gbp: float = Field(default=0.02)
 
@@ -48,7 +48,7 @@ class AgentConfig:
         use_claim_check: bool = True,
         use_agent: bool = True,
         max_tool_calls: int = 12,
-        max_llm_rounds: int = 6,
+        max_llm_rounds: int = 8,
         max_wall_seconds: int = 60,
         max_cost_gbp: float = 0.02,
     ) -> None:
@@ -90,7 +90,7 @@ AGENT_CONFIGS: dict[str, AgentConfig] = {
     "baseline_fixed": AgentConfig(
         name="baseline_fixed",
         llm_provider="nebius",
-        model="Qwen/Qwen3-30B-A3B-Instruct-2507",
+        model="Qwen/Qwen3.8-27B",
         summary_model="Qwen/Qwen3-30B-A3B-Instruct-2507",
         judge_model="Qwen/Qwen3-30B-A3B-Instruct-2507",
         use_agent=False,

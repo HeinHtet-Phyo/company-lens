@@ -295,3 +295,22 @@ async def run_claim_check(
     )
 
     return updated_report, result
+
+
+class CountingLLM:
+    """Proxy that sums token/cost usage of the calls made through it."""
+
+    def __init__(self, inner: Any) -> None:
+        self.inner = inner
+        self.input_tokens = 0
+        self.output_tokens = 0
+        self.cost = 0.0
+        self.calls = 0
+
+    async def chat(self, *args: Any, **kwargs: Any) -> Any:
+        out = await self.inner.chat(*args, **kwargs)
+        self.input_tokens += out[1]
+        self.output_tokens += out[2]
+        self.cost += out[3]
+        self.calls += 1
+        return out
