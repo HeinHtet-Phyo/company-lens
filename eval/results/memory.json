@@ -1,0 +1,13 @@
+{
+  "idle_mib": 84.1,
+  "peak_mib": 92.2,
+  "oom_killed": false,
+  "limit_mib": 512,
+  "cold_start_s": 1.4,
+  "image_mb": 433,
+  "queries": [
+    "Monzo Bank",
+    "00445790",
+    "Greggs plc"
+  ]
+}

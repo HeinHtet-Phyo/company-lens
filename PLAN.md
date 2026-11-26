@@ -142,3 +142,8 @@ See `docs/decisions.md` for full ADRs.
 
 ## Blockers
 _None currently._
+
+## Status (updated)
+- Done: Phases 0, 1 (clients, tools, MCP; fixtures scripts pending), 2 (agent, guards, risk, Docker), 3 partial (claim check, baseline module, injection defences; approval flow NOT done), 4 (API, SSE, safety, UI).
+- Measured: peak 92 MiB under --memory=512m, image 433 MB, cold start 1.4 s (eval/results/memory.json).
+- Open: FCA endpoint unverified (no credentials); Langfuse unverified (no keys); baseline not runnable via API; fixtures; eval phases 5-6; README/docs phase 8; Render deploy (Hein).
