@@ -18,6 +18,7 @@ from companylens.agent.baseline import (
     _build_facts,
     _extract_data,
     _load_prompt,
+    limitation_for,
 )
 from companylens.agent.claim_check import CountingLLM as _CountingLLM
 from companylens.agent.claim_check import run_claim_check
@@ -411,9 +412,7 @@ class CompanyAgent:
         for t in ("get_company_profile", "get_insolvency", "get_charges"):
             if t not in called:
                 limitations.append(f"Check not performed: {t}.")
-        limitations.extend(
-            f"{r.tool} unavailable: {r.error}" for r in state["tool_results"] if not r.ok
-        )
+        limitations.extend(limitation_for(r) for r in state["tool_results"] if not r.ok)
         if state["stop_reason"] != "complete":
             limitations.append(f"Run stopped early: {state['stop_reason']}.")
 

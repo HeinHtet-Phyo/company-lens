@@ -51,6 +51,16 @@ _BASELINE_TOOLS = [
 ]
 
 
+def limitation_for(result: ToolResult) -> str:
+    """Human-readable limitation for a failed tool call."""
+    if result.tool == "check_fca_register" and "credentials" in (result.error or ""):
+        return (
+            "FCA Register check not performed: FCA API credentials are not configured, "
+            "so regulatory standing (rule R8) is not assessed."
+        )
+    return f"{result.tool} unavailable: {result.error}"
+
+
 def _tool_excerpt(tool_result: ToolResult) -> str:
     """Build a short human-readable excerpt from a tool result."""
     if not tool_result.ok or tool_result.data is None:
@@ -402,6 +412,7 @@ async def run_baseline(
         limitations=[
             "This is a baseline fixed-pipeline report. No adaptive agent reasoning was applied.",
             "News search results depend on GDELT availability.",
+            *[limitation_for(r) for _, r in results if not r.ok],
         ],
         generated_at=datetime.now(tz=UTC),
     )
