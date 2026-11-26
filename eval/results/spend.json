@@ -1,20 +1,40 @@
 {
- "total_gbp_est": 0.129,
+ "total_gbp_est": 0.6438,
  "entries": [
-  {
-   "config": "agent_qwen",
-   "split": "dev",
-   "gbp_est": 0.0061
-  },
-  {
-   "config": "agent_qwen",
-   "split": "dev",
-   "gbp_est": 0.117
-  },
   {
    "config": "baseline_fixed",
    "split": "dev",
-   "gbp_est": 0.0059
+   "gbp_est": 0.0062
+  },
+  {
+   "config": "agent_qwen",
+   "split": "dev",
+   "gbp_est": 0.1333
+  },
+  {
+   "config": "agent_small",
+   "split": "dev",
+   "gbp_est": 0.0232
+  },
+  {
+   "config": "agent_qwen_noclaimcheck",
+   "split": "dev",
+   "gbp_est": 0.1283
+  },
+  {
+   "config": "agent_qwen_tight",
+   "split": "dev",
+   "gbp_est": 0.0331
+  },
+  {
+   "config": "baseline_fixed",
+   "split": "test",
+   "gbp_est": 0.0122
+  },
+  {
+   "config": "agent_qwen",
+   "split": "test",
+   "gbp_est": 0.3075
   }
  ],
  "note": "Estimated from token counts and a price table in llm.py, not provider invoices."

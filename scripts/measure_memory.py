@@ -18,7 +18,11 @@ def sh(*a: str) -> str:
 
 
 def mem_mib() -> float:
-    raw = sh("docker", "stats", "--no-stream", "--format", "{{.MemUsage}}", NAME).split("/")[0].strip()
+    raw = (
+        sh("docker", "stats", "--no-stream", "--format", "{{.MemUsage}}", NAME)
+        .split("/")[0]
+        .strip()
+    )
     num = float("".join(c for c in raw if c.isdigit() or c == "."))
     return num / 1024 if "KiB" in raw else num * 1024 if "GiB" in raw else num
 
@@ -26,7 +30,19 @@ def mem_mib() -> float:
 def main() -> None:
     sh("docker", "rm", "-f", NAME)
     t0 = time.time()
-    sh("docker", "run", "-d", "--name", NAME, "--memory=512m", "-p", "8001:8000", "--env-file", ".env", "companylens:latest")
+    sh(
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        NAME,
+        "--memory=512m",
+        "-p",
+        "8001:8000",
+        "--env-file",
+        ".env",
+        "companylens:latest",
+    )
     while time.time() - t0 < 60:
         try:
             urllib.request.urlopen("http://localhost:8001/health", timeout=2)
@@ -45,8 +61,15 @@ def main() -> None:
     oom = inspect["State"]["OOMKilled"]
     size = int(sh("docker", "image", "inspect", "companylens:latest", "--format", "{{.Size}}"))
     sh("docker", "rm", "-f", NAME)
-    out = {"idle_mib": round(idle, 1), "peak_mib": round(peak, 1), "oom_killed": oom, "limit_mib": 512,
-           "cold_start_s": round(cold_start, 1), "image_mb": round(size / 1e6), "queries": QUERIES}
+    out = {
+        "idle_mib": round(idle, 1),
+        "peak_mib": round(peak, 1),
+        "oom_killed": oom,
+        "limit_mib": 512,
+        "cold_start_s": round(cold_start, 1),
+        "image_mb": round(size / 1e6),
+        "queries": QUERIES,
+    }
     Path("eval/results/memory.json").write_text(json.dumps(out, indent=2))
     print(out)
 

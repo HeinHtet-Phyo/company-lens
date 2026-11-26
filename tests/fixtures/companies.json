@@ -1,0 +1,1705 @@
+{
+ "check_fca_register|{\"company_name\": \"02468686\", \"company_number\": \"02468686\"}": {
+  "args": {
+   "company_name": "02468686",
+   "company_number": "02468686"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:34:31.226452Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"aviva plc\", \"company_number\": \"02468686\"}": {
+  "args": {
+   "company_name": "AVIVA PLC",
+   "company_number": "02468686"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:14:56.824881Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"greggs plc\", \"company_number\": \"00502851\"}": {
+  "args": {
+   "company_name": "GREGGS PLC",
+   "company_number": "00502851"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:16:16.863337Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"monzo bank limited\", \"company_number\": \"09446231\"}": {
+  "args": {
+   "company_name": "MONZO BANK LIMITED",
+   "company_number": "09446231"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:14:45.686290Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"nmc health plc\", \"company_number\": \"07712220\"}": {
+  "args": {
+   "company_name": "NMC HEALTH PLC",
+   "company_number": "07712220"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:14:45.744631Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"rolls-royce holdings plc\", \"company_number\": \"07524813\"}": {
+  "args": {
+   "company_name": "ROLLS-ROYCE HOLDINGS PLC",
+   "company_number": "07524813"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:15:21.207894Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"vodafone group public limited company\", \"company_number\": \"01833679\"}": {
+  "args": {
+   "company_name": "VODAFONE GROUP PUBLIC LIMITED COMPANY",
+   "company_number": "01833679"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:15:31.895787Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "check_fca_register|{\"company_name\": \"wilko limited\", \"company_number\": \"09563205\"}": {
+  "args": {
+   "company_name": "WILKO LIMITED",
+   "company_number": "09563205"
+  },
+  "data": null,
+  "error": "FCA credentials not configured",
+  "ok": false,
+  "retrieved_at": "2026-11-26T14:16:23.992489Z",
+  "source_url": "https://register.fca.org.uk/s/firm",
+  "tool": "check_fca_register"
+ },
+ "get_charges|{\"company_number\": \"00502851\"}": {
+  "args": {
+   "company_number": "00502851"
+  },
+  "data": {
+   "latest_created_on": "1985-01-30",
+   "outstanding": 0,
+   "satisfied": 0,
+   "total": 40
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:16.847647Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/00502851/charges",
+  "tool": "get_charges"
+ },
+ "get_charges|{\"company_number\": \"01833679\"}": {
+  "args": {
+   "company_number": "01833679"
+  },
+  "data": {
+   "latest_created_on": "2016-03-31",
+   "outstanding": 5,
+   "satisfied": 0,
+   "total": 6
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:31.875115Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679/charges",
+  "tool": "get_charges"
+ },
+ "get_charges|{\"company_number\": \"02468686\"}": {
+  "args": {
+   "company_number": "02468686"
+  },
+  "data": {
+   "latest_created_on": "2013-04-15",
+   "outstanding": 2,
+   "satisfied": 0,
+   "total": 3
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:56.807395Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/02468686/charges",
+  "tool": "get_charges"
+ },
+ "get_charges|{\"company_number\": \"07524813\"}": {
+  "args": {
+   "company_number": "07524813"
+  },
+  "data": {
+   "latest_created_on": null,
+   "outstanding": 0,
+   "satisfied": 0,
+   "total": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:21.189361Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813/charges",
+  "tool": "get_charges"
+ },
+ "get_charges|{\"company_number\": \"07712220\"}": {
+  "args": {
+   "company_number": "07712220"
+  },
+  "data": {
+   "latest_created_on": "2020-07-21",
+   "outstanding": 1,
+   "satisfied": 0,
+   "total": 1
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.726478Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07712220/charges",
+  "tool": "get_charges"
+ },
+ "get_charges|{\"company_number\": \"09446231\"}": {
+  "args": {
+   "company_number": "09446231"
+  },
+  "data": {
+   "latest_created_on": "2022-03-11",
+   "outstanding": 2,
+   "satisfied": 0,
+   "total": 4
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.671518Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09446231/charges",
+  "tool": "get_charges"
+ },
+ "get_charges|{\"company_number\": \"09563205\"}": {
+  "args": {
+   "company_number": "09563205"
+  },
+  "data": {
+   "latest_created_on": null,
+   "outstanding": 0,
+   "satisfied": 0,
+   "total": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:23.977338Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09563205/charges",
+  "tool": "get_charges"
+ },
+ "get_company_profile|{\"company_number\": \"00502851\"}": {
+  "args": {
+   "company_number": "00502851"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2027-06-30",
+    "overdue": false
+   },
+   "confirmation_statement": {
+    "overdue": false
+   },
+   "date_of_creation": "1951-12-29",
+   "has_charges": false,
+   "has_insolvency_history": false,
+   "registered_office_locality": "Newcastle Upon Tyne",
+   "sic_codes": [
+    "10710",
+    "47240"
+   ],
+   "status": "active",
+   "type": "plc"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:16.669208Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/00502851",
+  "tool": "get_company_profile"
+ },
+ "get_company_profile|{\"company_number\": \"01833679\"}": {
+  "args": {
+   "company_number": "01833679"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2027-09-30",
+    "overdue": false
+   },
+   "confirmation_statement": {
+    "overdue": false
+   },
+   "date_of_creation": "1984-07-17",
+   "has_charges": false,
+   "has_insolvency_history": false,
+   "registered_office_locality": "Newbury",
+   "sic_codes": [
+    "61900",
+    "70100"
+   ],
+   "status": "active",
+   "type": "plc"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:31.675492Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679",
+  "tool": "get_company_profile"
+ },
+ "get_company_profile|{\"company_number\": \"02468686\"}": {
+  "args": {
+   "company_number": "02468686"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2027-06-30",
+    "overdue": false
+   },
+   "confirmation_statement": {
+    "overdue": false
+   },
+   "date_of_creation": "1990-02-09",
+   "has_charges": false,
+   "has_insolvency_history": false,
+   "registered_office_locality": "London",
+   "sic_codes": [
+    "70100"
+   ],
+   "status": "active",
+   "type": "plc"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:56.471699Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/02468686",
+  "tool": "get_company_profile"
+ },
+ "get_company_profile|{\"company_number\": \"07524813\"}": {
+  "args": {
+   "company_number": "07524813"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2027-06-30",
+    "overdue": false
+   },
+   "confirmation_statement": {
+    "overdue": false
+   },
+   "date_of_creation": "2011-02-10",
+   "has_charges": false,
+   "has_insolvency_history": false,
+   "registered_office_locality": "London",
+   "sic_codes": [
+    "70100"
+   ],
+   "status": "active",
+   "type": "plc"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:20.983227Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813",
+  "tool": "get_company_profile"
+ },
+ "get_company_profile|{\"company_number\": \"07712220\"}": {
+  "args": {
+   "company_number": "07712220"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2020-09-30",
+    "overdue": true
+   },
+   "confirmation_statement": {
+    "overdue": true
+   },
+   "date_of_creation": "2011-07-20",
+   "has_charges": false,
+   "has_insolvency_history": true,
+   "registered_office_locality": "Brighton",
+   "sic_codes": [
+    "86101"
+   ],
+   "status": "administration",
+   "type": "plc"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.530624Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07712220",
+  "tool": "get_company_profile"
+ },
+ "get_company_profile|{\"company_number\": \"09446231\"}": {
+  "args": {
+   "company_number": "09446231"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2027-12-31",
+    "overdue": false
+   },
+   "confirmation_statement": {
+    "overdue": false
+   },
+   "date_of_creation": "2015-02-18",
+   "has_charges": false,
+   "has_insolvency_history": false,
+   "registered_office_locality": "London",
+   "sic_codes": [
+    "64191",
+    "64999"
+   ],
+   "status": "active",
+   "type": "ltd"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.520188Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09446231",
+  "tool": "get_company_profile"
+ },
+ "get_company_profile|{\"company_number\": \"09563205\"}": {
+  "args": {
+   "company_number": "09563205"
+  },
+  "data": {
+   "accounts": {
+    "next_due": "2027-10-31",
+    "overdue": false
+   },
+   "confirmation_statement": {
+    "overdue": false
+   },
+   "date_of_creation": "2015-04-27",
+   "has_charges": false,
+   "has_insolvency_history": false,
+   "registered_office_locality": "Plymouth",
+   "sic_codes": [
+    "99999"
+   ],
+   "status": "active",
+   "type": "ltd"
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:23.848553Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09563205",
+  "tool": "get_company_profile"
+ },
+ "get_filing_history|{\"company_number\": \"00502851\"}": {
+  "args": {
+   "company_number": "00502851",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "officers",
+     "date": "2026-10-27",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-03",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "resolution",
+     "date": "2026-06-01",
+     "description": "resolution",
+     "type": "RESOLUTIONS"
+    },
+    {
+     "category": "accounts",
+     "date": "2026-05-19",
+     "description": "accounts-with-accounts-type-group",
+     "type": "AA"
+    },
+    {
+     "category": "officers",
+     "date": "2026-05-18",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2026-04-16",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-04-16",
+     "description": "replacement-filing-of-director-appointment-with-name",
+     "type": "RP01AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-04-15",
+     "description": "change-person-director-company-with-change-date",
+     "type": "CH01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-04-14",
+     "description": "change-person-director-company-with-change-date",
+     "type": "CH01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-04-13",
+     "description": "change-person-director-company-with-change-date",
+     "type": "CH01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-04-13",
+     "description": "termination-secretary-company-with-name-termination-date",
+     "type": "TM02"
+    },
+    {
+     "category": "officers",
+     "date": "2026-03-09",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-02-02",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2025-07-01",
+     "description": "termination-secretary-company-with-name-termination-date",
+     "type": "TM02"
+    },
+    {
+     "category": "accounts",
+     "date": "2025-06-30",
+     "description": "accounts-with-accounts-type-group",
+     "type": "AA"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2025-04-17",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "officers",
+     "date": "2024-12-19",
+     "description": "appoint-person-secretary-company-with-name-date",
+     "type": "AP03"
+    },
+    {
+     "category": "accounts",
+     "date": "2024-07-05",
+     "description": "accounts-with-accounts-type-group",
+     "type": "AA"
+    },
+    {
+     "category": "officers",
+     "date": "2024-06-07",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "resolution",
+     "date": "2024-05-21",
+     "description": "resolution",
+     "type": "RESOLUTIONS"
+    }
+   ],
+   "total_count": 641
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:16.776104Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/00502851/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_filing_history|{\"company_number\": \"01833679\"}": {
+  "args": {
+   "company_number": "01833679",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "capital",
+     "date": "2026-10-22",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-22",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-12",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-12",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-07",
+     "description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+     "type": "SH04"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2026-08-28",
+     "description": "confirmation-statement-with-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-26",
+     "description": "capital-allotment-shares",
+     "type": "SH01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-21",
+     "description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+     "type": "SH04"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-10",
+     "description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+     "type": "SH04"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-10",
+     "description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+     "type": "SH04"
+    },
+    {
+     "category": "accounts",
+     "date": "2026-08-07",
+     "description": "accounts-with-accounts-type-group",
+     "type": "AA"
+    },
+    {
+     "category": "resolution",
+     "date": "2026-08-06",
+     "description": "resolution",
+     "type": "RESOLUTIONS"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-31",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-29",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-20",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-09",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-09",
+     "description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+     "type": "SH04"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-09",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-09",
+     "description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+     "type": "SH04"
+    },
+    {
+     "category": "capital",
+     "date": "2026-05-19",
+     "description": "capital-return-purchase-own-shares-treasury-capital-date",
+     "type": "SH03"
+    }
+   ],
+   "total_count": 8374
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:31.816407Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_filing_history|{\"company_number\": \"02468686\"}": {
+  "args": {
+   "company_number": "02468686",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "capital",
+     "date": "2026-11-25",
+     "description": "capital-allotment-shares",
+     "type": "SH01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-11-25",
+     "description": "capital-allotment-shares",
+     "type": "SH01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-09",
+     "description": "capital-allotment-shares",
+     "type": "SH01"
+    },
+    {
+     "category": "miscellaneous",
+     "date": "2026-09-01",
+     "description": "legacy",
+     "type": "RP01SH01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-21",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-18",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-18",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-18",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-18",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-18",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-13",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-13",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-04",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-04",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-04",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-08-04",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-29",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-29",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-29",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-07-17",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    }
+   ],
+   "total_count": 6137
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:56.740701Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/02468686/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_filing_history|{\"company_number\": \"07524813\"}": {
+  "args": {
+   "company_number": "07524813",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "capital",
+     "date": "2026-11-25",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-11-25",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-11-25",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-11-18",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-11-11",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-30",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-30",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-30",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-26",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-26",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-12",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2026-10-07",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-05",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-10-05",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-22",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-22",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-22",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-22",
+     "description": "capital-return-purchase-own-shares",
+     "type": "SH03"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-14",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    },
+    {
+     "category": "capital",
+     "date": "2026-09-14",
+     "description": "capital-cancellation-shares",
+     "type": "SH06"
+    }
+   ],
+   "total_count": 1069
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:21.134498Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_filing_history|{\"company_number\": \"07712220\"}": {
+  "args": {
+   "company_number": "07712220",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "insolvency",
+     "date": "2026-11-18",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2026-05-15",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2025-11-11",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "address",
+     "date": "2025-10-24",
+     "description": "change-registered-office-address-company-with-date-old-address-new-address",
+     "type": "AD01"
+    },
+    {
+     "category": "officers",
+     "date": "2025-08-05",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "insolvency",
+     "date": "2025-05-14",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2025-04-18",
+     "description": "liquidation-in-administration-extension-of-period",
+     "type": "AM19"
+    },
+    {
+     "category": "insolvency",
+     "date": "2024-11-13",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2024-05-16",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2023-11-14",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2023-07-07",
+     "description": "liquidation-change-of-membership-of-creditors-or-liquidation-committee",
+     "type": "COM2"
+    },
+    {
+     "category": "insolvency",
+     "date": "2023-05-15",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2023-02-20",
+     "description": "liquidation-change-of-membership-of-creditors-or-liquidation-committee",
+     "type": "COM2"
+    },
+    {
+     "category": "insolvency",
+     "date": "2022-11-14",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2022-08-19",
+     "description": "liquidation-change-of-membership-of-creditors-or-liquidation-committee",
+     "type": "COM2"
+    },
+    {
+     "category": "insolvency",
+     "date": "2022-05-10",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "insolvency",
+     "date": "2022-03-29",
+     "description": "liquidation-in-administration-extension-of-period",
+     "type": "AM19"
+    },
+    {
+     "category": "insolvency",
+     "date": "2021-11-11",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    },
+    {
+     "category": "officers",
+     "date": "2021-11-02",
+     "description": "termination-secretary-company-with-name-termination-date",
+     "type": "TM02"
+    },
+    {
+     "category": "insolvency",
+     "date": "2021-05-13",
+     "description": "liquidation-in-administration-progress-report",
+     "type": "AM10"
+    }
+   ],
+   "total_count": 143
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.650038Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07712220/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_filing_history|{\"company_number\": \"09446231\"}": {
+  "args": {
+   "company_number": "09446231",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "confirmation-statement",
+     "date": "2026-11-23",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-10-21",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-09-10",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "accounts",
+     "date": "2026-08-27",
+     "description": "accounts-with-accounts-type-full",
+     "type": "AA"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-30",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-30",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-30",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-30",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-07-30",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-06-10",
+     "description": "change-person-director-company-with-change-date",
+     "type": "CH01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-06-10",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-06-10",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-02-13",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2026-02-11",
+     "description": "termination-director-company-with-name-termination-date",
+     "type": "TM01"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2025-11-11",
+     "description": "confirmation-statement-with-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "officers",
+     "date": "2025-10-16",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2025-10-16",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2025-09-04",
+     "description": "second-filing-of-director-appointment-with-name",
+     "type": "RP04AP01"
+    },
+    {
+     "category": "officers",
+     "date": "2025-09-02",
+     "description": "appoint-person-director-company-with-name-date",
+     "type": "AP01"
+    },
+    {
+     "category": "capital",
+     "date": "2025-09-02",
+     "description": "capital-allotment-shares",
+     "type": "SH01"
+    }
+   ],
+   "total_count": 217
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.584084Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09446231/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_filing_history|{\"company_number\": \"09563205\"}": {
+  "args": {
+   "company_number": "09563205",
+   "limit": 20
+  },
+  "data": {
+   "filings": [
+    {
+     "category": "accounts",
+     "date": "2026-09-24",
+     "description": "accounts-with-accounts-type-micro-entity",
+     "type": "AA"
+    },
+    {
+     "category": "persons-with-significant-control",
+     "date": "2026-05-13",
+     "description": "change-to-a-person-with-significant-control",
+     "type": "PSC05"
+    },
+    {
+     "category": "persons-with-significant-control",
+     "date": "2026-05-12",
+     "description": "notification-of-a-person-with-significant-control",
+     "type": "PSC02"
+    },
+    {
+     "category": "persons-with-significant-control",
+     "date": "2026-05-12",
+     "description": "cessation-of-a-person-with-significant-control",
+     "type": "PSC07"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2026-04-17",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "accounts",
+     "date": "2025-10-03",
+     "description": "accounts-with-accounts-type-micro-entity",
+     "type": "AA"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2025-04-24",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "accounts",
+     "date": "2024-09-18",
+     "description": "accounts-with-accounts-type-micro-entity",
+     "type": "AA"
+    },
+    {
+     "category": "persons-with-significant-control",
+     "date": "2024-04-17",
+     "description": "change-to-a-person-with-significant-control",
+     "type": "PSC05"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2024-04-17",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "persons-with-significant-control",
+     "date": "2024-04-17",
+     "description": "change-to-a-person-with-significant-control",
+     "type": "PSC04"
+    },
+    {
+     "category": "persons-with-significant-control",
+     "date": "2024-04-17",
+     "description": "change-to-a-person-with-significant-control",
+     "type": "PSC04"
+    },
+    {
+     "category": "officers",
+     "date": "2024-04-17",
+     "description": "change-person-director-company-with-change-date",
+     "type": "CH01"
+    },
+    {
+     "category": "change-of-name",
+     "date": "2023-11-06",
+     "description": "certificate-change-of-name-company",
+     "type": "CERTNM"
+    },
+    {
+     "category": "change-of-name",
+     "date": "2023-11-06",
+     "description": "change-of-name-notice",
+     "type": "CONNOT"
+    },
+    {
+     "category": "accounts",
+     "date": "2023-10-26",
+     "description": "accounts-with-accounts-type-micro-entity",
+     "type": "AA"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2023-04-28",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "accounts",
+     "date": "2022-11-08",
+     "description": "accounts-with-accounts-type-dormant",
+     "type": "AA"
+    },
+    {
+     "category": "confirmation-statement",
+     "date": "2022-04-29",
+     "description": "confirmation-statement-with-no-updates",
+     "type": "CS01"
+    },
+    {
+     "category": "accounts",
+     "date": "2021-10-20",
+     "description": "accounts-with-accounts-type-dormant",
+     "type": "AA"
+    }
+   ],
+   "total_count": 38
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:23.907839Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09563205/filing-history",
+  "tool": "get_filing_history"
+ },
+ "get_insolvency|{\"company_number\": \"00502851\"}": {
+  "args": {
+   "company_number": "00502851"
+  },
+  "data": {
+   "cases": []
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:16.863276Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/00502851/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_insolvency|{\"company_number\": \"01833679\"}": {
+  "args": {
+   "company_number": "01833679"
+  },
+  "data": {
+   "cases": []
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:31.895589Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_insolvency|{\"company_number\": \"02468686\"}": {
+  "args": {
+   "company_number": "02468686"
+  },
+  "data": {
+   "cases": []
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:56.824746Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/02468686/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_insolvency|{\"company_number\": \"07524813\"}": {
+  "args": {
+   "company_number": "07524813"
+  },
+  "data": {
+   "cases": []
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:21.207778Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_insolvency|{\"company_number\": \"07712220\"}": {
+  "args": {
+   "company_number": "07712220"
+  },
+  "data": {
+   "cases": [
+    {
+     "dates": [
+      {
+       "date": "2020-04-09",
+       "type": "administration-started-on"
+      }
+     ],
+     "practitioners": 3,
+     "type": "in-administration"
+    }
+   ]
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.744441Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07712220/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_insolvency|{\"company_number\": \"09446231\"}": {
+  "args": {
+   "company_number": "09446231"
+  },
+  "data": {
+   "cases": []
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.686135Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09446231/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_insolvency|{\"company_number\": \"09563205\"}": {
+  "args": {
+   "company_number": "09563205"
+  },
+  "data": {
+   "cases": []
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:23.992336Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09563205/insolvency",
+  "tool": "get_insolvency"
+ },
+ "get_officers|{\"company_number\": \"00502851\"}": {
+  "args": {
+   "company_number": "00502851"
+  },
+  "data": {
+   "active_directors": 9,
+   "active_secretaries": 2,
+   "resignations_last_12m": 3
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:16.715441Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/00502851/officers",
+  "tool": "get_officers"
+ },
+ "get_officers|{\"company_number\": \"01833679\"}": {
+  "args": {
+   "company_number": "01833679"
+  },
+  "data": {
+   "active_directors": 12,
+   "active_secretaries": 1,
+   "resignations_last_12m": 3
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:31.730206Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679/officers",
+  "tool": "get_officers"
+ },
+ "get_officers|{\"company_number\": \"02468686\"}": {
+  "args": {
+   "company_number": "02468686"
+  },
+  "data": {
+   "active_directors": 13,
+   "active_secretaries": 1,
+   "resignations_last_12m": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:56.531499Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/02468686/officers",
+  "tool": "get_officers"
+ },
+ "get_officers|{\"company_number\": \"07524813\"}": {
+  "args": {
+   "company_number": "07524813"
+  },
+  "data": {
+   "active_directors": 14,
+   "active_secretaries": 1,
+   "resignations_last_12m": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:21.037639Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813/officers",
+  "tool": "get_officers"
+ },
+ "get_officers|{\"company_number\": \"07712220\"}": {
+  "args": {
+   "company_number": "07712220"
+  },
+  "data": {
+   "active_directors": 0,
+   "active_secretaries": 0,
+   "resignations_last_12m": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.599374Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07712220/officers",
+  "tool": "get_officers"
+ },
+ "get_officers|{\"company_number\": \"09446231\"}": {
+  "args": {
+   "company_number": "09446231"
+  },
+  "data": {
+   "active_directors": 8,
+   "active_secretaries": 1,
+   "resignations_last_12m": 8
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.554301Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09446231/officers",
+  "tool": "get_officers"
+ },
+ "get_officers|{\"company_number\": \"09563205\"}": {
+  "args": {
+   "company_number": "09563205"
+  },
+  "data": {
+   "active_directors": 1,
+   "active_secretaries": 0,
+   "resignations_last_12m": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:23.876470Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09563205/officers",
+  "tool": "get_officers"
+ },
+ "get_psc|{\"company_number\": \"00502851\"}": {
+  "args": {
+   "company_number": "00502851"
+  },
+  "data": {
+   "ceased_count": 0,
+   "corporate_pscs": [],
+   "kinds": {},
+   "total_count": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:16.807028Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/00502851/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "get_psc|{\"company_number\": \"01833679\"}": {
+  "args": {
+   "company_number": "01833679"
+  },
+  "data": {
+   "ceased_count": 0,
+   "corporate_pscs": [],
+   "kinds": {},
+   "total_count": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:31.848980Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "get_psc|{\"company_number\": \"02468686\"}": {
+  "args": {
+   "company_number": "02468686"
+  },
+  "data": {
+   "ceased_count": 0,
+   "corporate_pscs": [],
+   "kinds": {},
+   "total_count": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:56.774457Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/02468686/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "get_psc|{\"company_number\": \"07524813\"}": {
+  "args": {
+   "company_number": "07524813"
+  },
+  "data": {
+   "ceased_count": 0,
+   "corporate_pscs": [],
+   "kinds": {},
+   "total_count": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:15:21.164865Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "get_psc|{\"company_number\": \"07712220\"}": {
+  "args": {
+   "company_number": "07712220"
+  },
+  "data": {
+   "ceased_count": 0,
+   "corporate_pscs": [],
+   "kinds": {},
+   "total_count": 0
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.701303Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/07712220/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "get_psc|{\"company_number\": \"09446231\"}": {
+  "args": {
+   "company_number": "09446231"
+  },
+  "data": {
+   "ceased_count": 2,
+   "corporate_pscs": [
+    "Monzo Bank Holding Group Limited",
+    "Passion Capital Fs (Gp) Llp",
+    "Passion Capital Fs Lp"
+   ],
+   "kinds": {
+    "corporate-entity-person-with-significant-control": 3
+   },
+   "total_count": 3
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:14:45.616773Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09446231/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "get_psc|{\"company_number\": \"09563205\"}": {
+  "args": {
+   "company_number": "09563205"
+  },
+  "data": {
+   "ceased_count": 1,
+   "corporate_pscs": [
+    "Cds (Superstores International) Limited",
+    "Norton Group Holdings Limited"
+   ],
+   "kinds": {
+    "corporate-entity-person-with-significant-control": 2,
+    "individual-person-with-significant-control": 2
+   },
+   "total_count": 4
+  },
+  "error": null,
+  "ok": true,
+  "retrieved_at": "2026-11-26T14:16:23.949591Z",
+  "source_url": "https://find-and-update.company-information.service.gov.uk/company/09563205/persons-with-significant-control",
+  "tool": "get_psc"
+ },
+ "search_news|{\"company_name\": \"02468686\"}": {
+  "args": {
+   "company_name": "02468686",
+   "days": 180,
+   "limit": 5
+  },
+  "data": null,
+  "error": "HTTP 429",
+  "ok": false,
+  "retrieved_at": "2026-11-26T15:09:43.006559Z",
+  "source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202468686%22&maxrecords=5&timespan=180d&sort=datedesc",
+  "tool": "search_news"
+ }
+}

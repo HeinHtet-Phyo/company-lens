@@ -46,10 +46,18 @@ def boot_ci(xs: list[float], n: int = 2000, seed: int = 7) -> tuple[float, float
     return statistics.fmean(xs), means[int(0.025 * n)], means[int(0.975 * n)]
 
 
+_WORDS = {w: str(i) for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen "
+    "sixteen seventeen eighteen nineteen twenty".split())}
+_DATE = re.compile(r"\b(\d{1,2}) (?:January|February|March|April|May|June|July|August|September|October|November|December) (\d{4})", re.I)
+
+
 def unsupported_numbers(rep: dict[str, Any]) -> tuple[int, int]:
     ev = " ".join(e["excerpt"] for e in rep["evidence"]) + " " + json.dumps(rep["facts"])
     ev_nums = {m.replace(",", "") for m in _NUM.findall(ev)}
     summ = re.sub(r"\[e\d+\]", "", rep["summary"])
+    summ = _DATE.sub(lambda m: m.group(2), summ)
+    summ = re.sub(r"\b(" + "|".join(_WORDS) + r")\b", lambda m: _WORDS[m.group(1).lower()], summ, flags=re.I)
     nums = [m.replace(",", "") for m in _NUM.findall(summ)]
     return sum(1 for n in nums if n not in ev_nums), len(nums)
 

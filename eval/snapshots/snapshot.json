@@ -879,19 +879,6 @@
 "retrieved_at": "2026-11-26T14:14:45.948783Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"monzo bank limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "MONZO BANK LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22MONZO+BANK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:14:56.391872Z",
-"error": "HTTP 429"
-},
 "search_news|{\"company_name\": \"nmc health plc\"}": {
 "tool": "search_news",
 "args": {
@@ -1287,19 +1274,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:14:56.644632Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"virgin atlantic airways limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "VIRGIN ATLANTIC AIRWAYS LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22VIRGIN+ATLANTIC+AIRWAYS+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:14:56.716984Z",
-"error": "HTTP 429"
 },
 "get_filing_history|{\"company_number\": \"02468686\"}": {
 "tool": "get_filing_history",
@@ -3532,19 +3506,6 @@
 "retrieved_at": "2026-11-26T14:15:23.379530Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"rolls-royce holdings plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "ROLLS-ROYCE HOLDINGS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ROLLS-ROYCE+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:31.316499Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"atom bank plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -4437,19 +4398,6 @@
 "retrieved_at": "2026-11-26T14:15:33.717856Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"atom bank plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "ATOM BANK PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ATOM+BANK+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:41.680058Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"workspace group plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -4735,19 +4683,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:15:41.995090Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"vodafone group public limited company\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "VODAFONE GROUP PUBLIC LIMITED COMPANY",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22VODAFONE+GROUP+PUBLIC+LIMITED+COMPANY%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:42.000945Z",
-"error": "ConnectTimeout: "
 },
 "search_companies|{\"query\": \"toys \\\"r\\\" us limited\"}": {
 "tool": "search_companies",
@@ -5082,19 +5017,6 @@
 "retrieved_at": "2026-11-26T14:15:42.210482Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"easyjet plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "EASYJET PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22EASYJET+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:43.825449Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"greensill capital (uk) limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -5398,19 +5320,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:15:44.036606Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"workspace group plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "WORKSPACE GROUP PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WORKSPACE+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:52.100129Z",
-"error": "ConnectTimeout: "
 },
 "search_companies|{\"query\": \"hsbc holdings plc\"}": {
 "tool": "search_companies",
@@ -5997,19 +5906,6 @@
 "retrieved_at": "2026-11-26T14:15:52.669469Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"greensill capital (uk) limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "GREENSILL CAPITAL (UK) LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22GREENSILL+CAPITAL+%28UK%29+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:15:55.999154Z",
-"error": "HTTP 429"
-},
 "search_companies|{\"query\": \"brewdog plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -6308,19 +6204,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:15:56.225082Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"hsbc holdings plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "HSBC HOLDINGS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22HSBC+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:02.589500Z",
-"error": "ConnectTimeout: "
 },
 "search_companies|{\"query\": \"kingfisher plc\"}": {
 "tool": "search_companies",
@@ -6922,19 +6805,6 @@
 "retrieved_at": "2026-11-26T14:16:03.238587Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"brewdog plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "BREWDOG PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BREWDOG+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:06.337595Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"monarch airlines limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -7227,19 +7097,6 @@
 "retrieved_at": "2026-11-26T14:16:06.512328Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"thomas cook group plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "THOMAS COOK GROUP PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22THOMAS+COOK+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:13.263528Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"dyson limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -7317,19 +7174,6 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/company/02627406",
 "retrieved_at": "2026-11-26T14:16:13.335146Z",
 "error": null
-},
-"search_news|{\"company_name\": \"kingfisher plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "KINGFISHER PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22KINGFISHER+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:13.348141Z",
-"error": "ConnectTimeout: "
 },
 "get_officers|{\"company_number\": \"02627406\"}": {
 "tool": "get_officers",
@@ -8132,19 +7976,6 @@
 "retrieved_at": "2026-11-26T14:16:16.863337Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"dyson limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "DYSON LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DYSON+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:23.602680Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"oaknorth bank plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -8237,19 +8068,6 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/company/08595042/officers",
 "retrieved_at": "2026-11-26T14:16:23.733396Z",
 "error": null
-},
-"search_news|{\"company_name\": \"jd sports fashion plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "JD SPORTS FASHION PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22JD+SPORTS+FASHION+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:23.776416Z",
-"error": "ConnectTimeout: "
 },
 "get_filing_history|{\"company_number\": \"08595042\"}": {
 "tool": "get_filing_history",
@@ -8742,19 +8560,6 @@
 "retrieved_at": "2026-11-26T14:16:23.992489Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"greggs plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "GREGGS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22GREGGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:26.971477Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"bhs limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -9039,19 +8844,6 @@
 "retrieved_at": "2026-11-26T14:16:27.146547Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"oaknorth bank plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "OAKNORTH BANK PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22OAKNORTH+BANK+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:33.964929Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"harrods limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -9129,19 +8921,6 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/company/00030209",
 "retrieved_at": "2026-11-26T14:16:34.037715Z",
 "error": null
-},
-"search_news|{\"company_name\": \"wilko limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "WILKO LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WILKO+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:34.096175Z",
-"error": "ConnectTimeout: "
 },
 "get_officers|{\"company_number\": \"00030209\"}": {
 "tool": "get_officers",
@@ -9940,19 +9719,6 @@
 "retrieved_at": "2026-11-26T14:16:37.535072Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"j sainsbury plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "J SAINSBURY PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22J+SAINSBURY+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:45.800082Z",
-"error": "HTTP 429"
-},
 "search_companies|{\"query\": \"revolut ltd\"}": {
 "tool": "search_companies",
 "args": {
@@ -10343,19 +10109,6 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/company/00048839",
 "retrieved_at": "2026-11-26T14:16:48.605512Z",
 "error": null
-},
-"search_news|{\"company_name\": \"premier foods plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "PREMIER FOODS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22PREMIER+FOODS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:48.610105Z",
-"error": "HTTP 429"
 },
 "get_officers|{\"company_number\": \"00048839\"}": {
 "tool": "get_officers",
@@ -10855,19 +10608,6 @@
 "retrieved_at": "2026-11-26T14:16:48.878742Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"revolut ltd\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "REVOLUT LTD",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22REVOLUT+LTD%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:57.998982Z",
-"error": "HTTP 429"
-},
 "search_companies|{\"query\": \"ocado group plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -11156,19 +10896,6 @@
 "retrieved_at": "2026-11-26T14:16:58.274155Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"barclays plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "BARCLAYS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BARCLAYS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:58.940641Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"bp p.l.c.\"}": {
 "tool": "search_companies",
 "args": {
@@ -11218,19 +10945,6 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/search?q=BP P.L.C.",
 "retrieved_at": "2026-11-26T14:16:58.974688Z",
 "error": null
-},
-"search_news|{\"company_name\": \"zopa bank limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "ZOPA BANK LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ZOPA+BANK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:16:58.984727Z",
-"error": "ConnectTimeout: "
 },
 "get_company_profile|{\"company_number\": \"00102498\"}": {
 "tool": "get_company_profile",
@@ -11754,19 +11468,6 @@
 "retrieved_at": "2026-11-26T14:16:59.380636Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"ocado group plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "OCADO GROUP PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22OCADO+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:17:08.380067Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"sig plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -12093,19 +11794,6 @@
 "source_url": "https://find-and-update.company-information.service.gov.uk/company/03757874",
 "retrieved_at": "2026-11-26T14:17:09.484833Z",
 "error": null
-},
-"search_news|{\"company_name\": \"bp p.l.c.\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "BP P.L.C.",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BP+P.L.C.%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:17:09.486603Z",
-"error": "ConnectTimeout: "
 },
 "get_company_profile|{\"company_number\": \"06376492\"}": {
 "tool": "get_company_profile",
@@ -14656,19 +14344,6 @@
 "retrieved_at": "2026-11-26T14:17:40.720088Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"01417162\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "01417162",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2201417162%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:17:42.512302Z",
-"error": "HTTP 429"
-},
 "get_company_profile|{\"company_number\": \"01354001\"}": {
 "tool": "get_company_profile",
 "args": {
@@ -16331,19 +16006,6 @@
 "retrieved_at": "2026-11-26T14:18:01.993115Z",
 "error": "ConnectTimeout: "
 },
-"search_news|{\"company_name\": \"01354001\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "01354001",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2201354001%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:18:01.999132Z",
-"error": "ReadTimeout: "
-},
 "search_companies|{\"query\": \"zzqx qwvb holdings\"}": {
 "tool": "search_companies",
 "args": {
@@ -17358,19 +17020,6 @@
 "retrieved_at": "2026-11-26T14:33:27.175536Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"future plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "FUTURE PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22FUTURE+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:33:39.033284Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"cambridge analytica limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -17551,19 +17200,6 @@
 "retrieved_at": "2026-11-26T14:33:39.236056Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"carillion plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "CARILLION PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22CARILLION+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:33:41.023435Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"national grid plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -17626,19 +17262,6 @@
 "retrieved_at": "2026-11-26T14:33:41.058007Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"patisserie holdings plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "PATISSERIE HOLDINGS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22PATISSERIE+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:33:41.289380Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"british steel limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -17700,19 +17323,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:33:41.327934Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"cambridge analytica limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "CAMBRIDGE ANALYTICA LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22CAMBRIDGE+ANALYTICA+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:33:50.345669Z",
-"error": "ConnectTimeout: "
 },
 "search_companies|{\"query\": \"blue prism group limited\"}": {
 "tool": "search_companies",
@@ -18005,19 +17615,6 @@
 "retrieved_at": "2026-11-26T14:33:50.628637Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"british steel limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "BRITISH STEEL LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BRITISH+STEEL+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:33:53.043921Z",
-"error": "HTTP 429"
-},
 "search_companies|{\"query\": \"debenhams plc\"}": {
 "tool": "search_companies",
 "args": {
@@ -18079,19 +17676,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:33:53.075284Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"national grid plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "NATIONAL GRID PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NATIONAL+GRID+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:33:54.221607Z",
-"error": "HTTP 429"
 },
 "search_companies|{\"query\": \"deliveroo limited\"}": {
 "tool": "search_companies",
@@ -18384,19 +17968,6 @@
 "retrieved_at": "2026-11-26T14:33:54.402230Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"blue prism group limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "BLUE PRISM GROUP LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BLUE+PRISM+GROUP+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:00.736457Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"farfetch uk limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -18459,19 +18030,6 @@
 "retrieved_at": "2026-11-26T14:34:00.840341Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"debenhams plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "DEBENHAMS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DEBENHAMS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:03.187815Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"wonga.com limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -18526,19 +18084,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:34:03.216646Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"deliveroo limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "DELIVEROO LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DELIVEROO+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:04.511177Z",
-"error": "ConnectTimeout: "
 },
 "search_companies|{\"query\": \"arcadia group ltd\"}": {
 "tool": "search_companies",
@@ -18726,19 +18271,6 @@
 "retrieved_at": "2026-11-26T14:34:04.726102Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"farfetch uk limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "FARFETCH UK LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22FARFETCH+UK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:10.949089Z",
-"error": "ConnectTimeout: "
-},
 "search_companies|{\"query\": \"wise payments limited\"}": {
 "tool": "search_companies",
 "args": {
@@ -18800,19 +18332,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:34:11.011902Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"wonga.com limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "WONGA.COM LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WONGA.COM+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:13.324546Z",
-"error": "ConnectTimeout: "
 },
 "search_companies|{\"query\": \"asos plc\"}": {
 "tool": "search_companies",
@@ -18876,19 +18395,6 @@
 "retrieved_at": "2026-11-26T14:34:13.356319Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"arcadia group ltd\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "ARCADIA GROUP LTD",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ARCADIA+GROUP+LTD%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:14.833304Z",
-"error": "ConnectTimeout: "
-},
 "check_fca_register|{\"company_name\": \"nf001705\", \"company_number\": \"nf001705\"}": {
 "tool": "check_fca_register",
 "args": {
@@ -18901,19 +18407,6 @@
 "retrieved_at": "2026-11-26T14:34:14.834208Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"wise payments limited\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "WISE PAYMENTS LIMITED",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WISE+PAYMENTS+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:21.117378Z",
-"error": "ConnectTimeout: "
-},
 "check_fca_register|{\"company_name\": \"sc095000\", \"company_number\": \"sc095000\"}": {
 "tool": "check_fca_register",
 "args": {
@@ -18925,19 +18418,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:34:21.117805Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"asos plc\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "ASOS PLC",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ASOS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:23.465958Z",
-"error": "ConnectTimeout: "
 },
 "get_company_profile|{\"company_number\": \"16351760\"}": {
 "tool": "get_company_profile",
@@ -19099,19 +18579,6 @@
 "retrieved_at": "2026-11-26T14:34:23.644573Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"nf001705\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "NF001705",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NF001705%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:24.941952Z",
-"error": "ConnectTimeout: "
-},
 "check_fca_register|{\"company_name\": \"02366661\", \"company_number\": \"02366661\"}": {
 "tool": "check_fca_register",
 "args": {
@@ -19123,19 +18590,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:34:24.942512Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"sc095000\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "SC095000",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22SC095000%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:31.225677Z",
-"error": "ConnectTimeout: "
 },
 "check_fca_register|{\"company_name\": \"02468686\", \"company_number\": \"02468686\"}": {
 "tool": "check_fca_register",
@@ -19149,19 +18603,6 @@
 "retrieved_at": "2026-11-26T14:34:31.226452Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"02366661\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "02366661",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202366661%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:35.049382Z",
-"error": "ConnectTimeout: "
-},
 "check_fca_register|{\"company_name\": \"08140312\", \"company_number\": \"08140312\"}": {
 "tool": "check_fca_register",
 "args": {
@@ -19173,19 +18614,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:34:35.049876Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"16351760\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "16351760",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2216351760%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:36.249632Z",
-"error": "HTTP 429"
 },
 "check_fca_register|{\"company_name\": \"03849958\", \"company_number\": \"03849958\"}": {
 "tool": "check_fca_register",
@@ -19199,19 +18627,6 @@
 "retrieved_at": "2026-11-26T14:34:36.250116Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"03849958\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "03849958",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2203849958%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:36.362449Z",
-"error": "RemoteProtocolError: Server disconnected without sending a response."
-},
 "check_fca_register|{\"company_name\": \"00998314\", \"company_number\": \"00998314\"}": {
 "tool": "check_fca_register",
 "args": {
@@ -19223,19 +18638,6 @@
 "source_url": "https://register.fca.org.uk/s/firm",
 "retrieved_at": "2026-11-26T14:34:36.363027Z",
 "error": "FCA credentials not configured"
-},
-"search_news|{\"company_name\": \"02468686\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "02468686",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202468686%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:41.333575Z",
-"error": "ConnectTimeout: "
 },
 "get_company_profile|{\"company_number\": \"07063562\"}": {
 "tool": "get_company_profile",
@@ -19478,19 +18880,6 @@
 "retrieved_at": "2026-11-26T14:34:41.607631Z",
 "error": "FCA credentials not configured"
 },
-"search_news|{\"company_name\": \"08140312\"}": {
-"tool": "search_news",
-"args": {
-"company_name": "08140312",
-"days": 180,
-"limit": 5
-},
-"ok": false,
-"data": null,
-"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2208140312%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:45.164744Z",
-"error": "ConnectTimeout: "
-},
 "check_fca_register|{\"company_name\": \"09092149\", \"company_number\": \"09092149\"}": {
 "tool": "check_fca_register",
 "args": {
@@ -19503,6 +18892,748 @@
 "retrieved_at": "2026-11-26T14:34:45.165195Z",
 "error": "FCA credentials not configured"
 },
+"search_news|{\"company_name\": \"virgin atlantic airways limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "VIRGIN ATLANTIC AIRWAYS LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22VIRGIN+ATLANTIC+AIRWAYS+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:35:35.950017Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"carillion plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "CARILLION PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22CARILLION+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:36:38.465300Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"oaknorth bank plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "OAKNORTH BANK PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22OAKNORTH+BANK+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:37:39.342342Z",
+"error": null
+},
+"search_news|{\"company_name\": \"future plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "FUTURE PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22FUTURE+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:38:32.239706Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"thomas cook group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "THOMAS COOK GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22THOMAS+COOK+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:39:26.121105Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"patisserie holdings plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "PATISSERIE HOLDINGS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22PATISSERIE+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:39:47.252576Z",
+"error": null
+},
+"search_news|{\"company_name\": \"cambridge analytica limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "CAMBRIDGE ANALYTICA LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22CAMBRIDGE+ANALYTICA+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:40:07.085964Z",
+"error": null
+},
+"search_news|{\"company_name\": \"national grid plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "NATIONAL GRID PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NATIONAL+GRID+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:40:58.425834Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"revolut ltd\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "REVOLUT LTD",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22REVOLUT+LTD%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:41:50.811685Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"atom bank plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ATOM BANK PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ATOM+BANK+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:42:45.547314Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"british steel limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BRITISH STEEL LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BRITISH+STEEL+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:43:38.471018Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"rolls-royce holdings plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ROLLS-ROYCE HOLDINGS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ROLLS-ROYCE+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:44:38.221747Z",
+"error": "ReadTimeout: "
+},
+"search_news|{\"company_name\": \"premier foods plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "PREMIER FOODS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22PREMIER+FOODS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:45:29.900415Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"greensill capital (uk) limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "GREENSILL CAPITAL (UK) LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22GREENSILL+CAPITAL+%28UK%29+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:46:29.147589Z",
+"error": null
+},
+"search_news|{\"company_name\": \"blue prism group limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BLUE PRISM GROUP LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BLUE+PRISM+GROUP+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:47:23.949048Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"vodafone group public limited company\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "VODAFONE GROUP PUBLIC LIMITED COMPANY",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22VODAFONE+GROUP+PUBLIC+LIMITED+COMPANY%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:47:43.469282Z",
+"error": null
+},
+"search_news|{\"company_name\": \"kingfisher plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "KINGFISHER PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": [
+{
+"url": "https://www.retaildetail.eu/news/food/thierry-garnier-will-take-office-as-ceo-of-ahold-delhaize-on-march-3/",
+"title": "Thierry Garnier will take office as CEO of Ahold Delhaize on March 3",
+"seendate": "20261021T120000Z",
+"domain": "retaildetail.eu"
+},
+{
+"url": "https://www.tickerreport.com/banking-finance/13595232/kingfisher-lonkgf-to-repurchase-0-stock.html",
+"title": "Kingfisher ( LON : KGF ) to Repurchase 0 Stock",
+"seendate": "20260925T053000Z",
+"domain": "tickerreport.com"
+},
+{
+"url": "https://finance.yahoo.com/markets/stocks/articles/kingfisher-h1-earnings-call-highlights-100324747.html",
+"title": "Kingfisher H1 Earnings Call Highlights",
+"seendate": "20260923T193000Z",
+"domain": "finance.yahoo.com"
+},
+{
+"url": "https://www.themarketsdaily.com/2026/09/23/kingfisher-lonkgf-to-buyback-0-outstanding-shares.html",
+"title": "Kingfisher ( LON : KGF ) to Buyback 0 Outstanding Shares",
+"seendate": "20260923T031500Z",
+"domain": "themarketsdaily.com"
+},
+{
+"url": "https://www.tickerreport.com/banking-finance/13591917/kingfisher-lonkgf-trading-9-6-higher-still-a-buy.html",
+"title": "Kingfisher ( LON : KGF ) Trading 9 . 6 % Higher \u2013 Still a Buy ? ",
+"seendate": "20260922T180000Z",
+"domain": "tickerreport.com"
+}
+]
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22KINGFISHER+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:48:23.597964Z",
+"error": null
+},
+"search_news|{\"company_name\": \"workspace group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "WORKSPACE GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": [
+{
+"url": "https://www.investegate.co.uk/announcement/rns/workspace-group--wkp/holding-s-in-company/9835002",
+"title": "Holding ( s ) in Company | Company Announcement",
+"seendate": "20261021T161500Z",
+"domain": "investegate.co.uk"
+},
+{
+"url": "https://www.investegate.co.uk/announcement/rns/workspace-group--wkp/holding-s-in-company/9802685",
+"title": "Holding ( s ) in Company | Company Announcement",
+"seendate": "20261001T150000Z",
+"domain": "investegate.co.uk"
+}
+]
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WORKSPACE+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:48:44.948519Z",
+"error": null
+},
+"search_news|{\"company_name\": \"brewdog plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BREWDOG PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BREWDOG+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:49:40.388641Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"hsbc holdings plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "HSBC HOLDINGS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22HSBC+HOLDINGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:50:32.031062Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"ocado group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "OCADO GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22OCADO+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:51:42.482680Z",
+"error": "ReadTimeout: "
+},
+"search_news|{\"company_name\": \"jd sports fashion plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "JD SPORTS FASHION PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22JD+SPORTS+FASHION+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:52:36.885176Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"debenhams plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "DEBENHAMS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DEBENHAMS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:52:58.765241Z",
+"error": null
+},
+"search_news|{\"company_name\": \"dyson limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "DYSON LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DYSON+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:53:48.976327Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"deliveroo limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "DELIVEROO LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DELIVEROO+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:54:41.302365Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"farfetch uk limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "FARFETCH UK LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22FARFETCH+UK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:55:36.074036Z",
+"error": null
+},
+"search_news|{\"company_name\": \"monzo bank limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "MONZO BANK LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22MONZO+BANK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:56:15.923198Z",
+"error": null
+},
+"search_news|{\"company_name\": \"wonga.com limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "WONGA.COM LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WONGA.COM+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:56:37.526979Z",
+"error": null
+},
+"search_news|{\"company_name\": \"arcadia group ltd\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ARCADIA GROUP LTD",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ARCADIA+GROUP+LTD%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:56:56.919464Z",
+"error": null
+},
+"search_news|{\"company_name\": \"wilko limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "WILKO LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WILKO+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:57:46.007391Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"greggs plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "GREGGS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": [
+{
+"url": "https://www.proactiveinvestors.com/companies/news/1099420/markets-live-wall-street-opens-higher-despite-rising-treasury-yields-and-strong-jobs-data-1099420.html",
+"title": "MARKETS LIVE : Wall Street opens higher despite rising Treasury yields and strong jobs data",
+"seendate": "20261001T143000Z",
+"domain": "proactiveinvestors.com"
+},
+{
+"url": "https://www.themarketsdaily.com/2026/09/22/analysts-set-greggs-plc-longrg-price-target-at-gbx-1900.html",
+"title": "Analysts Set Greggs plc ( LON : GRG ) Price Target at GBX 1 , 900",
+"seendate": "20260922T074500Z",
+"domain": "themarketsdaily.com"
+}
+]
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22GREGGS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:58:22.138565Z",
+"error": null
+},
+"search_news|{\"company_name\": \"easyjet plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "EASYJET PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": [
+{
+"url": "https://www.investegate.co.uk/announcement/mfn/easyjet--ezj/holding-s-in-company/9838934",
+"title": "Holding ( s ) in Company | Company Announcement",
+"seendate": "20261023T110000Z",
+"domain": "investegate.co.uk"
+},
+{
+"url": "https://www.manilatimes.net/2026/10/21/tmt-newswire/globenewswire/davidson-kempner-capital-management-lp-form-83-easyjet-plc/2451020",
+"title": "Davidson Kempner Capital Management LP : Form 8 . 3 - easyJet Plc",
+"seendate": "20261021T151500Z",
+"domain": "manilatimes.net"
+},
+{
+"url": "https://www.investegate.co.uk/announcement/rns/mobico-group--mcg/disclosure-table/9834011",
+"title": "Disclosure Table | Company Announcement",
+"seendate": "20261021T101500Z",
+"domain": "investegate.co.uk"
+},
+{
+"url": "https://www.finanznachrichten.de/nachrichten-2026-10/69855685-norges-bank-form-8-3-easyjet-plc-008.htm",
+"title": "Norges Bank - Form 8 . 3 - easyJet PLC",
+"seendate": "20261016T090000Z",
+"domain": "finanznachrichten.de"
+},
+{
+"url": "https://www.dailypolitical.com/2026/10/16/easyjet-plc-lonezj-stock-rated-hold-by-wall-street-brokerages.html",
+"title": "easyJet plc ( LON : EZJ ) Stock Rated  Hold  by Wall Street Brokerages",
+"seendate": "20261016T084500Z",
+"domain": "dailypolitical.com"
+}
+]
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22EASYJET+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T14:59:17.269293Z",
+"error": null
+},
+"search_news|{\"company_name\": \"wise payments limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "WISE PAYMENTS LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22WISE+PAYMENTS+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:00:08.505555Z",
+"error": null
+},
+"search_news|{\"company_name\": \"barclays plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BARCLAYS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BARCLAYS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:01:04.849585Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"zopa bank limited\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ZOPA BANK LIMITED",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ZOPA+BANK+LIMITED%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:02:00.189852Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"asos plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "ASOS PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22ASOS+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:02:51.531732Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"bp p.l.c.\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "BP P.L.C.",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22BP+P.L.C.%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:03:52.857060Z",
+"error": "ReadTimeout: "
+},
+"search_news|{\"company_name\": \"j sainsbury plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "J SAINSBURY PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22J+SAINSBURY+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:04:44.195366Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"nf001705\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "NF001705",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22NF001705%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:05:09.813958Z",
+"error": null
+},
+"search_news|{\"company_name\": \"sc095000\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "SC095000",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": []
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22SC095000%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:06:06.011287Z",
+"error": null
+},
+"search_news|{\"company_name\": \"16351760\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "16351760",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2216351760%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:06:58.739667Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"02366661\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "02366661",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": [
+{
+"url": "https://www.theconstructionindex.co.uk/tenders/view/42115",
+"title": "Pump Optimisation and Aeration Efficiency Analysis : | Construction Tenders",
+"seendate": "20261015T123000Z",
+"domain": "theconstructionindex.co.uk"
+}
+]
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202366661%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:07:55.600396Z",
+"error": null
+},
+"search_news|{\"company_name\": \"01354001\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "01354001",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2201354001%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:08:49.215308Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"02468686\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "02468686",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2202468686%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:09:43.006559Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"08140312\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "08140312",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2208140312%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:10:35.591836Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"03849958\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "03849958",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2203849958%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:11:28.243457Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"01417162\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "01417162",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2201417162%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-26T15:12:22.277719Z",
+"error": "HTTP 429"
+},
 "search_news|{\"company_name\": \"00998314\"}": {
 "tool": "search_news",
 "args": {
@@ -19513,8 +19644,8 @@
 "ok": false,
 "data": null,
 "source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2200998314%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:46.470931Z",
-"error": "ConnectTimeout: "
+"retrieved_at": "2026-11-26T15:13:15.333163Z",
+"error": "HTTP 429"
 },
 "search_news|{\"company_name\": \"07063562\"}": {
 "tool": "search_news",
@@ -19526,7 +19657,7 @@
 "ok": false,
 "data": null,
 "source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2207063562%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:51.718017Z",
+"retrieved_at": "2026-11-26T15:14:07.309746Z",
 "error": "ConnectTimeout: "
 },
 "search_news|{\"company_name\": \"09092149\"}": {
@@ -19539,7 +19670,7 @@
 "ok": false,
 "data": null,
 "source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2209092149%22&maxrecords=5&timespan=180d&sort=datedesc",
-"retrieved_at": "2026-11-26T14:34:56.989560Z",
+"retrieved_at": "2026-11-26T15:15:07.986712Z",
 "error": "HTTP 429"
 }
 }

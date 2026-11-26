@@ -1,8 +1,9 @@
-"""Langfuse observability via REST batch ingestion. Non-blocking, fail-silent."""
+"""Langfuse observability via OTLP/JSON. Non-blocking, fail-silent."""
 
 from __future__ import annotations
 
 import base64
+import json
 import re
 import sys
 import threading
@@ -50,6 +51,7 @@ class Tracer:
         self._trace_meta: dict[str, dict[str, Any]] = {}
         self._span_data: dict[str, dict[str, Any]] = {}  # span_id -> mutable span dict
         self._lock = threading.Lock()
+        self.last_status: int | None = None
 
     def _now_iso(self) -> str:
         return datetime.now(tz=UTC).isoformat()
@@ -114,62 +116,87 @@ class Tracer:
             t.start()
 
     def _flush(self, trace_id: str) -> None:
-        """Send traces to Langfuse REST batch endpoint. Swallows all errors."""
+        """Send one trace to Langfuse via OTLP/JSON (/api/public/otel). Swallows all errors."""
         try:
             with self._lock:
-                meta = self._trace_meta.get(trace_id, {})
-                spans = list(self._traces.get(trace_id, []))
+                meta = dict(self._trace_meta.get(trace_id, {}))
+                spans = [dict(sp) for sp in self._traces.get(trace_id, [])]
+            tid = uuid.UUID(trace_id).hex
+            root_id = tid[:16]
 
-            # Build Langfuse batch ingestion body
-            batch: list[dict[str, Any]] = []
+            def ns(iso: str | None) -> str:
+                dt = datetime.fromisoformat(iso) if iso else datetime.now(tz=UTC)
+                return str(int(dt.timestamp() * 1e9))
 
-            # Trace event
-            batch.append(
+            def attrs(d: dict[str, Any]) -> list[dict[str, Any]]:
+                return [
+                    {"key": k, "value": {"stringValue": str(v)}}
+                    for k, v in d.items()
+                    if v is not None
+                ]
+
+            otel_spans: list[dict[str, Any]] = [
                 {
-                    "id": str(uuid.uuid4()),
-                    "type": "trace-create",
-                    "timestamp": meta.get("timestamp", self._now_iso()),
-                    "body": {
-                        "id": meta.get("id", trace_id),
-                        "name": meta.get("name", "unknown"),
-                        "input": meta.get("input"),
-                        "output": meta.get("output"),
-                        "timestamp": meta.get("timestamp", self._now_iso()),
-                    },
+                    "traceId": tid,
+                    "spanId": root_id,
+                    "name": meta.get("name", "trace"),
+                    "kind": 1,
+                    "startTimeUnixNano": ns(meta.get("timestamp")),
+                    "endTimeUnixNano": ns(meta.get("end_time")),
+                    "attributes": attrs(
+                        {
+                            "langfuse.trace.name": meta.get("name", "trace"),
+                            "langfuse.trace.input": json.dumps(meta.get("input"), default=str),
+                            "langfuse.trace.output": json.dumps(meta.get("output"), default=str),
+                        }
+                    ),
                 }
-            )
-
-            # Span events
-            for span in spans:
-                batch.append(
+            ]
+            for sp in spans:
+                otel_spans.append(
                     {
-                        "id": str(uuid.uuid4()),
-                        "type": "span-create",
-                        "timestamp": span.get("start_time", self._now_iso()),
-                        "body": {
-                            "id": span.get("id"),
-                            "traceId": trace_id,
-                            "name": span.get("name"),
-                            "startTime": span.get("start_time"),
-                            "endTime": span.get("end_time"),
-                            "input": span.get("input"),
-                            "output": span.get("output"),
-                        },
+                        "traceId": tid,
+                        "spanId": uuid.UUID(sp["id"]).hex[:16],
+                        "parentSpanId": root_id,
+                        "name": sp.get("name", "span"),
+                        "kind": 1,
+                        "startTimeUnixNano": ns(sp.get("start_time")),
+                        "endTimeUnixNano": ns(sp.get("end_time") or sp.get("start_time")),
+                        "attributes": attrs(
+                            {
+                                "langfuse.observation.input": json.dumps(
+                                    sp.get("input"), default=str
+                                ),
+                                "langfuse.observation.output": json.dumps(
+                                    sp.get("output"), default=str
+                                ),
+                            }
+                        ),
                     }
                 )
-
+            body = {
+                "resourceSpans": [
+                    {
+                        "resource": {"attributes": attrs({"service.name": "companylens"})},
+                        "scopeSpans": [{"scope": {"name": "companylens"}, "spans": otel_spans}],
+                    }
+                ]
+            }
             credentials = base64.b64encode(
                 f"{self._public_key}:{self._secret_key}".encode()
             ).decode()
-
             with httpx.Client(timeout=10.0) as client:
-                client.post(
-                    f"{self._host}/api/public/ingestion",
-                    json={"batch": batch},
+                resp = client.post(
+                    f"{self._host}/api/public/otel/v1/traces",
+                    json=body,
                     headers={
                         "Authorization": f"Basic {credentials}",
                         "Content-Type": "application/json",
+                        "x-langfuse-ingestion-version": "4",
                     },
                 )
+                self.last_status = resp.status_code
+                if resp.status_code >= 300:
+                    print(f"[companylens] Langfuse HTTP {resp.status_code}", file=sys.stderr)
         except Exception as exc:
-            print(f"[companylens] Langfuse flush error: {exc}", file=sys.stderr)
+            print(f"[companylens] Langfuse flush error: {type(exc).__name__}", file=sys.stderr)
