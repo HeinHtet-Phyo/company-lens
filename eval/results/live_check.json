@@ -1,0 +1,24 @@
+{
+  "clean": {
+    "query": "Greggs plc",
+    "seconds": 27.6,
+    "risk": "Medium risk",
+    "flags": 1
+  },
+  "red_flag": {
+    "query": "Carillion plc",
+    "seconds": 27.0,
+    "risk": "High risk",
+    "flags": 5
+  },
+  "ambiguous": {
+    "seconds": 1.3,
+    "choices": 5
+  },
+  "refusal": "CompanyLens covers UK companies only. It can't look up private individuals, personal details, or follow instructions that change its rules.",
+  "approval_prompt": "The agent wants to: look up MONZO BANK LIMITED on the FCA Register (sends the company name to a third party); search news about MONZO BANK LIMITED on GDELT (sends the company name to a third party)",
+  "approval_skip_limitations": [
+    "check_fca_register unavailable: skipped by user (not approved)",
+    "search_news unavailable: skipped by user (not approved)"
+  ]
+}

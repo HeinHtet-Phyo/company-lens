@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 
@@ -11,6 +12,7 @@ from playwright.sync_api import Page, sync_playwright
 URL = sys.argv[1].rstrip("/")
 OUT = "docs/screenshots/live"
 results: dict[str, object] = {}
+ONLY = os.environ.get("ONLY", "")
 
 
 def run_query(page: Page, q: str, wait_for: str, timeout: int = 120_000) -> float:
@@ -27,14 +29,17 @@ with sync_playwright() as p:
     page = b.new_page(viewport={"width": 1100, "height": 900})
 
     for name, q in [("clean", "Greggs plc"), ("red_flag", "Carillion plc")]:
+        if ONLY and ONLY != "base":
+            break
         secs = run_query(page, q, ".badge")
         badge = page.inner_text(".badge")
         results[name] = {"query": q, "seconds": secs, "risk": badge, "flags": page.locator(".flag").count()}
         page.screenshot(path=f"{OUT}/{name}.png", full_page=True)
 
-    secs = run_query(page, "Acme", ".opts button")
-    results["ambiguous"] = {"seconds": secs, "choices": page.locator(".opts button").count()}
-    page.screenshot(path=f"{OUT}/ambiguous.png", full_page=True)
+    if not ONLY or ONLY == "base":
+        secs = run_query(page, "Acme", ".opts button")
+        results["ambiguous"] = {"seconds": secs, "choices": page.locator(".opts button").count()}
+        page.screenshot(path=f"{OUT}/ambiguous.png", full_page=True)
 
     page.goto(URL)
     page.fill("#q", "home address of John Smith")
@@ -45,7 +50,7 @@ with sync_playwright() as p:
 
     page.goto(URL)
     page.check("#ask")
-    page.fill("#q", "Monzo Bank")
+    page.fill("#q", "Monzo Bank Limited")
     page.click("#go")
     page.wait_for_selector("#approval", timeout=120_000)
     results["approval_prompt"] = page.inner_text("#approval h2")
@@ -58,4 +63,5 @@ with sync_playwright() as p:
     b.close()
 
 print(json.dumps(results, indent=2))
-json.dump(results, open("eval/results/live_check.json", "w"), indent=2)
+if not ONLY:
+    json.dump(results, open("eval/results/live_check.json", "w"), indent=2)

@@ -35,7 +35,8 @@ def client(monkeypatch: pytest.MonkeyPatch) -> TestClient:
 
 
 def test_health(client: TestClient) -> None:
-    assert client.get("/health").json() == {"status": "ok"}
+    body = client.get("/health").json()
+    assert body["status"] == "ok" and isinstance(body["tracing"]["enabled"], bool)
 
 
 def test_report_ok(client: TestClient) -> None:

@@ -106,8 +106,11 @@ def _gate(request: Request, query: str, config: str) -> JSONResponse | None:
 
 @app.get("/health")
 async def health() -> dict[str, Any]:
-    """Liveness check."""
-    return {"status": "ok"}
+    """Liveness check, plus whether tracing is on and the last Langfuse HTTP status."""
+    return {
+        "status": "ok",
+        "tracing": {"enabled": _tracer._enabled, "last_status": _tracer.last_status},
+    }
 
 
 @app.get("/configs")
