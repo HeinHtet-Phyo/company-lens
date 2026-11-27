@@ -8,7 +8,7 @@ Real failures from the dev and test runs (`eval/results/runs/*.jsonl`, scored in
 `agent_qwen` returned a report instead of asking which company was meant, e.g. APPLE LTD (dissolved, flagged R3 High), ACME LTD, LONDON CONSULTING LTD. These six ambiguous items plus case 1b below are all 7 of the agent's routing failures on test (87% = 47/54). `baseline_fixed` also failed these, and c057 Phoenix.
 **Cause:** the resolver auto-picks a unique exact name match (after removing the legal suffix). The first search page held only one such match, so the rule saw no ambiguity even though many companies share these names on the register.
 **Consequence:** a confident, cited report about the wrong company. This is the most serious open failure.
-**Possible fix:** always ask for clarification when the query is a single common word, even with one exact hit.
+**Possible fix (implemented as resolver v2, commit be9c4c9):** ask whenever a bare name (no legal-form word typed) has two or more active prefix matches, even with one exact hit. Validated on dev (routing 100% before and after) and on a fresh 15-name set (routing 67% to 100%, ambiguous 0% to 100%). The test split was NOT re-run, so these six test failures are still recorded as open for the test numbers. Live check: "Acme" and "Monzo Bank" now return choice buttons.
 
 ### 1b. Nonexistent name still produced a report (c068 "Wxyzabc Foobarbaz Ltd")
 The overlap guard that fixed the dev cases (case 8) did not stop this one; the agent returned a report instead of not-found. Not investigated further.
@@ -45,6 +45,11 @@ The first number check flagged dates ("12 March 2019") and number words ("ten di
 
 ### 10. Name collision with shell companies (Cambridge Analytica)
 A search for a well-known failed firm returned several companies with near-identical names, including shell entities. This case motivated the clarification path and the rule to reject a candidate list instead of guessing when more than one live match remains. The ambiguity in case 1 shows the rule is incomplete.
+
+## Found during live deployment
+- **Static UI and prompts missing from the Docker image.** `pip install .` did not include `index.html` or the prompt `.txt` files, so the first live deploy returned a 500 on `/` and reports would have failed. Local runs used the source tree and the earlier memory test only called `/health`. Fixed with `package-data` in pyproject.toml (e5f48a7) and a test that the patterns cover those files.
+- **Langfuse 401 from the live service.** Keys set in Render are rejected by Langfuse (`/health` shows `last_status` 401) while the same host works with local keys. Needs the Render env vars re-entered.
+- **Insolvency/charges skipped on Rightmove plc (live).** Same behaviour as case 2: Low risk with two checks not performed.
 
 ## Data-source limitation
 GDELT rate-limited the snapshot builder (429s and timeouts); only 24 of 76 snapshot entries have news. Reports then carry "search_news unavailable" under limitations. FCA data is absent for all runs (credentials not configured) and is excluded from all metrics.

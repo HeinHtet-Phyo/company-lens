@@ -1,6 +1,6 @@
 # CompanyLens — Build Plan
 
-**Last updated:** 2026-11-26  
+**Last updated:** 2026-11-27  
 **Spend so far:** ~£1.17 est. (see eval/results/spend.json)  
 **Branch:** main
 
@@ -172,7 +172,11 @@ Also re-read CLAUDE.md. Hein's standing instruction: keep building without stopp
 - Mistral: one tool-call test OK on `mistral-small-latest`, no billing prompt. Dev run of agent_mistral NOT yet done (free tier: use low concurrency; if billing is demanded, STOP and tell Hein).
 - FCA: portal down, no key. Decision (Hein): keep "credentials not configured", shown in report limitations (done) and README (TODO); FCA excluded from eval metrics (documented in docs/eval_method.md); re-run later with `python eval/refresh_fca.py`. FCA `/Firm/Search` endpoint unverified.
 
-### Open items (in order)
+### Update 2026-11-27 (latest)
+- Live: https://companylens-j7zl.onrender.com . Resolver v2 (be9c4c9), FCA placeholder handling, opt-in human approval interrupt (dd42578), packaging fix (e5f48a7), /health tracing status (644e987) all pushed. Live checks in eval/results/live_check.json; 7 of 8 live reports used.
+- Open: Langfuse keys on Render give 401 (Hein to re-enter); cold start measured: 22.3 s after 17 min idle; hand_check.csv; FCA key.
+
+### Open items (older list, partly superseded by the update above)
 1. Phase 7: render.yaml reviewed OK. Hein must create the Render service + env vars (COMPANIES_HOUSE_API_KEY, NEBIUS_API_KEY, MISTRAL_API_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_HOST, DAILY_BUDGET_GBP; FCA_* later). Then live Playwright, 429/OOM checks, cold start.
 2. Phase 8: README, demo GIF (docs/demo.gif), docs/architecture.md, private/interview_notes.md, independent review (fixes applied), history secret scan (clean) are DONE. Left: repo description/topics via gh, re-record demo GIF from live site after deploy.
 3. Optional: human-approval interrupt (not built; say so).

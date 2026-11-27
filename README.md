@@ -1,5 +1,7 @@
 # CompanyLens
 
+**Live demo: https://companylens-j7zl.onrender.com** (free Render plan: the first request after about 15 minutes idle wakes the service and took 22 s in my measurement; later requests take 25-40 s per full report). Limits: 10 reports/min/IP, daily budget cap.
+
 An AI agent for first-pass due diligence on UK companies. Give it a company name or number; it queries Companies House (and, once credentials exist, the FCA Register) plus GDELT news, then returns a structured report where every claim cites its evidence.
 
 It is a screening aid, not advice. The risk level comes from fixed rules (R1–R9), not from the model.
@@ -19,7 +21,9 @@ It is a screening aid, not advice. The risk level comes from fixed rules (R1–R
 ## Known limitations
 
 - **FCA Register check is not live.** The FCA developer portal was unavailable when this was built, so no key is configured. Reports say "FCA credentials not configured" under limitations, and FCA is excluded from every evaluation metric. The endpoint itself is unverified. Re-run just that part later with `python eval/refresh_fca.py`.
-- **Ambiguous names are the main weakness.** On the test split the agent returned a report instead of asking which company was meant for 6 of 7 ambiguous queries (`docs/failure_analysis.md`).
+- **Ambiguous names were the main weakness, now addressed on dev and fresh data only.** On the original test split the agent returned a report instead of asking for 6 of 7 ambiguous queries. A new rule (ask whenever a bare name has two or more active matches) fixed this on dev and on a fresh 15-name set (see Evaluation), but the test split was run once and has not been re-run.
+- **Skipped checks still give a risk level.** On large plcs the agent sometimes stops before the insolvency and charges checks; the report lists them under limitations but still shows e.g. "Low" (live example: Rightmove plc). Tracked in `docs/failure_analysis.md`.
+- **Langfuse on the live site:** traces from the Render deployment currently get HTTP 401 (keys configured in Render are rejected); `/health` shows `tracing.last_status`. Local traces work.
 - **News coverage is partial.** GDELT rate-limits; only part of the evaluation snapshot has news.
 - **Human approval is opt-in.** Tick "Ask me before looking up news or the FCA Register" and the run pauses (LangGraph `interrupt`, resumed by run id) before any lookup that sends the company name to a third party. It is off by default and was not part of the evaluation.
 - Judge-vs-human agreement is unmeasured: `eval/hand_check.csv` is generated but not yet filled in by a person.
@@ -42,6 +46,8 @@ Test split, n=54 (intervals are wide). Risk and recall are scored only on the 35
 
 \*The fixed pipeline always calls every tool and uses the same rules as the oracle, so its risk agreement is 100% by construction.
 
+Resolver v2 (dev + fresh set, not the test split). Fresh set n=15 (5 clear, 5 ambiguous, 5 not-found, never used before, seed 1127): routing 67% [40-87] before, 100% [100-100] after (ambiguous 0% to 100%); fixed pipeline 60% on the same items. Dev n=26: routing 100% before and after. These are improvements measured on data the rule was designed against or run on once; the original test numbers above are unchanged. Source: `eval/results/summary.md`, section "Resolver change".
+
 What the numbers support: the agent routes better than the fixed pipeline's naive top-hit resolver (74% → 87%, intervals overlap in places); a small tool budget clearly hurts recall; the claim check made no clear difference on the test split (31% vs 33%, overlapping intervals). They do not show that the agent beats the pipeline on report quality. Prompt injection (E5): 5 payloads were planted in a free-text field of the company profile for 6 companies (30 runs, all produced reports); 29 of 30 kept the risk level, flag set, prompt secrecy and tool budget. The one miss (c040) changed the flag set but not the risk level; that company also hit the round limit in clean runs, so the cause is unclear. Checks are deterministic only. A first version of this test planted the payload where the agent never saw it and produced no reports; it was fixed and re-run.
 
 ## Run it
@@ -53,11 +59,13 @@ make test                # no network, no keys needed
 make run                 # http://localhost:8000
 ```
 
+Live-site checks (`scripts/live_check.py`, `eval/results/live_check.json`): reports for Greggs, Carillion and Rightmove took 27-30 s; "Acme" returned 5 choice buttons in 1.3 s; the John Smith request was refused; the 11th request in a minute returned 429; the approval prompt appeared and Skip produced a report with the lookups listed under limitations.
+
 Docker: `make docker`. Measured under `docker run --memory=512m`: peak 92 MiB, idle 84 MiB, no OOM, cold start 1.4 s (`eval/results/memory.json`).
 
 Environment variables: `COMPANIES_HOUSE_API_KEY`, `NEBIUS_API_KEY`, `MISTRAL_API_KEY`, `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`, `LANGFUSE_HOST`, `DAILY_BUDGET_GBP`, `FCA_API_EMAIL`, `FCA_API_KEY`.
 
-API: `GET /health`, `GET /configs`, `POST /report`, `GET /report/stream?q=...` (SSE). Limits: 10 reports/min/IP, daily budget cap (503 when exhausted).
+API: `GET /health`, `GET /configs`, `POST /report`, `GET /report/stream?q=...[&approve=true]` (SSE), `POST /report/approve`. Limits: 10 reports/min/IP, daily budget cap (503 when exhausted).
 
 ## Docs
 

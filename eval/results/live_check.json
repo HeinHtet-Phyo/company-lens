@@ -1,10 +1,4 @@
 {
-  "clean": {
-    "query": "Greggs plc",
-    "seconds": 27.6,
-    "risk": "Medium risk",
-    "flags": 1
-  },
   "red_flag": {
     "query": "Carillion plc",
     "seconds": 27.0,
@@ -20,5 +14,22 @@
   "approval_skip_limitations": [
     "check_fca_register unavailable: skipped by user (not approved)",
     "search_news unavailable: skipped by user (not approved)"
-  ]
+  ],
+  "greggs_medium": {
+    "query": "Greggs plc",
+    "seconds": 27.6,
+    "risk": "Medium risk",
+    "flags": 1
+  },
+  "clean_rightmove": {
+    "query": "Rightmove plc",
+    "seconds": 29.5,
+    "risk": "Low risk",
+    "flags": 0,
+    "note": "insolvency and charges checks not performed (failure case 2)"
+  },
+  "rate_limit": "11 refusal POSTs in a minute: first 10 returned 200, the 11th 429",
+  "langfuse_live": "HTTP 401 from live service (Render keys rejected); no live trace arrived",
+  "cold_start_seconds": 22.3,
+  "cold_start_note": "first /health after ~17 min idle on Render free plan; warm /health 0.2 s"
 }
