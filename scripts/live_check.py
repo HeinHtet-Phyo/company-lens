@@ -33,7 +33,12 @@ with sync_playwright() as p:
             break
         secs = run_query(page, q, ".badge")
         badge = page.inner_text(".badge")
-        results[name] = {"query": q, "seconds": secs, "risk": badge, "flags": page.locator(".flag").count()}
+        results[name] = {
+            "query": q,
+            "seconds": secs,
+            "risk": badge,
+            "flags": page.locator(".flag").count(),
+        }
         page.screenshot(path=f"{OUT}/{name}.png", full_page=True)
 
     if not ONLY or ONLY == "base":
