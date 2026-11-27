@@ -26,6 +26,17 @@ PER_COMPANY = [
 ]
 
 
+FRESH = Path(__file__).parent / "companies" / "fresh.jsonl"
+
+
+def load_all_items() -> list[dict[str, Any]]:
+    """Items from set.json (dev/test) plus fresh.jsonl (the post-test fresh set), if present."""
+    items: list[dict[str, Any]] = json.loads(SET.read_text())["items"]
+    if FRESH.exists():
+        items += [json.loads(line) for line in FRESH.read_text().splitlines() if line.strip()]
+    return items
+
+
 def key(tool: str, args: dict[str, Any]) -> str:
     """Stable key; ignores limits/paging args and case of free-text args."""
     a = {
@@ -86,10 +97,10 @@ def _epoch() -> Any:
     return datetime(2026, 1, 1, tzinfo=UTC)
 
 
-async def record() -> None:
+async def record(only_split: str | None = None) -> None:
     live = build_registry(get_settings())
     store = Store(live)
-    items = json.loads(SET.read_text())["items"]
+    items = [i for i in load_all_items() if only_split in (None, i["split"])]
     sem = asyncio.Semaphore(3)
 
     async def one(it: dict[str, Any]) -> None:
@@ -134,4 +145,6 @@ async def record() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(record())
+    import sys
+
+    asyncio.run(record(sys.argv[1] if len(sys.argv) > 1 else None))

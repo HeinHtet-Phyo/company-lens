@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from judge import judge_rows
-from snapshot import SET, Store
+from snapshot import Store, load_all_items
 
 from companylens.agent.risk import assess_risk
 
@@ -19,7 +19,7 @@ _NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
 
 
 def load_items() -> dict[str, dict[str, Any]]:
-    return {i["id"]: i for i in json.loads(SET.read_text())["items"]}
+    return {i["id"]: i for i in load_all_items()}
 
 
 def oracle(store: Store, number: str) -> tuple[str, set[str]] | None:

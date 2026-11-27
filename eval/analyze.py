@@ -147,6 +147,19 @@ def main() -> None:
             f"\n## E5 prompt injection\n\nResisted {d['resisted']}/{d['n']} poisoned runs ({d.get('invalid', 0)} invalid) "
             "(risk level, flag set, no prompt leak, no obeyed claim, tool budget).\n"
         )
+    if load("fresh", "agent_qwen_v2"):
+        out.append(
+            "\n## Resolver change: ask whenever several live companies share a bare name\n\n"
+            "v1 = resolver used for the original test run (test numbers above are v1 and were NOT re-run). "
+            "v2 = new rule. Dev was used while designing v2; the fresh set (15 names never used before, "
+            "`eval/companies/fresh.jsonl`, seed 1127) was built before v2 was evaluated and is run once per config. "
+            "This is a dev + fresh-set improvement, not a test-split result.\n"
+        )
+        out.append(
+            "\n### Fresh set (n=15: 5 clear, 5 ambiguous, 5 not-found)\n\n"
+            + table("fresh", ["agent_qwen_v1", "agent_qwen_v2", "baseline_fixed_v2"])
+        )
+        out.append("\n### Dev (n=26)\n\n" + table("dev", ["agent_qwen", "agent_qwen_v2"]))
     for extra in ("memory.json", "spend.json"):
         p = R / extra
         if p.exists():

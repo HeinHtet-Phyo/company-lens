@@ -1,5 +1,5 @@
 {
- "total_gbp_est": 1.1724,
+ "total_gbp_est": 1.4119,
  "entries": [
   {
    "config": "baseline_fixed",
@@ -60,6 +60,26 @@
    "config": "agent_mistral",
    "split": "test",
    "gbp_est": 0.0575
+  },
+  {
+   "config": "agent_qwen",
+   "split": "fresh",
+   "gbp_est": 0.0328
+  },
+  {
+   "config": "agent_qwen",
+   "split": "fresh",
+   "gbp_est": 0.0689
+  },
+  {
+   "config": "baseline_fixed",
+   "split": "fresh",
+   "gbp_est": 0.0028
+  },
+  {
+   "config": "agent_qwen",
+   "split": "dev",
+   "gbp_est": 0.135
   }
  ],
  "note": "Estimated from token counts and a price table in llm.py, not provider invoices."

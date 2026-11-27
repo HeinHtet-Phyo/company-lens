@@ -1,0 +1,257 @@
+{
+ "summary": {
+  "config": "agent_qwen_v2",
+  "split": "fresh",
+  "n": 15,
+  "route_acc": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "route_by_category": {
+   "ambiguous": 1.0,
+   "nonexistent": 1.0,
+   "unique_name": 1.0
+  },
+  "risk_agree": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "flag_recall": 1.0,
+  "flag_precision": 1.0,
+  "unsupported_sentence_rate": 0.08,
+  "reports_with_unsupported_sentence": [
+   0.4,
+   0.0,
+   0.8
+  ],
+  "unsupported_number_rate": 0.11538461538461539,
+  "cost_gbp_mean": [
+   0.00656848,
+   0.006267824000000001,
+   0.006914623999999999
+  ],
+  "latency_s_mean": [
+   14.478800000000001,
+   13.213400000000002,
+   15.4438
+  ],
+  "latency_s_p95": 15.544,
+  "tool_calls_mean": [
+   7.4,
+   6.4,
+   8.4
+  ],
+  "llm_rounds_mean": [
+   6.0,
+   6.0,
+   6.0
+  ],
+  "complete_rate": 1.0,
+  "exceptions": 0,
+  "claim_check_paths": {
+   "passed": 5,
+   "repaired": 0,
+   "dropped": 0
+  },
+  "judge_cost_gbp": 0.0021916
+ },
+ "per_item": [
+  {
+   "id": "f000",
+   "category": "unique_name",
+   "route_ok": true,
+   "type": "report",
+   "exception": false,
+   "wall_s": 12.11,
+   "cost": 0.006113920000000001,
+   "latency": 12.102,
+   "tools": 6,
+   "rounds": 6,
+   "complete": true,
+   "cc_path": "passed",
+   "risk_ok": true,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "num_bad": 1,
+   "num_tot": 7,
+   "sent_bad": 0,
+   "sent_tot": 5,
+   "judge_cost": 0.000398
+  },
+  {
+   "id": "f001",
+   "category": "unique_name",
+   "route_ok": true,
+   "type": "report",
+   "exception": false,
+   "wall_s": 14.99,
+   "cost": 0.00633176,
+   "latency": 14.987,
+   "tools": 8,
+   "rounds": 6,
+   "complete": true,
+   "cc_path": "passed",
+   "risk_ok": true,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "num_bad": 1,
+   "num_tot": 5,
+   "sent_bad": 0,
+   "sent_tot": 5,
+   "judge_cost": 0.0004136000000000001
+  },
+  {
+   "id": "f002",
+   "category": "unique_name",
+   "route_ok": true,
+   "type": "report",
+   "exception": false,
+   "wall_s": 15.61,
+   "cost": 0.006476,
+   "latency": 15.6,
+   "tools": 6,
+   "rounds": 6,
+   "complete": true,
+   "cc_path": "passed",
+   "risk_ok": true,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "num_bad": 1,
+   "num_tot": 7,
+   "sent_bad": 1,
+   "sent_tot": 5,
+   "judge_cost": 0.0004
+  },
+  {
+   "id": "f003",
+   "category": "unique_name",
+   "route_ok": true,
+   "type": "report",
+   "exception": false,
+   "wall_s": 15.55,
+   "cost": 0.0066656,
+   "latency": 15.544,
+   "tools": 8,
+   "rounds": 6,
+   "complete": true,
+   "cc_path": "passed",
+   "risk_ok": true,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "num_bad": 0,
+   "num_tot": 4,
+   "sent_bad": 1,
+   "sent_tot": 5,
+   "judge_cost": 0.00042080000000000004
+  },
+  {
+   "id": "f004",
+   "category": "unique_name",
+   "route_ok": true,
+   "type": "report",
+   "exception": false,
+   "wall_s": 14.17,
+   "cost": 0.00725512,
+   "latency": 14.161,
+   "tools": 9,
+   "rounds": 6,
+   "complete": true,
+   "cc_path": "passed",
+   "risk_ok": true,
+   "tp": 1,
+   "fp": 0,
+   "fn": 0,
+   "num_bad": 0,
+   "num_tot": 3,
+   "sent_bad": 0,
+   "sent_tot": 5,
+   "judge_cost": 0.0005591999999999999
+  },
+  {
+   "id": "f005",
+   "category": "ambiguous",
+   "route_ok": true,
+   "type": "clarification",
+   "exception": false,
+   "wall_s": 0.01
+  },
+  {
+   "id": "f006",
+   "category": "ambiguous",
+   "route_ok": true,
+   "type": "clarification",
+   "exception": false,
+   "wall_s": 0.0
+  },
+  {
+   "id": "f007",
+   "category": "ambiguous",
+   "route_ok": true,
+   "type": "clarification",
+   "exception": false,
+   "wall_s": 0.0
+  },
+  {
+   "id": "f008",
+   "category": "ambiguous",
+   "route_ok": true,
+   "type": "clarification",
+   "exception": false,
+   "wall_s": 0.01
+  },
+  {
+   "id": "f009",
+   "category": "ambiguous",
+   "route_ok": true,
+   "type": "clarification",
+   "exception": false,
+   "wall_s": 0.0
+  },
+  {
+   "id": "f010",
+   "category": "nonexistent",
+   "route_ok": true,
+   "type": "not_found",
+   "exception": false,
+   "wall_s": 0.0
+  },
+  {
+   "id": "f011",
+   "category": "nonexistent",
+   "route_ok": true,
+   "type": "not_found",
+   "exception": false,
+   "wall_s": 0.03
+  },
+  {
+   "id": "f012",
+   "category": "nonexistent",
+   "route_ok": true,
+   "type": "not_found",
+   "exception": false,
+   "wall_s": 0.0
+  },
+  {
+   "id": "f013",
+   "category": "nonexistent",
+   "route_ok": true,
+   "type": "not_found",
+   "exception": false,
+   "wall_s": 0.0
+  },
+  {
+   "id": "f014",
+   "category": "nonexistent",
+   "route_ok": true,
+   "type": "not_found",
+   "exception": false,
+   "wall_s": 0.0
+  }
+ ]
+}

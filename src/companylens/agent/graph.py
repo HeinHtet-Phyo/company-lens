@@ -226,6 +226,11 @@ class CompanyAgent:
         prefix = [x for x in cands if _norm_name(x["name"] or "").startswith(nq)]
         live_exact = [x for x in exact if x.get("status") != "dissolved"]
         pool = live_exact if live_exact else exact
+        live_prefix = [x for x in prefix if x.get("status") != "dissolved"]
+        typed_legal_form = bool(set(re.sub(r"[^a-z0-9 ]", " ", q.lower()).split()) & _SUFFIXES)
+        # A bare name ("Apple") with several live companies sharing it must be chosen by the user.
+        if not typed_legal_form and len(live_prefix) >= 2:
+            return {**base, **self._clarify(cands)}
         if len(pool) == 1:
             return {**base, "company_number": pool[0]["number"], "company_name": pool[0]["name"]}
         if len(prefix) >= 2:
@@ -247,7 +252,7 @@ class CompanyAgent:
         except json.JSONDecodeError:
             verdict = {"ambiguous": len(cands) > 1, "choice": None}
         picked = next((x for x in cands if x["number"] == verdict.get("choice")), None)
-        if picked is not None and _overlap(nq, _norm_name(picked["name"] or "")) < 0.5:
+        if picked is not None and _overlap(nq, _norm_name(picked["name"] or "")) < 1.0:
             picked = None
         if verdict.get("ambiguous"):
             return {**base, **self._clarify(cands)}

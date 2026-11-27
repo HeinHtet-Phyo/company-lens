@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from snapshot import SET, Store
+from snapshot import Store, load_all_items
 
 from companylens.agent.baseline import run_baseline
 from companylens.agent.graph import CompanyAgent
@@ -94,19 +94,20 @@ async def _baseline(q: str, reg: Any, llm: LLMClient, cfg: Any, tracer: Tracer) 
 
 async def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--split", choices=["dev", "test"], required=True)
+    ap.add_argument("--split", choices=["dev", "test", "fresh"], required=True)
+    ap.add_argument("--suffix", default="", help="appended to the run file name, e.g. _v2")
     ap.add_argument("--configs", required=True)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--conc", type=int, default=4)
     a = ap.parse_args()
-    items = [i for i in json.loads(SET.read_text())["items"] if i["split"] == a.split]
+    items = [i for i in load_all_items() if i["split"] == a.split]
     if a.limit:
         items = items[: a.limit]
     store = Store(live=None)
     (RESULTS / "runs").mkdir(parents=True, exist_ok=True)
     for cfg_name in a.configs.split(","):
-        out = RESULTS / "runs" / f"{a.split}_{cfg_name}.jsonl"
-        if a.split == "test" and out.exists():
+        out = RESULTS / "runs" / f"{a.split}_{cfg_name}{a.suffix}.jsonl"
+        if a.split in ("test", "fresh") and out.exists():
             print(f"REFUSING: {out} exists; the test split is run once per config.")
             continue
         if total_spend() >= SPEND_CAP_GBP:

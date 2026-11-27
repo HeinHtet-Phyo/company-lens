@@ -1,0 +1,15 @@
+{"category": "unique_name", "query": "SMITHS GROUP PLC", "expected_number": "00137013", "split": "fresh", "id": "f000"}
+{"category": "unique_name", "query": "DUNELM GROUP PLC", "expected_number": "04708277", "split": "fresh", "id": "f001"}
+{"category": "unique_name", "query": "RIGHTMOVE PLC", "expected_number": "06426485", "split": "fresh", "id": "f002"}
+{"category": "unique_name", "query": "SPIRAX GROUP PLC", "expected_number": "00596337", "split": "fresh", "id": "f003"}
+{"category": "unique_name", "query": "GAMES WORKSHOP GROUP PLC", "expected_number": "02670969", "split": "fresh", "id": "f004"}
+{"category": "ambiguous", "query": "Crown Consulting", "expected_type": "clarification", "split": "fresh", "id": "f005"}
+{"category": "ambiguous", "query": "Imperial Trading", "expected_type": "clarification", "split": "fresh", "id": "f006"}
+{"category": "ambiguous", "query": "Pioneer Holdings", "expected_type": "clarification", "split": "fresh", "id": "f007"}
+{"category": "ambiguous", "query": "Evergreen Consulting", "expected_type": "clarification", "split": "fresh", "id": "f008"}
+{"category": "ambiguous", "query": "Atlas Developments", "expected_type": "clarification", "split": "fresh", "id": "f009"}
+{"category": "nonexistent", "query": "Xkcdwy Merblat Limited", "expected_type": "not_found", "split": "fresh", "id": "f010"}
+{"category": "nonexistent", "query": "Hvkpq Sdorm Limited", "expected_type": "not_found", "split": "fresh", "id": "f011"}
+{"category": "nonexistent", "query": "Zzmrkt Hjdquo Limited", "expected_type": "not_found", "split": "fresh", "id": "f012"}
+{"category": "nonexistent", "query": "Qvxtrl Plonbwe Ltd", "expected_type": "not_found", "split": "fresh", "id": "f013"}
+{"category": "nonexistent", "query": "Yfglop Ruwqen Ltd", "expected_type": "not_found", "split": "fresh", "id": "f014"}

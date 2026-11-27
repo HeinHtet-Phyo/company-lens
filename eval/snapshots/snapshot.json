@@ -19672,5 +19672,2283 @@
 "source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%2209092149%22&maxrecords=5&timespan=180d&sort=datedesc",
 "retrieved_at": "2026-11-26T15:15:07.986712Z",
 "error": "HTTP 429"
+},
+"search_companies|{\"query\": \"rightmove plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "RIGHTMOVE PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "RIGHTMOVE PLC",
+"number": "06426485",
+"status": "active",
+"date_of_creation": "2007-11-14",
+"address_locality": "Milton Keynes"
+},
+{
+"name": "RIGHTMOVE GROUP LIMITED",
+"number": "03997679",
+"status": "active",
+"date_of_creation": "2000-05-16",
+"address_locality": "Milton Keynes"
+},
+{
+"name": "RIGHTMOVE.CO.UK LIMITED",
+"number": "05038189",
+"status": "dissolved",
+"date_of_creation": "2004-02-09",
+"address_locality": "Milton Keynes"
+},
+{
+"name": "RIGHTMOVE AUCTIONS LIMITED",
+"number": "13480778",
+"status": "dissolved",
+"date_of_creation": "2021-06-28",
+"address_locality": "Westcliff On Sea"
+},
+{
+"name": "RIGHTMOVE AUTOS LIMITED",
+"number": "14955869",
+"status": "active",
+"date_of_creation": "2023-06-23",
+"address_locality": "Reading"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=RIGHTMOVE PLC",
+"retrieved_at": "2026-11-27T01:03:04.720383Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"06426485\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "06426485"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "plc",
+"date_of_creation": "2007-11-14",
+"sic_codes": [
+"62090",
+"63120"
+],
+"accounts": {
+"next_due": "2027-06-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Milton Keynes"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06426485",
+"retrieved_at": "2026-11-27T01:03:04.742851Z",
+"error": null
+},
+"search_companies|{\"query\": \"smiths group plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "SMITHS GROUP PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "SMITHS GROUP PLC",
+"number": "00137013",
+"status": "active",
+"date_of_creation": "1914-07-15",
+"address_locality": "London"
+},
+{
+"name": "SMITHS INDUSTRIES LIMITED",
+"number": "00391027",
+"status": "active",
+"date_of_creation": "1944-11-09",
+"address_locality": "London"
+},
+{
+"name": "SMITHS GROUP (GIBRALTAR) LIMITED",
+"number": "BR013739",
+"status": "closed",
+"date_of_creation": "2009-10-01",
+"address_locality": "London"
+},
+{
+"name": "SMITHS GROUP HOLDINGS NETHERLANDS B.V.",
+"number": "BR013870",
+"status": "open",
+"date_of_creation": "2009-10-01",
+"address_locality": "Slough"
+},
+{
+"name": "SMITHS GROUP HOLDINGS NETHERLANDS B.V.",
+"number": "FC028768",
+"status": "active",
+"date_of_creation": "2008-12-12",
+"address_locality": "Slough"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=SMITHS GROUP PLC",
+"retrieved_at": "2026-11-27T01:03:04.759113Z",
+"error": null
+},
+"search_companies|{\"query\": \"dunelm group plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "DUNELM GROUP PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "DUNELM GROUP PLC",
+"number": "04708277",
+"status": "active",
+"date_of_creation": "2003-03-23",
+"address_locality": "Leicester"
+},
+{
+"name": "EBOR DUNELM GROUP LIMITED",
+"number": "17515657",
+"status": "active",
+"date_of_creation": "2026-10-12",
+"address_locality": "London"
+},
+{
+"name": "DUNELM DEVELOPMENT GROUP LTD",
+"number": "SC660796",
+"status": "dissolved",
+"date_of_creation": "2020-05-11",
+"address_locality": "Edinburgh"
+},
+{
+"name": "DUNELM LIMITED",
+"number": "05045977",
+"status": "active",
+"date_of_creation": "2004-02-17",
+"address_locality": "Leicester"
+},
+{
+"name": "DUNELM ACCOUNTANTS LIMITED",
+"number": "09482318",
+"status": "active",
+"date_of_creation": "2015-03-10",
+"address_locality": "Newmarket"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=DUNELM GROUP PLC",
+"retrieved_at": "2026-11-27T01:03:04.761632Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"00137013\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "00137013"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "plc",
+"date_of_creation": "1914-07-15",
+"sic_codes": [
+"70100"
+],
+"accounts": {
+"next_due": "2027-01-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013",
+"retrieved_at": "2026-11-27T01:03:04.771751Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"04708277\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "04708277"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "plc",
+"date_of_creation": "2003-03-23",
+"sic_codes": [
+"70100"
+],
+"accounts": {
+"next_due": "2027-12-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Leicester"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04708277",
+"retrieved_at": "2026-11-27T01:03:04.778864Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"06426485\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "06426485"
+},
+"ok": true,
+"data": {
+"active_directors": 9,
+"active_secretaries": 1,
+"resignations_last_12m": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06426485/officers",
+"retrieved_at": "2026-11-27T01:03:04.783468Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"04708277\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "04708277"
+},
+"ok": true,
+"data": {
+"active_directors": 10,
+"active_secretaries": 1,
+"resignations_last_12m": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04708277/officers",
+"retrieved_at": "2026-11-27T01:03:04.822787Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"00137013\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "00137013"
+},
+"ok": true,
+"data": {
+"active_directors": 11,
+"active_secretaries": 1,
+"resignations_last_12m": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013/officers",
+"retrieved_at": "2026-11-27T01:03:04.826148Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"06426485\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "06426485",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-26",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-23",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2026-11-18",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+}
+],
+"total_count": 2832
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06426485/filing-history",
+"retrieved_at": "2026-11-27T01:03:04.835758Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"04708277\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "04708277",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-11-19",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2026-11-19",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-11-16",
+"type": "AA",
+"description": "accounts-with-accounts-type-group",
+"category": "accounts"
+},
+{
+"date": "2026-10-12",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-09-16",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-08-12",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-07-10",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-06-17",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-05-28",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-04-13",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-04-13",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares-treasury-capital-date",
+"category": "capital"
+},
+{
+"date": "2026-04-13",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares-treasury-capital-date",
+"category": "capital"
+},
+{
+"date": "2026-03-29",
+"type": "AA",
+"description": "accounts-with-accounts-type-interim",
+"category": "accounts"
+},
+{
+"date": "2026-03-23",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares-treasury-capital-date",
+"category": "capital"
+},
+{
+"date": "2026-03-23",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares-treasury-capital-date",
+"category": "capital"
+},
+{
+"date": "2026-03-09",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-02-09",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2026-01-28",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-01-06",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+},
+{
+"date": "2025-12-03",
+"type": "SH04",
+"description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+"category": "capital"
+}
+],
+"total_count": 498
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04708277/filing-history",
+"retrieved_at": "2026-11-27T01:03:04.858060Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"06426485\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "06426485"
+},
+"ok": true,
+"data": {
+"total_count": 0,
+"kinds": {},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06426485/persons-with-significant-control",
+"retrieved_at": "2026-11-27T01:03:04.873145Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"04708277\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "04708277"
+},
+"ok": true,
+"data": {
+"total_count": 0,
+"kinds": {},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04708277/persons-with-significant-control",
+"retrieved_at": "2026-11-27T01:03:04.885462Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"06426485\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "06426485"
+},
+"ok": true,
+"data": {
+"total": 0,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": null
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06426485/charges",
+"retrieved_at": "2026-11-27T01:03:04.899033Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"04708277\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "04708277"
+},
+"ok": true,
+"data": {
+"total": 1,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": "2003-06-17"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04708277/charges",
+"retrieved_at": "2026-11-27T01:03:04.907575Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"06426485\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "06426485"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06426485/insolvency",
+"retrieved_at": "2026-11-27T01:03:04.913175Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"rightmove plc\", \"company_number\": \"06426485\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "RIGHTMOVE PLC",
+"company_number": "06426485"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-27T01:03:04.913265Z",
+"error": "FCA credentials not configured"
+},
+"get_insolvency|{\"company_number\": \"04708277\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "04708277"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04708277/insolvency",
+"retrieved_at": "2026-11-27T01:03:04.922421Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"dunelm group plc\", \"company_number\": \"04708277\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "DUNELM GROUP PLC",
+"company_number": "04708277"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-27T01:03:04.922504Z",
+"error": "FCA credentials not configured"
+},
+"get_filing_history|{\"company_number\": \"00137013\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "00137013",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-11-25",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2026-11-11",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2026-10-05",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2026-09-09",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2026-08-17",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-17",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH06",
+"description": "capital-cancellation-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-14",
+"type": "SH03",
+"description": "capital-return-purchase-own-shares",
+"category": "capital"
+}
+],
+"total_count": 3935
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013/filing-history",
+"retrieved_at": "2026-11-27T01:03:04.965110Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"00137013\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "00137013"
+},
+"ok": true,
+"data": {
+"total_count": 0,
+"kinds": {},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013/persons-with-significant-control",
+"retrieved_at": "2026-11-27T01:03:04.997716Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"00137013\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "00137013"
+},
+"ok": true,
+"data": {
+"total": 17,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": "2017-07-17"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013/charges",
+"retrieved_at": "2026-11-27T01:03:05.030499Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"00137013\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "00137013"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013/insolvency",
+"retrieved_at": "2026-11-27T01:03:05.179653Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"smiths group plc\", \"company_number\": \"00137013\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "SMITHS GROUP PLC",
+"company_number": "00137013"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-27T01:03:05.179797Z",
+"error": "FCA credentials not configured"
+},
+"search_companies|{\"query\": \"games workshop group plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "GAMES WORKSHOP GROUP PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "GAMES WORKSHOP GROUP PLC",
+"number": "02670969",
+"status": "active",
+"date_of_creation": "1991-12-09",
+"address_locality": "Nottingham"
+},
+{
+"name": "GAMES WORKSHOP LIMITED",
+"number": "01467092",
+"status": "active",
+"date_of_creation": "1979-12-17",
+"address_locality": "Nottingham"
+},
+{
+"name": "GAMES WORKSHOP LIMITED",
+"number": "NF003287",
+"status": "active",
+"date_of_creation": "1996-08-12",
+"address_locality": "Castle Court"
+},
+{
+"name": "GAMES WORKSHOP INTERACTIVE LIMITED",
+"number": "04140413",
+"status": "active",
+"date_of_creation": "2001-01-12",
+"address_locality": "Nottingham"
+},
+{
+"name": "GAMES WORKSHOP INTERNATIONAL LIMITED",
+"number": "02924330",
+"status": "active",
+"date_of_creation": "1994-04-29",
+"address_locality": "Nottingham"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=GAMES WORKSHOP GROUP PLC",
+"retrieved_at": "2026-11-27T01:03:15.127382Z",
+"error": null
+},
+"search_companies|{\"query\": \"spirax group plc\"}": {
+"tool": "search_companies",
+"args": {
+"query": "SPIRAX GROUP PLC",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "SPIRAX GROUP PLC",
+"number": "00596337",
+"status": "active",
+"date_of_creation": "1958-01-01",
+"address_locality": "Cheltenham"
+},
+{
+"name": "SPIRAX-SARCO ENGINEERING LIMITED",
+"number": "15436803",
+"status": "active",
+"date_of_creation": "2024-01-23",
+"address_locality": "Cheltenham"
+},
+{
+"name": "SPIRAX LTD",
+"number": "16134875",
+"status": "active",
+"date_of_creation": "2024-12-13",
+"address_locality": "Keston"
+},
+{
+"name": "SPIRAX MANUFACTURING COMPANY LIMITED",
+"number": "00261886",
+"status": "active",
+"date_of_creation": "1932-01-13",
+"address_locality": "Cheltenham"
+},
+{
+"name": "SPIRAX-SARCO LIMITED",
+"number": "00509018",
+"status": "active",
+"date_of_creation": "1952-06-19",
+"address_locality": "Cheltenham"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=SPIRAX GROUP PLC",
+"retrieved_at": "2026-11-27T01:03:15.134269Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"02670969\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "02670969"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "plc",
+"date_of_creation": "1991-12-09",
+"sic_codes": [
+"64209"
+],
+"accounts": {
+"next_due": "2027-11-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Nottingham"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02670969",
+"retrieved_at": "2026-11-27T01:03:15.153257Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"00596337\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "00596337"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "plc",
+"date_of_creation": "1958-01-01",
+"sic_codes": [
+"28131"
+],
+"accounts": {
+"next_due": "2027-06-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Cheltenham"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00596337",
+"retrieved_at": "2026-11-27T01:03:15.166393Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"02670969\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "02670969"
+},
+"ok": true,
+"data": {
+"active_directors": 7,
+"active_secretaries": 1,
+"resignations_last_12m": 2
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02670969/officers",
+"retrieved_at": "2026-11-27T01:03:15.195574Z",
+"error": null
+},
+"get_officers|{\"company_number\": \"00596337\"}": {
+"tool": "get_officers",
+"args": {
+"company_number": "00596337"
+},
+"ok": true,
+"data": {
+"active_directors": 10,
+"active_secretaries": 1,
+"resignations_last_12m": 1
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00596337/officers",
+"retrieved_at": "2026-11-27T01:03:15.203812Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"02670969\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "02670969",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-11-26",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-23",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-23",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-11-05",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-10-08",
+"type": "AA",
+"description": "accounts-with-accounts-type-interim",
+"category": "accounts"
+},
+{
+"date": "2026-10-05",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-09-28",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2026-09-22",
+"type": "AA",
+"description": "accounts-with-accounts-type-group",
+"category": "accounts"
+},
+{
+"date": "2026-09-14",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-09-02",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-20",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-08-09",
+"type": "AA",
+"description": "accounts-with-accounts-type-interim",
+"category": "accounts"
+},
+{
+"date": "2026-07-17",
+"type": "AA",
+"description": "accounts-with-accounts-type-interim",
+"category": "accounts"
+},
+{
+"date": "2026-07-01",
+"type": "AD01",
+"description": "change-registered-office-address-company-with-date-old-address-new-address",
+"category": "address"
+},
+{
+"date": "2026-06-24",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-06-17",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-06-03",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2026-06-02",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-05-20",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2026-05-07",
+"type": "AA",
+"description": "accounts-with-accounts-type-interim",
+"category": "accounts"
+}
+],
+"total_count": 650
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02670969/filing-history",
+"retrieved_at": "2026-11-27T01:03:15.252323Z",
+"error": null
+},
+"get_filing_history|{\"company_number\": \"00596337\"}": {
+"tool": "get_filing_history",
+"args": {
+"company_number": "00596337",
+"limit": 20
+},
+"ok": true,
+"data": {
+"filings": [
+{
+"date": "2026-06-01",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2026-05-28",
+"type": "CS01",
+"description": "confirmation-statement-with-no-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2026-05-14",
+"type": "AA",
+"description": "accounts-with-accounts-type-group",
+"category": "accounts"
+},
+{
+"date": "2026-05-13",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2026-05-11",
+"type": "RESOLUTIONS",
+"description": "resolution",
+"category": "resolution"
+},
+{
+"date": "2026-03-11",
+"type": "SH01",
+"description": "capital-allotment-shares",
+"category": "capital"
+},
+{
+"date": "2025-11-04",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2025-10-06",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2025-07-23",
+"type": "RP04CS01",
+"description": "second-filing-of-confirmation-statement-with-made-up-date",
+"category": "confirmation-statement"
+},
+{
+"date": "2025-06-19",
+"type": "AA",
+"description": "accounts-with-accounts-type-group",
+"category": "accounts"
+},
+{
+"date": "2025-06-09",
+"type": "CS01",
+"description": "confirmation-statement-with-updates",
+"category": "confirmation-statement"
+},
+{
+"date": "2025-06-05",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2025-03-26",
+"type": "MA",
+"description": "memorandum-articles",
+"category": "incorporation"
+},
+{
+"date": "2025-01-14",
+"type": "TM01",
+"description": "termination-director-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2024-11-05",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2024-10-02",
+"type": "TM02",
+"description": "termination-secretary-company-with-name-termination-date",
+"category": "officers"
+},
+{
+"date": "2024-10-02",
+"type": "AP03",
+"description": "appoint-person-secretary-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2024-07-15",
+"type": "AP01",
+"description": "appoint-person-director-company-with-name-date",
+"category": "officers"
+},
+{
+"date": "2024-06-24",
+"type": "CH03",
+"description": "change-person-secretary-company-with-change-date",
+"category": "officers"
+},
+{
+"date": "2024-06-23",
+"type": "AA",
+"description": "accounts-with-accounts-type-group",
+"category": "accounts"
+}
+],
+"total_count": 572
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00596337/filing-history",
+"retrieved_at": "2026-11-27T01:03:15.262580Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"02670969\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "02670969"
+},
+"ok": true,
+"data": {
+"total_count": 0,
+"kinds": {},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02670969/persons-with-significant-control",
+"retrieved_at": "2026-11-27T01:03:15.286548Z",
+"error": null
+},
+"get_psc|{\"company_number\": \"00596337\"}": {
+"tool": "get_psc",
+"args": {
+"company_number": "00596337"
+},
+"ok": true,
+"data": {
+"total_count": 0,
+"kinds": {},
+"corporate_pscs": [],
+"ceased_count": 0
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00596337/persons-with-significant-control",
+"retrieved_at": "2026-11-27T01:03:15.295989Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"02670969\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "02670969"
+},
+"ok": true,
+"data": {
+"total": 4,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": "1991-12-20"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02670969/charges",
+"retrieved_at": "2026-11-27T01:03:15.315810Z",
+"error": null
+},
+"get_charges|{\"company_number\": \"00596337\"}": {
+"tool": "get_charges",
+"args": {
+"company_number": "00596337"
+},
+"ok": true,
+"data": {
+"total": 1,
+"outstanding": 0,
+"satisfied": 0,
+"latest_created_on": "1993-04-29"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00596337/charges",
+"retrieved_at": "2026-11-27T01:03:15.317664Z",
+"error": null
+},
+"get_insolvency|{\"company_number\": \"02670969\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "02670969"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02670969/insolvency",
+"retrieved_at": "2026-11-27T01:03:15.332479Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"games workshop group plc\", \"company_number\": \"02670969\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "GAMES WORKSHOP GROUP PLC",
+"company_number": "02670969"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-27T01:03:15.332677Z",
+"error": "FCA credentials not configured"
+},
+"get_insolvency|{\"company_number\": \"00596337\"}": {
+"tool": "get_insolvency",
+"args": {
+"company_number": "00596337"
+},
+"ok": true,
+"data": {
+"cases": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/00596337/insolvency",
+"retrieved_at": "2026-11-27T01:03:15.334096Z",
+"error": null
+},
+"check_fca_register|{\"company_name\": \"spirax group plc\", \"company_number\": \"00596337\"}": {
+"tool": "check_fca_register",
+"args": {
+"company_name": "SPIRAX GROUP PLC",
+"company_number": "00596337"
+},
+"ok": false,
+"data": null,
+"source_url": "https://register.fca.org.uk/s/firm",
+"retrieved_at": "2026-11-27T01:03:15.334211Z",
+"error": "FCA credentials not configured"
+},
+"search_companies|{\"query\": \"crown consulting\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Crown Consulting",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "CROWN CONSULTING LTD",
+"number": "15362962",
+"status": "active",
+"date_of_creation": "2023-12-19",
+"address_locality": "Leeds"
+},
+{
+"name": "CROWN CONSULTING LIMITED",
+"number": "04605940",
+"status": "dissolved",
+"date_of_creation": "2002-12-02",
+"address_locality": "Manchester"
+},
+{
+"name": "CROWN CONSULTING & LEGAL DOCUMENTS LTD",
+"number": "16772537",
+"status": "active",
+"date_of_creation": "2025-10-08",
+"address_locality": "Leeds"
+},
+{
+"name": "CROWN CONSULTING (PROJECTS) LTD",
+"number": "14769137",
+"status": "active",
+"date_of_creation": "2023-03-30",
+"address_locality": "London"
+},
+{
+"name": "CROWN CONSULTING SERVICES LTD",
+"number": "14401638",
+"status": "dissolved",
+"date_of_creation": "2022-10-06",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Crown Consulting",
+"retrieved_at": "2026-11-27T01:03:15.371821Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"15362962\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "15362962"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2023-12-19",
+"sic_codes": [
+"71122"
+],
+"accounts": {
+"next_due": "2027-09-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Leeds"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/15362962",
+"retrieved_at": "2026-11-27T01:03:15.389621Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"04605940\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "04605940"
+},
+"ok": true,
+"data": {
+"status": "dissolved",
+"type": "ltd",
+"date_of_creation": "2002-12-02",
+"sic_codes": [
+"62020"
+],
+"accounts": {
+"next_due": null,
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": true,
+"has_charges": false,
+"registered_office_locality": "Manchester"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04605940",
+"retrieved_at": "2026-11-27T01:03:15.404082Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"16772537\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "16772537"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2025-10-08",
+"sic_codes": [
+"74909"
+],
+"accounts": {
+"next_due": "2027-07-08",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Leeds"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16772537",
+"retrieved_at": "2026-11-27T01:03:15.420840Z",
+"error": null
+},
+"search_companies|{\"query\": \"imperial trading\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Imperial Trading",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "IMPERIAL TRADING LIMITED",
+"number": "02349838",
+"status": "active",
+"date_of_creation": "1989-02-20",
+"address_locality": "Richmond"
+},
+{
+"name": "IMPERIAL TRADING AND CONSTRUCTION LTD",
+"number": "11946458",
+"status": "active",
+"date_of_creation": "2019-04-15",
+"address_locality": "Reading"
+},
+{
+"name": "IMPERIAL TRADING & SERVICES LIMITED",
+"number": "11019483",
+"status": "active",
+"date_of_creation": "2017-10-18",
+"address_locality": "Bury St. Edmunds"
+},
+{
+"name": "IMPERIAL TRADING CONSULTANCY LIMITED",
+"number": "06471731",
+"status": "active",
+"date_of_creation": "2008-01-14",
+"address_locality": "London"
+},
+{
+"name": "IMPERIAL TRADING CORPORATION LTD",
+"number": "16977870",
+"status": "active",
+"date_of_creation": "2026-01-21",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Imperial Trading",
+"retrieved_at": "2026-11-27T01:03:15.469718Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"02349838\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "02349838"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "1989-02-20",
+"sic_codes": [
+"62020"
+],
+"accounts": {
+"next_due": "2027-01-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Richmond"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/02349838",
+"retrieved_at": "2026-11-27T01:03:15.484276Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"11946458\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "11946458"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2019-04-15",
+"sic_codes": [
+"41202"
+],
+"accounts": {
+"next_due": "2027-01-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Reading"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/11946458",
+"retrieved_at": "2026-11-27T01:03:15.682863Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"11019483\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "11019483"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2017-10-18",
+"sic_codes": [
+"47910",
+"88990",
+"96090"
+],
+"accounts": {
+"next_due": "2027-07-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Bury St. Edmunds"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/11019483",
+"retrieved_at": "2026-11-27T01:03:16.175505Z",
+"error": null
+},
+"search_companies|{\"query\": \"pioneer holdings\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Pioneer Holdings",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "PIONEER HOLDINGS LIMITED",
+"number": "06753103",
+"status": "dissolved",
+"date_of_creation": "2008-11-19",
+"address_locality": "London"
+},
+{
+"name": "PIONEER HOLDINGS (DONCASTER) LIMITED",
+"number": "16652104",
+"status": "active",
+"date_of_creation": "2025-08-15",
+"address_locality": "Doncaster"
+},
+{
+"name": "PIONEER HOLDINGS GLOBAL LIMITED",
+"number": "10301341",
+"status": "active",
+"date_of_creation": "2016-07-28",
+"address_locality": "Cheadle"
+},
+{
+"name": "PIONEER HOLDINGS (MALVERN) LIMITED",
+"number": "15730575",
+"status": "active",
+"date_of_creation": "2024-05-20",
+"address_locality": "Malvern"
+},
+{
+"name": "PIONEER HOLDINGS UK LIMITED",
+"number": "10301359",
+"status": "active",
+"date_of_creation": "2016-07-28",
+"address_locality": "Cheadle"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Pioneer Holdings",
+"retrieved_at": "2026-11-27T01:03:16.730471Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"06753103\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "06753103"
+},
+"ok": true,
+"data": {
+"status": "dissolved",
+"type": "ltd",
+"date_of_creation": "2008-11-19",
+"sic_codes": [
+"99999"
+],
+"accounts": {
+"next_due": null,
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/06753103",
+"retrieved_at": "2026-11-27T01:03:17.181892Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"16652104\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "16652104"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2025-08-15",
+"sic_codes": [
+"64209"
+],
+"accounts": {
+"next_due": "2026-12-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Doncaster"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/16652104",
+"retrieved_at": "2026-11-27T01:03:17.679785Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"10301341\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "10301341"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2016-07-28",
+"sic_codes": [
+"33130"
+],
+"accounts": {
+"next_due": "2027-09-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Cheadle"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/10301341",
+"retrieved_at": "2026-11-27T01:03:18.176341Z",
+"error": null
+},
+"search_companies|{\"query\": \"evergreen consulting\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Evergreen Consulting",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "EVERGREEN CONSULTING LIMITED",
+"number": "14184123",
+"status": "active",
+"date_of_creation": "2022-06-20",
+"address_locality": "Saffron Walden"
+},
+{
+"name": "EVERGREEN CONSULTING LIMITED",
+"number": "07295687",
+"status": "dissolved",
+"date_of_creation": "2010-06-25",
+"address_locality": "Basingstoke"
+},
+{
+"name": "EVERGREEN CONSULTING SERVICES LTD",
+"number": "13929041",
+"status": "active",
+"date_of_creation": "2022-02-21",
+"address_locality": "London"
+},
+{
+"name": "EVERGREEN CONSULTING (GB) LTD",
+"number": "07988082",
+"status": "dissolved",
+"date_of_creation": "2012-03-13",
+"address_locality": "Gravesend"
+},
+{
+"name": "EVERGREEN CONSULTING LONDON LIMITED",
+"number": "10668647",
+"status": "dissolved",
+"date_of_creation": "2017-03-14",
+"address_locality": "London"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Evergreen Consulting",
+"retrieved_at": "2026-11-27T01:03:18.724148Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"14184123\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "14184123"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2022-06-20",
+"sic_codes": [
+"74909"
+],
+"accounts": {
+"next_due": "2027-09-30",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": true
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Saffron Walden"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/14184123",
+"retrieved_at": "2026-11-27T01:03:19.180790Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"07295687\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "07295687"
+},
+"ok": true,
+"data": {
+"status": "dissolved",
+"type": "ltd",
+"date_of_creation": "2010-06-25",
+"sic_codes": [
+"70229"
+],
+"accounts": {
+"next_due": null,
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Basingstoke"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/07295687",
+"retrieved_at": "2026-11-27T01:03:19.678395Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"13929041\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "13929041"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2022-02-21",
+"sic_codes": [
+"69201"
+],
+"accounts": {
+"next_due": "2026-12-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "London"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/13929041",
+"retrieved_at": "2026-11-27T01:03:20.180089Z",
+"error": null
+},
+"search_companies|{\"query\": \"atlas developments\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Atlas Developments",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "ATLAS DEVELOPMENTS LTD",
+"number": "04221308",
+"status": "active",
+"date_of_creation": "2001-05-22",
+"address_locality": "Essex"
+},
+{
+"name": "ATLAS DEVELOPMENTS LEISURE (CARLISLE) LLP",
+"number": "OC373472",
+"status": "active",
+"date_of_creation": "2012-03-19",
+"address_locality": "Carlisle"
+},
+{
+"name": "ATLAS DEVELOPMENTS PROPERTY MANAGEMENT LTD",
+"number": "15145154",
+"status": "active",
+"date_of_creation": "2023-09-18",
+"address_locality": "Carlisle"
+},
+{
+"name": "ATLAS DEVELOPMENTS & MAINTENANCE LTD",
+"number": "12423742",
+"status": "dissolved",
+"date_of_creation": "2020-01-24",
+"address_locality": "Puddington"
+},
+{
+"name": "ARENA CONSTRUCTION SERVICES LTD",
+"number": "SC620865",
+"status": "active",
+"date_of_creation": "2019-02-11",
+"address_locality": "Glasgow"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Atlas Developments",
+"retrieved_at": "2026-11-27T01:03:20.715375Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"04221308\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "04221308"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2001-05-22",
+"sic_codes": [
+"68100",
+"68209"
+],
+"accounts": {
+"next_due": "2027-02-28",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Essex"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/04221308",
+"retrieved_at": "2026-11-27T01:03:21.179363Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"oc373472\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "OC373472"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "llp",
+"date_of_creation": "2012-03-19",
+"sic_codes": [],
+"accounts": {
+"next_due": "2026-12-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Carlisle"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/OC373472",
+"retrieved_at": "2026-11-27T01:03:21.693354Z",
+"error": null
+},
+"get_company_profile|{\"company_number\": \"15145154\"}": {
+"tool": "get_company_profile",
+"args": {
+"company_number": "15145154"
+},
+"ok": true,
+"data": {
+"status": "active",
+"type": "ltd",
+"date_of_creation": "2023-09-18",
+"sic_codes": [
+"68100"
+],
+"accounts": {
+"next_due": "2026-12-31",
+"overdue": false
+},
+"confirmation_statement": {
+"overdue": false
+},
+"has_insolvency_history": false,
+"has_charges": false,
+"registered_office_locality": "Carlisle"
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/company/15145154",
+"retrieved_at": "2026-11-27T01:03:22.176895Z",
+"error": null
+},
+"search_companies|{\"query\": \"xkcdwy merblat limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Xkcdwy Merblat Limited",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Xkcdwy Merblat Limited",
+"retrieved_at": "2026-11-27T01:03:22.686707Z",
+"error": null
+},
+"search_companies|{\"query\": \"hvkpq sdorm limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Hvkpq Sdorm Limited",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": [
+{
+"name": "SDORMER LIMITED",
+"number": "11840182",
+"status": "active",
+"date_of_creation": "2019-02-21",
+"address_locality": "Grantham"
+}
+]
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Hvkpq Sdorm Limited",
+"retrieved_at": "2026-11-27T01:03:23.183932Z",
+"error": null
+},
+"search_companies|{\"query\": \"zzmrkt hjdquo limited\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Zzmrkt Hjdquo Limited",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Zzmrkt Hjdquo Limited",
+"retrieved_at": "2026-11-27T01:03:23.683969Z",
+"error": null
+},
+"search_companies|{\"query\": \"qvxtrl plonbwe ltd\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Qvxtrl Plonbwe Ltd",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Qvxtrl Plonbwe Ltd",
+"retrieved_at": "2026-11-27T01:03:24.181498Z",
+"error": null
+},
+"search_companies|{\"query\": \"yfglop ruwqen ltd\"}": {
+"tool": "search_companies",
+"args": {
+"query": "Yfglop Ruwqen Ltd",
+"limit": 5
+},
+"ok": true,
+"data": {
+"candidates": []
+},
+"source_url": "https://find-and-update.company-information.service.gov.uk/search?q=Yfglop Ruwqen Ltd",
+"retrieved_at": "2026-11-27T01:03:24.687723Z",
+"error": null
+},
+"search_news|{\"company_name\": \"smiths group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "SMITHS GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22SMITHS+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-27T01:04:09.783550Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"dunelm group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "DUNELM GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22DUNELM+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-27T01:05:05.279330Z",
+"error": "HTTP 429"
+},
+"search_news|{\"company_name\": \"rightmove plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "RIGHTMOVE PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22RIGHTMOVE+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-27T01:05:56.602201Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"spirax group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "SPIRAX GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": false,
+"data": null,
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22SPIRAX+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-27T01:06:47.933624Z",
+"error": "ConnectTimeout: "
+},
+"search_news|{\"company_name\": \"games workshop group plc\"}": {
+"tool": "search_news",
+"args": {
+"company_name": "GAMES WORKSHOP GROUP PLC",
+"days": 180,
+"limit": 5
+},
+"ok": true,
+"data": {
+"articles": [
+{
+"url": "https://www.investegate.co.uk/announcement/rns/games-workshop-group--gaw/director-shareholding/9827851",
+"title": "Director Shareholding | Company Announcement",
+"seendate": "20261016T143000Z",
+"domain": "investegate.co.uk"
+},
+{
+"url": "https://www.investegate.co.uk/announcement/rns/games-workshop-group--gaw/total-voting-rights/9802326",
+"title": "Total Voting Rights | Company Announcement",
+"seendate": "20261001T123000Z",
+"domain": "investegate.co.uk"
+},
+{
+"url": "https://www.dailypolitical.com/2026/10/01/games-workshop-group-plc-otcmktsgmwkf-sees-large-decline-in-short-interest.html",
+"title": "Games Workshop Group PLC ( OTCMKTS : GMWKF ) Sees Large Decline in Short Interest",
+"seendate": "20261001T120000Z",
+"domain": "dailypolitical.com"
+},
+{
+"url": "https://www.tickerreport.com/banking-finance/13594996/games-workshop-group-longaw-share-price-breaks-below-two-hundred-day-moving-average-time-to-sell.html",
+"title": "Games Workshop Group ( LON : GAW ) Share Price Breaks Below Two Hundred Day Moving Average \u2013 Time to Sell ? ",
+"seendate": "20260925T004500Z",
+"domain": "tickerreport.com"
+},
+{
+"url": "https://www.themarketsdaily.com/2026/09/03/games-workshop-group-gmwkf-and-the-competition-head-to-head-survey.html",
+"title": "Games Workshop Group ( GMWKF ) and The Competition Head - To - Head Survey",
+"seendate": "20260903T153000Z",
+"domain": "themarketsdaily.com"
+}
+]
+},
+"source_url": "https://api.gdeltproject.org/api/v2/doc/doc?mode=artlist&format=json&query=%22GAMES+WORKSHOP+GROUP+PLC%22&maxrecords=5&timespan=180d&sort=datedesc",
+"retrieved_at": "2026-11-27T01:07:46.196273Z",
+"error": null
 }
 }

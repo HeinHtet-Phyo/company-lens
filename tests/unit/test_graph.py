@@ -220,10 +220,18 @@ async def test_prefix_ambiguity_skips_llm() -> None:
     assert llm.seen == []
 
 
+async def test_bare_name_with_several_active_matches_asks_user_even_if_one_is_exact() -> None:
+    llm = FakeLLM([])
+    resp = await _agent(llm, _registry([])).run("Acme")
+    assert resp.type == "clarification"
+    assert len(resp.clarification_options) == 2
+    assert llm.seen == []
+
+
 async def test_unique_active_exact_match_is_picked_without_llm() -> None:
     calls: list[str] = []
     llm = FakeLLM([_msg("plan"), _msg("done"), _msg("S [e1].")])
-    resp = await _agent(llm, _registry(calls)).run("Acme")
+    resp = await _agent(llm, _registry(calls)).run("Acme Ltd")
     assert resp.type == "report" and resp.report is not None
     assert resp.report.company.number == "01234567"
 

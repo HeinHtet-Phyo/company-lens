@@ -222,6 +222,44 @@ Costs are estimates from token counts × a price table in `llm.py`, not provider
 
 Resisted 29/30 poisoned runs (0 invalid) (risk level, flag set, no prompt leak, no obeyed claim, tool budget).
 
+## Resolver change: ask whenever several live companies share a bare name
+
+v1 = resolver used for the original test run (test numbers above are v1 and were NOT re-run). v2 = new rule. Dev was used while designing v2; the fresh set (15 names never used before, `eval/companies/fresh.jsonl`, seed 1127) was built before v2 was evaluated and is run once per config. This is a dev + fresh-set improvement, not a test-split result.
+
+### Fresh set (n=15: 5 clear, 5 ambiguous, 5 not-found)
+
+| Metric | agent_qwen_v1 | agent_qwen_v2 | baseline_fixed_v2 |
+|---|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 67% [40–87] | 100% [100–100] | 60% [33–87] |
+| Risk level matches snapshot oracle | 100% [100–100] | 100% [100–100] | 100% [100–100] |
+| Flag recall | 100% | 100% | 100% |
+| Flag precision | 100% | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 40% [10–70] | 40% [0–80] | 45% [18–73] |
+| Unsupported-sentence rate (judge) | 10% | 8% | 13% |
+| Unsupported-number rate (deterministic) | 34% | 12% | 21% |
+| Cost per report, GBP est. | 0.007 [0.006–0.008] | 0.007 [0.006–0.007] | 0.000 [0.000–0.000] |
+| Latency mean, s | 14.282 [13.047–16.036] | 14.479 [13.213–15.444] | 6.981 [6.241–7.821] |
+| Tool calls mean | 8.400 [7.600–9.300] | 7.400 [6.400–8.400] | 8.000 [8.000–8.000] |
+| Completed without hitting a guard | 90% | 100% | 100% |
+| n items | 15 | 15 | 15 |
+
+### Dev (n=26)
+
+| Metric | agent_qwen | agent_qwen_v2 |
+|---|---|---|
+| Routing accuracy (right company / clarify / not-found / refuse) | 100% [100–100] | 100% [100–100] |
+| Risk level matches snapshot oracle | 100% [100–100] | 100% [100–100] |
+| Flag recall | 93% | 93% |
+| Flag precision | 100% | 100% |
+| Reports with ≥1 unsupported sentence (judge) | 24% [6–47] | 12% [0–29] |
+| Unsupported-sentence rate (judge) | 5% | 2% |
+| Unsupported-number rate (deterministic) | 19% | 9% |
+| Cost per report, GBP est. | 0.008 [0.007–0.009] | 0.008 [0.007–0.009] |
+| Latency mean, s | 16.035 [14.767–17.309] | 13.476 [12.774–14.318] |
+| Tool calls mean | 7.647 [7.059–8.176] | 7.765 [7.176–8.412] |
+| Completed without hitting a guard | 88% | 88% |
+| n items | 26 | 26 |
+
 ## memory.json
 
 ```
@@ -244,7 +282,7 @@ Resisted 29/30 poisoned runs (0 invalid) (risk level, flag set, no prompt leak, 
 
 ```
 {
- "total_gbp_est": 1.1724,
+ "total_gbp_est": 1.4119,
  "entries": [
   {
    "config": "baseline_fixed",
@@ -305,6 +343,26 @@ Resisted 29/30 poisoned runs (0 invalid) (risk level, flag set, no prompt leak, 
    "config": "agent_mistral",
    "split": "test",
    "gbp_est": 0.0575
+  },
+  {
+   "config": "agent_qwen",
+   "split": "fresh",
+   "gbp_est": 0.0328
+  },
+  {
+   "config": "agent_qwen",
+   "split": "fresh",
+   "gbp_est": 0.0689
+  },
+  {
+   "config": "baseline_fixed",
+   "split": "fresh",
+   "gbp_est": 0.0028
+  },
+  {
+   "config": "agent_qwen",
+   "split": "dev",
+   "gbp_est": 0.135
   }
  ],
  "note": "Estimated from token counts and a price table in llm.py, not provider invoices."
