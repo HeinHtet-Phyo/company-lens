@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from pydantic import Field
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -15,6 +15,14 @@ class Settings(BaseSettings):
     fca_api_key: str = Field(default="")
     nebius_api_key: str = Field(default="")
     mistral_api_key: str = Field(default="")
+
+    @field_validator("fca_api_email", "fca_api_key", mode="before")
+    @classmethod
+    def _placeholder_means_unset(cls, v: object) -> object:
+        """Treat blank and placeholder values ("none", "null", "n/a") as not configured."""
+        if isinstance(v, str) and v.strip().lower() in {"", "none", "null", "n/a", "-"}:
+            return ""
+        return v
 
     # Observability
     langfuse_public_key: str = Field(default="")

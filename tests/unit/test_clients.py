@@ -379,3 +379,31 @@ async def test_search_news_network_error_ok_false(httpx_mock: HTTPXMock) -> None
 
     assert result.ok is False
     assert result.error is not None
+
+
+# ---------------------------------------------------------------------------
+# FCA — placeholder credentials
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("placeholder", ["", "none", "None", " NONE ", "null", "n/a"])
+def test_settings_treat_placeholder_fca_credentials_as_unset(placeholder: str) -> None:
+    from companylens.config import Settings
+
+    s = Settings(fca_api_email=placeholder, fca_api_key=placeholder)
+    assert s.fca_api_email == "" and s.fca_api_key == ""
+
+
+async def test_fca_check_skipped_without_http_when_placeholder(
+    monkeypatch: pytest.MonkeyPatch, httpx_mock: HTTPXMock
+) -> None:
+    from companylens.config import get_settings
+
+    monkeypatch.setenv("FCA_API_EMAIL", "none")
+    monkeypatch.setenv("FCA_API_KEY", "none")
+    with patch("companylens.clients.fca.get_settings", get_settings):
+        async with FCAClient() as client:
+            result = await client.check_fca_register("ACME LTD", "12345678")
+    assert result.ok is False
+    assert result.error == "FCA credentials not configured"
+    assert httpx_mock.get_requests() == []
