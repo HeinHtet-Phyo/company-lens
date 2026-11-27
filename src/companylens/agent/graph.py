@@ -10,7 +10,9 @@ from collections.abc import Awaitable, Callable
 from datetime import UTC, datetime
 from typing import Any, Literal
 
+from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph
+from langgraph.types import Command, interrupt
 
 from companylens.agent.baseline import (
     _build_company_header,
@@ -57,6 +59,12 @@ _RULE_TOOL = {
 }
 
 
+APPROVAL_TOOLS = {
+    "search_news": "search news about {name} on GDELT (sends the company name to a third party)",
+    "check_fca_register": "look up {name} on the FCA Register (sends the company name to a third "
+    "party)",
+}
+
 _SUFFIXES = {"ltd", "limited", "plc", "llp", "uk"}
 
 
@@ -95,8 +103,10 @@ class CompanyAgent:
         config: AgentConfig,
         tracer: Tracer,
         on_event: Callable[[dict[str, Any]], Awaitable[None]] | None = None,
+        require_approval: bool = False,
     ) -> None:
         self.on_event = on_event
+        self.require_approval = require_approval
         self.registry = registry
         self.llm = llm
         self.config = config
@@ -117,18 +127,24 @@ class CompanyAgent:
         g.add_node("resolve", self._resolve)
         g.add_node("plan", self._plan)
         g.add_node("act", self._act)
+        g.add_node("tools", self._tools)
         g.add_node("decide", self._decide)
         g.add_node("report", self._report)
         g.add_edge(START, "resolve")
         g.add_conditional_edges("resolve", self._after_resolve, {"plan": "plan", "end": END})
         g.add_edge("plan", "act")
-        g.add_edge("act", "decide")
+        g.add_edge("act", "tools")
+        g.add_edge("tools", "decide")
         g.add_conditional_edges("decide", self._after_decide, {"act": "act", "report": "report"})
         g.add_edge("report", END)
-        return g.compile()
+        return g.compile(checkpointer=MemorySaver() if self.require_approval else None)
 
-    async def run(self, query: str) -> AgentResponse:
-        """Run the agent on a company name or number."""
+    async def run(self, query: str, run_id: str | None = None) -> AgentResponse:
+        """Run the agent on a company name or number.
+
+        With ``require_approval`` the run may return ``approval_required``; continue it with
+        :meth:`resume` using the same ``run_id``.
+        """
         state: AgentState = {
             "query": query.strip(),
             "config_name": self.config.name,
@@ -148,12 +164,32 @@ class CompanyAgent:
             "output_tokens": 0,
             "should_stop": False,
             "stop_reason": "complete",
-            "pending_approval": None,
-            "approval_granted": False,
+            "pending_calls": [],
+            "skipped_tools": [],
             "report": None,
             "error_message": None,
         }
-        out = await self.graph.ainvoke(state)
+        return self._response(await self.graph.ainvoke(state, self._cfg(run_id)))
+
+    @staticmethod
+    def _cfg(run_id: str | None) -> dict[str, Any]:
+        return {"configurable": {"thread_id": run_id or "run"}}
+
+    async def resume(self, run_id: str, approve: bool) -> AgentResponse:
+        """Continue a run paused for approval: approve or skip the pending lookups."""
+        out = await self.graph.ainvoke(Command(resume=approve), self._cfg(run_id))
+        return self._response(out)
+
+    @staticmethod
+    def _response(out: dict[str, Any]) -> AgentResponse:
+        paused = out.get("__interrupt__")
+        if paused:
+            actions = paused[0].value["actions"]
+            return AgentResponse(
+                type="approval_required",
+                message="The agent wants to: " + "; ".join(a["description"] for a in actions),
+                pending_actions=actions,
+            )
         if out.get("report") is not None:
             return AgentResponse(type="report", report=out["report"])
         if out.get("needs_clarification"):
@@ -364,18 +400,58 @@ class CompanyAgent:
             else:
                 pending.append((tc.id, name, args))
                 history.append((name, args))
-        results = await asyncio.gather(*(self._tool(n, **a) for _, n, a in pending))
-        for (call_id, _, _), res in zip(pending, results, strict=True):
-            replies.append(self._tool_msg(call_id, _wrap(res)))
         upd.update(
             {
                 "messages": [*state["messages"], assistant, *replies],
-                "tool_results": [*state["tool_results"], *results],
                 "tool_call_history": history,
-                "tool_calls_count": count + len(pending),
+                "pending_calls": [{"id": i, "name": n, "args": a} for i, n, a in pending],
             }
         )
         return upd
+
+    async def _tools(self, state: AgentState) -> dict[str, Any]:
+        """Run the validated tool calls, pausing first for approval of third-party lookups."""
+        pending = state["pending_calls"]
+        if not pending:
+            return {}
+        gated = [p for p in pending if p["name"] in APPROVAL_TOOLS]
+        skipped: list[str] = []
+        replies: list[dict[str, Any]] = []
+        skipped_results: list[ToolResult] = []
+        if self.require_approval and gated:
+            who = state["company_name"] or state["company_number"] or "the company"
+            actions = [
+                {"tool": p["name"], "description": APPROVAL_TOOLS[p["name"]].format(name=who)}
+                for p in gated
+            ]
+            approved = interrupt({"actions": actions})
+            if not approved:
+                for p in gated:
+                    skipped.append(p["name"])
+                    replies.append(
+                        self._tool_msg(p["id"], "Skipped: the user declined this lookup.")
+                    )
+                    skipped_results.append(
+                        ToolResult(
+                            tool=p["name"],
+                            args=p["args"],
+                            ok=False,
+                            source_url="",
+                            retrieved_at=datetime.now(UTC),
+                            error="skipped by user (not approved)",
+                        )
+                    )
+                pending = [p for p in pending if p["name"] not in APPROVAL_TOOLS]
+        results = await asyncio.gather(*(self._tool(p["name"], **p["args"]) for p in pending))
+        for p, res in zip(pending, results, strict=True):
+            replies.append(self._tool_msg(p["id"], _wrap(res)))
+        return {
+            "messages": [*state["messages"], *replies],
+            "tool_results": [*state["tool_results"], *results, *skipped_results],
+            "tool_calls_count": state["tool_calls_count"] + len(pending),
+            "pending_calls": [],
+            "skipped_tools": [*state["skipped_tools"], *skipped],
+        }
 
     @staticmethod
     def _tool_msg(call_id: str, content: str) -> dict[str, Any]:

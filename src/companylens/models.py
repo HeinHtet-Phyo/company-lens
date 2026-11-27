@@ -118,7 +118,10 @@ class ClarificationOption(BaseModel):
 class AgentResponse(BaseModel):
     """Top-level API response — either a report or a clarification request."""
 
-    type: str  # "report" | "clarification" | "not_found" | "refused" | "error"
+    type: (
+        str  # "report" | "clarification" | "not_found" | "refused" | "error" | "approval_required"
+    )
     report: Report | None = None
     clarification_options: list[ClarificationOption] | None = None
     message: str | None = None
+    pending_actions: list[dict[str, Any]] | None = None

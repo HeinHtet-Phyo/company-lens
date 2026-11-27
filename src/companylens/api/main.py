@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import uuid
 from collections.abc import AsyncIterator
 from pathlib import Path
 from typing import Any
@@ -35,6 +36,13 @@ _budget = DailyBudget(_settings.daily_budget_gbp)
 _tracer = Tracer(_settings)
 _registry: ToolRegistry | None = None
 _llms: dict[str, LLMClient] = {}
+_approvals: dict[str, asyncio.Future[bool]] = {}
+APPROVAL_TIMEOUT_S = 120.0
+
+
+class ApprovalRequest(BaseModel):
+    run_id: str
+    approve: bool
 
 
 class ReportRequest(BaseModel):
@@ -49,11 +57,15 @@ def _get_registry() -> ToolRegistry:
     return _registry
 
 
-def _make_agent(config_name: str, on_event: Any = None) -> CompanyAgent:
+def _make_agent(
+    config_name: str, on_event: Any = None, require_approval: bool = False
+) -> CompanyAgent:
     config = AGENT_CONFIGS[config_name]
     if config_name not in _llms:
         _llms[config_name] = LLMClient(config, _settings)
-    return CompanyAgent(_get_registry(), _llms[config_name], config, _tracer, on_event)
+    return CompanyAgent(
+        _get_registry(), _llms[config_name], config, _tracer, on_event, require_approval
+    )
 
 
 def _error(status: int, message: str, exc: BaseException | None = None) -> JSONResponse:
@@ -125,9 +137,16 @@ async def report(req: ReportRequest, request: Request) -> JSONResponse:
 
 @app.get("/report/stream", response_model=None)
 async def report_stream(
-    request: Request, q: str = Query(...), config: str = Query(DEFAULT_CONFIG)
+    request: Request,
+    q: str = Query(...),
+    config: str = Query(DEFAULT_CONFIG),
+    approve: bool = Query(False),
 ) -> Any:
-    """Stream agent progress and the final report as server-sent events."""
+    """Stream agent progress and the final report as server-sent events.
+
+    With ``approve=true`` the run pauses before third-party lookups and emits an
+    ``approval_required`` event carrying a ``run_id``; answer it via ``POST /report/approve``.
+    """
     blocked = _gate(request, q, config)
     if blocked is not None:
         return blocked
@@ -139,7 +158,29 @@ async def report_stream(
 
     async def worker() -> None:
         try:
-            resp = await _make_agent(config, on_event).run(q)
+            agent = _make_agent(config, on_event, approve)
+            run_id = uuid.uuid4().hex
+            resp = await agent.run(q, run_id)
+            while resp.type == "approval_required":
+                fut: asyncio.Future[bool] = asyncio.get_running_loop().create_future()
+                _approvals[run_id] = fut
+                await queue.put(
+                    {
+                        "event": "approval_required",
+                        "data": {
+                            "run_id": run_id,
+                            "message": resp.message,
+                            "actions": resp.pending_actions,
+                        },
+                    }
+                )
+                try:
+                    decision = await asyncio.wait_for(fut, APPROVAL_TIMEOUT_S)
+                except TimeoutError:
+                    decision = False
+                finally:
+                    _approvals.pop(run_id, None)
+                resp = await agent.resume(run_id, decision)
             if resp.report is not None:
                 _budget.add(resp.report.stats.cost_gbp)
             await queue.put({"event": "report", "data": resp.model_dump(mode="json")})
@@ -166,6 +207,16 @@ async def report_stream(
             task.cancel()
 
     return EventSourceResponse(gen())
+
+
+@app.post("/report/approve")
+async def approve_lookup(req: ApprovalRequest) -> JSONResponse:
+    """Approve or skip the lookups a paused run is waiting on."""
+    fut = _approvals.get(req.run_id)
+    if fut is None or fut.done():
+        return _error(404, "No run is waiting for approval with that id.")
+    fut.set_result(req.approve)
+    return JSONResponse({"type": "ok", "run_id": req.run_id, "approved": req.approve})
 
 
 @app.get("/")

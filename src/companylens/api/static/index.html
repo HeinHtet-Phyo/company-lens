@@ -44,6 +44,7 @@
   <p class="sub">First-pass due-diligence check on a UK company, from live Companies House, FCA Register and news data.</p>
   <form id="f"><input id="q" type="text" maxlength="120" placeholder="Company name or number, e.g. Monzo Bank" autocomplete="off" required>
     <button id="go">Check</button></form>
+  <label class="sub" style="display:block;margin:6px 0"><input id="ask" type="checkbox"> Ask me before looking up news or the FCA Register (sends the company name to a third party)</label>
   <div class="chips" id="chips"></div>
   <div id="timeline-card" class="card" hidden><h2>Agent activity</h2><div id="timeline"></div></div>
   <div id="out"></div>
@@ -78,11 +79,12 @@ async function run() {
     else if (ev === "tool_call") pending[d.name] = line(`${d.name}(${Object.values(d.args).join(", ")})`, "run");
     else if (ev === "tool_result") { const el = pending[d.name]; if (el) { el.className = d.ok ? "ok" : "bad"; el.textContent += " — " + d.summary; } }
     else if (ev === "decision") line(d.action === "stop" ? "Decision: stop" + (d.reason ? " (" + d.reason + ")" : "") : "Decision: gather more", "ok");
+    else if (ev === "approval_required") askApproval(d);
     else if (ev === "report") render(d);
     else if (ev === "error") showError(`Something went wrong (${d.exception}): ${d.message}`);
   };
   try {
-    const r = await fetch("/report/stream?q=" + encodeURIComponent(q));
+    const r = await fetch("/report/stream?q=" + encodeURIComponent(q) + ($("ask").checked ? "&approve=true" : ""));
     if (!r.ok || !(r.headers.get("content-type") || "").includes("text/event-stream")) {
       const j = await r.json().catch(() => ({}));
       if (j.type === "refused") render(j); else showError(j.message || HTTP_MSG[r.status] || `Request failed (${r.status}).`);
@@ -102,6 +104,21 @@ async function run() {
     }
   } catch (e) { showError("Connection lost. Please try again."); }
   running = false; $("go").disabled = false;
+}
+
+function askApproval(d) {
+  const box = document.createElement("div"); box.className = "card opts"; box.id = "approval";
+  box.innerHTML = `<h2>${esc(d.message)}</h2><button data-a="1">Approve</button><button data-a="0">Skip</button>`;
+  box.addEventListener("click", async e => {
+    const a = e.target.dataset && e.target.dataset.a; if (a === undefined) return;
+    box.querySelectorAll("button").forEach(b => b.disabled = true);
+    const r = await fetch("/report/approve", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ run_id: d.run_id, approve: a === "1" }) });
+    line(a === "1" ? "You approved the lookup" : "You skipped the lookup", "ok");
+    box.remove();
+    if (!r.ok) showError("That approval request has expired.");
+  });
+  $("out").innerHTML = ""; $("out").appendChild(box);
 }
 
 function render(r) {

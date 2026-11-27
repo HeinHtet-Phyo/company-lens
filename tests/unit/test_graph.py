@@ -241,3 +241,79 @@ async def test_junk_query_is_not_found_without_llm() -> None:
     resp = await _agent(llm, _registry([])).run("Qqqq Nnnn Wwww Limited")
     assert resp.type == "not_found"
     assert llm.seen == []
+
+
+def _news_registry(calls: list[str]) -> ToolRegistry:
+    reg = _registry(calls)
+
+    async def news(**kw: Any) -> ToolResult:
+        calls.append("search_news")
+        return _result("search_news", {"articles": []})
+
+    reg.register(ToolDefinition("search_news", "n", {"type": "object", "properties": {}}, news))
+    return reg
+
+
+def _approval_llm() -> FakeLLM:
+    return FakeLLM(
+        [
+            _msg("Plan."),
+            _msg(
+                tool_calls=[
+                    _tc("1", "get_company_profile", company_number="01234567"),
+                    _tc("2", "search_news", query="ACME LTD"),
+                ]
+            ),
+            _msg("done"),
+            _msg("ACME is a company [e1]."),
+        ]
+    )
+
+
+def _gated_agent(llm: FakeLLM, reg: ToolRegistry, events: list[str]) -> CompanyAgent:
+    async def on_event(ev: dict[str, Any]) -> None:
+        events.append(ev["event"])
+
+    cfg = AGENT_CONFIGS["agent_qwen_noclaimcheck"]
+    return CompanyAgent(reg, llm, cfg, FakeTracer(), on_event, require_approval=True)  # type: ignore[arg-type]
+
+
+async def test_approval_pauses_before_third_party_lookup_and_resumes_on_approve() -> None:
+    calls: list[str] = []
+    agent = _gated_agent(_approval_llm(), _news_registry(calls), [])
+    paused = await agent.run("01234567", "run-1")
+    assert paused.type == "approval_required"
+    assert paused.message is not None and paused.message.startswith("The agent wants to: ")
+    assert paused.pending_actions is not None and paused.pending_actions[0]["tool"] == "search_news"
+    assert "search_news" not in calls
+    before = calls.count("get_company_profile")  # profile fetched once while resolving
+    done = await agent.resume("run-1", True)
+    assert done.type == "report" and done.report is not None
+    assert "search_news" in calls and "get_company_profile" in calls
+    assert calls.count("search_news") == 1
+    assert calls.count("get_company_profile") <= before + 1  # not repeated on resume
+
+
+async def test_skip_runs_other_tools_and_reports_limitation() -> None:
+    calls: list[str] = []
+    agent = _gated_agent(_approval_llm(), _news_registry(calls), [])
+    await agent.run("01234567", "run-2")
+    done = await agent.resume("run-2", False)
+    assert done.type == "report" and done.report is not None
+    assert "search_news" not in calls and "get_company_profile" in calls
+    assert any("search_news" in x and "skipped" in x for x in done.report.limitations)
+
+
+async def test_resume_does_not_repeat_llm_call() -> None:
+    llm = _approval_llm()
+    agent = _gated_agent(llm, _news_registry([]), [])
+    await agent.run("01234567", "run-3")
+    seen_at_pause = len(llm.seen)
+    await agent.resume("run-3", True)
+    assert len(llm.seen) == seen_at_pause + 2  # only the follow-up and report calls
+
+
+async def test_gate_off_by_default_never_pauses() -> None:
+    calls: list[str] = []
+    resp = await _agent(_approval_llm(), _news_registry(calls)).run("01234567")
+    assert resp.type == "report" and "search_news" in calls

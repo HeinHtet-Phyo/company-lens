@@ -59,8 +59,8 @@ class AgentState(TypedDict):
     # ------------------------------------------------------------------
     # Human approval
     # ------------------------------------------------------------------
-    pending_approval: dict[str, Any] | None  # None = no pending approval
-    approval_granted: bool
+    pending_calls: list[dict[str, Any]]  # validated tool calls awaiting execution
+    skipped_tools: list[str]  # tools the user declined to run
 
     # ------------------------------------------------------------------
     # Output

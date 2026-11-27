@@ -21,7 +21,7 @@ It is a screening aid, not advice. The risk level comes from fixed rules (R1–R
 - **FCA Register check is not live.** The FCA developer portal was unavailable when this was built, so no key is configured. Reports say "FCA credentials not configured" under limitations, and FCA is excluded from every evaluation metric. The endpoint itself is unverified. Re-run just that part later with `python eval/refresh_fca.py`.
 - **Ambiguous names are the main weakness.** On the test split the agent returned a report instead of asking which company was meant for 6 of 7 ambiguous queries (`docs/failure_analysis.md`).
 - **News coverage is partial.** GDELT rate-limits; only part of the evaluation snapshot has news.
-- **No human-approval step.** The state fields exist but the interrupt is not implemented.
+- **Human approval is opt-in.** Tick "Ask me before looking up news or the FCA Register" and the run pauses (LangGraph `interrupt`, resumed by run id) before any lookup that sends the company name to a third party. It is off by default and was not part of the evaluation.
 - Judge-vs-human agreement is unmeasured: `eval/hand_check.csv` is generated but not yet filled in by a person.
 - Costs are estimates from token counts and a price table, not provider invoices.
 

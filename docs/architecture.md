@@ -19,7 +19,8 @@ Langfuse (OTLP) ◄── redacted traces from every run
 4. **Risk**: `agent/risk.py` applies rules R1–R9 to tool output. The LLM does not decide the risk level (ADR-003).
 5. **Report**: the LLM writes a summary from the evidence only.
 6. **Claim check** (`agent/claim_check.py`): a deterministic number/fact check plus an LLM sentence check; one repair attempt, then unsupported sentences are dropped.
-7. **Stream**: events (`resolve`, `plan`, `tool_call`, `tool_result`, `decision`, `report`, `error`) go to the UI over SSE.
+7. **Approval (optional)**: with `approve=true` the `tools` node calls LangGraph `interrupt()` before `search_news` / `check_fca_register`. The API emits `approval_required` with a `run_id`; `POST /report/approve {run_id, approve}` resumes the run (checkpointer: in-memory, thread id = run id). No answer within 120 s counts as Skip. A skipped lookup appears under limitations.
+8. **Stream**: events (`resolve`, `plan`, `tool_call`, `tool_result`, `decision`, `report`, `error`) go to the UI over SSE.
 
 ## Components
 
@@ -39,6 +40,5 @@ One uvicorn worker, `OMP_NUM_THREADS=1`, no LangChain or LiteLLM model wrappers.
 
 ## Known gaps
 
-- Human-approval interrupt is not implemented.
 - FCA lookups need credentials that are not configured; reports say so under limitations.
 - GDELT is rate limited and often returns nothing; news coverage is partial.
